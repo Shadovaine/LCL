@@ -1,0 +1,62 @@
+#--------------------------------
+# Command YAML Template
+#--------------------------------
+
+# The name of the command (must match the actual Linux command)
+name: netstat
+
+# Category this command belongs to (text_processing, file_management, user_group_mgmt, networking)
+category: Networking_Tools
+
+# One-Line description of what the command does
+description: Displays network connections, routing tables, and interface stats. (Legacy- ss replaces it in modern systems.)
+
+# General syntax of the command
+syntax: netstat [Options]
+
+# Options: each flag (or set of flags) with an explanation
+# Use " flags" as a list if there are multiple aliases (e.g. ["-i", "--ignore-case"])
+# Optional: add "arg" if the optin expects a value
+options:
+  - flag: ["-a"]
+    explains: Shows all sockets.
+  - flag: ["-t"]
+    explains: Show TCP connections only.
+  - flag: ["-u"]
+    explains: Shows UDP connections only.
+  - flag: ["-l"]
+    explains: Show listening sockets only.
+  - flag: ["-p"]
+    explains: Show the PID and program name of each connections.
+  - flag: ["-n"]
+    explains: Show address numerically.
+  - flag: ["-r"]
+    explains: Show the routing table.
+  - flag: ["-i"]
+    explains: Show network interfaces.
+  - flag: ["-s"]
+    explains: Show per-protocol statistics.
+  - flag: ["-c"]
+    explains: Continuous output.
+  - flag: ["-e"]
+    explains: Show extended information.
+  - flag: ["-g"]
+    explains: Show multicast group membership.
+  - flag: ["-o"]
+    explains: Show timers for connections.
+
+# Examples: List of example usages
+examples:
+  - netstat -a 
+  - netstat -t 
+  - netstat -u
+  - netstat -l 
+  - sudo netstat -p 
+  - netstat -n 
+  - netstat -r 
+  - netstat -l 
+  - netstat -c 
+  - netstat -e 
+  - netstat -g 
+  - netstat -o 
+  
