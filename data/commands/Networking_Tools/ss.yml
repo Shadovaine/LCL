@@ -1,0 +1,72 @@
+#--------------------------------
+# Command YAML Template
+#--------------------------------
+
+# The name of the command (must match the actual Linux command)
+name: ss
+
+# Category this command belongs to (text_processing, file_management, user_group_mgmt, networking)
+category: Networking_Tools
+
+# One-Line description of what the command does
+description: A faster, more modern replacement for netstat.
+
+# General syntax of the command
+syntax: ss [Options] [Filter]
+
+# Options: each flag (or set of flags) with an explanation
+# Use " flags" as a list if there are multiple aliases (e.g. ["-i", "--ignore-case"])
+# Optional: add "arg" if the optin expects a value
+options:
+  - flag: ["-t"]
+    explains: Show TCP sockets only.
+  - flag: ["-u"]
+    explains: Show UDP sockets only.
+  - flag: ["-l"]
+    explains: Show listening sockets only.
+  - flag: ["-a"]
+    explains: Show all sockets.
+  - flag: ["-n"]
+    explains: Do not resolve service names or hostnames.
+  - flag: ["-p"]
+    explains: Show PID and process using the sockets.
+  - flag: ["-4"]
+    explains: Show only IPv4.
+  - flag: ["-6"]
+    explains: Show only IPv6.
+  - flag: ["-r"]
+    explains: Resolve service names.
+  - flag: ["-o"]
+    explains: Show timer information.
+  - flag: ["-s"]
+    explains: Show summary statistics.
+  - flag: ["-i"]
+    explains: Show interanl TCP info.
+  - flag: ["-m"]
+    explains: Show memory usage for sockets.
+  - flag: ["-K"]
+    explains: Kill a socket.
+  - flag: ["-f"]
+    explains: Specify socket family.
+  - flag: ["-H"]
+    explains: No header line in output.
+
+# Examples: List of example usages
+examples:
+  - ss -t 
+  - ss -u 
+  - ss -l 
+  - ss -a 
+  - ss -n 
+  - ss -p 
+  - ss -4 
+  - ss -6 
+  - ss -r 
+  - ss -o 
+  - ss -s 
+  - ss -ti 
+  - ss -m 
+  - ss -K 
+  - ss -f inet 
+  - ss -H 
+  
