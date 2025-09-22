@@ -1,0 +1,86 @@
+#--------------------------------
+# Command YAML Template
+#--------------------------------
+
+# The name of the command (must match the actual Linux command)
+name: ipcalc
+
+# Category this command belongs to (text_processing, file_management, user_group_mgmt, networking)
+category: Networking Tools
+
+# One-Line description of what the command does
+description: Calculate IP address information.
+
+# General syntax of the command
+syntax: ipcalc [OPTIONS]...[ARGS]...
+
+# Options: each flag (or set of flags) with an explanation
+# Use " flags" as a list if there are multiple aliases (e.g. ["-i", "--ignore-case"])
+# Optional: add "arg" if the optin expects a value
+options:
+  - flag: ["-c"]
+    explains: Validate if the IP is legitimate.
+  - flag: ["-i"]
+    explains: Show readable network information.
+  - flag: ["--all-info"]
+    explains: Display all available information.
+  - flag: ["-S"]
+    explains: Cut a network into smaller chunks specified prefixes.
+  - flag: ["-d"]
+    explains: Display the DNS PTR record for the given IP address.
+  - flag: ["-r"]
+    explains: Create a random private IP given mask.
+  - flag: ["-h"]
+    explains: Give me the possible hostname for that IP.
+  - flag: ["-j"]
+    explains: Show the JSON representation of the IP information.
+    arg:
+      name: FORMAT   # the placeholder name for the argument
+      required: false # true if mandatory, false if optional
+  - flag: ["--no-decorate"]
+    explains: Don't decorate the output
+  - flag: ["--addrspace"]
+    explains: Specify the address space to use (ipv4 or ipv6).
+    arg:
+      name: TYPE     # the placeholder name for the argument
+      required: true # true if mandatory, false if optional
+  - flag: ["-p"]
+    explains: Show the CIDR prefix.
+  - flag: ["--class-prefix"]
+    explains: Show the classful network prefix.
+  - flag: ["--netmask"]
+    explains: Show the netmask.
+  - flag: ["--wildcard"]
+    explains: Show the wildcard mask.
+  - flag: ["--network"]
+    explains: Show the network address.
+  - flag: ["--broadcast"]
+    explains: Show the broadcast address.
+  - flag: ["--hostmin"]
+    explains: Show the first host address.
+  - flag: ["--hostmax"]
+    explains: Show the last host address.
+  - flag: ["--hosts"]
+    explains: Show the number of hosts.
+ 
+# Examples: List of example usages
+examples:
+  - ipcalc  
+  - ipcalc -c 192.168.1.1
+  - ipcalc --all-info 10.0.0.1  
+  - ipcalc -S
+  - ipcalc -d 8.8.8.8
+  - ipcalc -r 24
+  - ipcalc -h
+  - ipcalc -j
+  - ipcalc --no-decorate
+  - ipcalc --addrspace ipv6 2001:0db8:85a3:0000:0000:8a2e:0370:7334/64
+  - ipcalc -p
+  - ipcalc --class-prefix
+  - ipcalc --netmask
+  - ipcalc --wildcard
+  - ipcalc --network
+  - ipcalc --broadcast
+  - ipcalc --hostmin
+  - ipcalc --hostmax
+  - ipcalc --hosts
