@@ -1,0 +1,81 @@
+#--------------------------------
+# Command YAML Template
+#--------------------------------
+
+# The name of the command (must match the actual Linux command)
+name: lsof
+
+# Category this command belongs to (text_processing, file_management, user_group_mgmt, networking)
+category: Networking Tools
+
+# One-Line description of what the command does
+description: List open files and the processes that opened them.
+
+# General syntax of the command
+syntax: lsof [OPTIONS]...[ARGS]...
+
+# Options: each flag (or set of flags) with an explanation
+# Use " flags" as a list if there are multiple aliases (e.g. ["-i", "--ignore-case"])
+# Optional: add "arg" if the optin expects a value
+options:
+  - flag: ["-u <user>"]
+    explains: List files opened by the specified user.
+  - flag: ["-p <pid>"]
+    explains: List files opened by the specified process ID.
+  - flag: ["-i"]
+    explains: List files related to network connections.
+  - flag: ["-i <port>"]
+    explains: List files related to the specified port.
+  - flag: ["-i tcp"]
+    explains: List files related to TCP connections.
+  - flag: ["-i udp"]
+    explains: List files related to UDP connections.
+  - flag: ["-i @<hostname>"]
+    explains: List files related to the specified hostname.
+  - flag: ["-c <string"]
+    explains: List files opened by commands that match the specified string.
+  - flag: ["-a"]
+    explains: Combine multiple selection options with a logical AND.
+  - flag: ["-p"]
+    explains: Combine multiple selection options with a logical OR.
+  - flag: ["-n"]
+    explains: Do not convert network numbers to host names for network files.
+  - flag: ["-r <seconds>"]
+    explains: Repeat the listing every specified number of seconds.
+  - flag: ["-n"]
+    explains: Do not resolve hostnames (speeds up output).
+  - flag: ["-t"]
+    explains: Output only process IDs (PIDs).
+  - flag: ["+d <directory>"]
+    explains: List files under the specified directory.
+  - flag: ["+D <directory>"]
+    explains: Recursively list files under the specified directory.
+
+# Examples: List of example usages
+examples:
+  - lsof -i
+  - lsof -i :80
+  - lsof -u username
+  - lsof -p 1234
+  - lsof +D /var/log
+  - lsof -i tcp -sTCP:LISTEN
+  - lsof -i udp
+  - lsof -c sshd
+  - lsof -n -P -i
+  - lsof -t -i :22
+  - lsof -r 5 -i    
+  - lsof -a -u username -i :443
+  - lsof -p 1234 -i
+  - lsof +d /tmp
+  - lsof -i @hostname
+  - lsof -i tcp:80
+  - lsof -i udp:53
+  - lsof -i TCP -sTCP:ESTABLISHED
+  - lsof -i UDP -sUDP:LISTEN
+  - lsof -i :8080
+  - lsof -i :443
+  - lsof -i :22
+  - lsof -i :3306
+  - lsof -i :5432
+  - lsof -i :6379
+  - lsof -i :27017  
