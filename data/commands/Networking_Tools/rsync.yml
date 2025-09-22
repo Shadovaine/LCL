@@ -1,0 +1,151 @@
+#--------------------------------
+# Command YAML Template
+#--------------------------------
+
+# The name of the command (must match the actual Linux command)
+name: rsync
+
+# Category this command belongs to (text_processing, file_management, user_group_mgmt, networking)
+category: Networking Tools 
+
+# One-Line description of w
+description: A fast, versatile file copying tool.
+
+# General syntax of the command
+syntax: rsync [OPTIONS]...[SRC]... [DEST]
+
+# Options: each flag (or set of flags) with an explanation
+# Use " flags" as a list if there are multiple aliases (e.g. ["-i", "--ignore-case"])
+# Optional: add "arg" if the optin expects a value
+options:
+  - flag: ["-v"]
+    explains: Verbose mode
+  - flag: ["-a"]
+    explains: Archive mode; equals -rlptgoD (no -H,-A,-X)
+  - flag: ["-r"]
+    explains: Recurse into directories
+  - flag: ["-l"]
+    explains: Copy symlinks as symlinks
+  - flag: ["-p"]
+    explains: Preserve permissions
+  - flag: ["-t"]
+    explains: Preserve modification times
+  - flag: ["-g"]
+    explains: Preserve group
+  - flag: ["-o"]
+    explains: Preserve owner (super-user only)
+  - flag: ["-D"]
+    explains: Preserve device and special files
+  - flag: ["-u"]
+    explains: Skip files that are newer on the receiver
+  - flag: ["-n:"]
+    explains: Perform a trial run with no changes made
+  - flag: ["-z"]
+    explains: Compress file data during the transfer
+  - flag: ["-p"]
+    explains: Preserve permissions
+  - flag: ["--progress"]
+    explains: Show progress during transfer
+  - flag: ["--partial"]
+    explains: Keep partially transferred files
+  - flag: ["--rsync-path=<PATH>"]
+    explains: Specify the path to the rsync executable on the remote machine
+    arg:
+      name: PATH
+      required: true
+  - flag: ["--chown=<USER>:<GROUP>"]
+    explains: Force the user and group of the files to the specified USER and GROUP
+    arg:
+      name: USER:GROUP
+      required: true
+  - flag: ["--chmod=<MODE>"]
+    explains: Affect file and directory permissions
+    arg:
+      name: MODE
+      required: true
+  - flag: ["--size-only"]
+    explains: Skip files that match in size
+  - flag: ["--ignore-existing"]
+    explains: Skip files that already exist on receiver
+  - flag: ["--remove-source-files"]
+    explains: Remove source files after transfer
+  - flag: ["--delet"]
+    explains: Delete extraneous files from destination dirs
+  - flag: ["--exclude=<PATTERN>"]
+    explains: Exclude files matching PATTERN
+    arg:
+      name: PATTERN
+      required: true
+  - flag: ["--exclude-from=<FILE>"]
+    explains: Read exclude patterns from FILE
+    arg:
+      name: FILE
+      required: true
+  - flag: ["--include=<PATTERN>"]
+    explains: Include files matching PATTERN
+    arg:
+      name: PATTERN
+      required: true
+  - flag: ["--bwlimit=<RATE>"]
+    explains: Limit I/O bandwidth; KBytes per second
+    arg:
+      name: RATE
+      required: true
+  - flag: ["--checksum"]
+    explains: Skip based on checksum, not mod-time & size
+  - flag: ["--append"]
+    explains: Append data onto shorter files
+  - flag: ["--append-verify"]
+    explains: Append data onto shorter files, but verify the data
+  - flag: ["--copy-links"]
+    explains: Transform symlink into referent file/directory
+  - flag: ["--copy-unsafe-links"]
+    explains: Only "unsafe" symlinks are transformed
+  - flag: ["--safe-links"]
+    explains: Ignore symlinks that point outside the source tree
+  - flag: ["--link-dest=<DIR>"]
+    explains: Hardlink to files in DIR when unchanged
+    arg:
+      name: DIR
+      required: true
+  - flag: ["--log-file=<FILE>"]
+    explains: Log what we're doing to the specified FILE
+    arg:
+      name: FILE
+      required: true
+  - flag: ["--log-file-format=<FORMAT>"]
+    explains: Log file format
+    arg:
+      name: FORMAT
+      required: true
+  - flag: ["--iconv=<CONVERT_SPEC>"]
+    explains: Convert file names between character sets
+    arg:
+      name: CONVERT_SPEC
+      required: true  
+
+# Examples: List of example usages 
+examples:
+  - rsync -avz /source/directory/ user@remote:/destination/directory/
+  - rsync -av --exclude='*.tmp' /source/ user@remote:/destination/
+  - rsync -av --delete /source/ user@remote:/destination/
+  - rsync -av --progress /source/file user@remote:/destination/file   
+  - rsync -av --partial /source/ user@remote:/destination/
+  - rsync -av --chown=user:group /source/ user@remote:/destination/
+  - rsync -av --chmod=Du=rwx,Dgo=rx,Fu=rw,Fgo=r /source/ user@remote:/destination/
+  - rsync -av --size-only /source/ user@remote:/destination/
+  - rsync -av --ignore-existing /source/ user@remote:/destination/
+  - rsync -av --remove-source-files /source/ user@remote:/destination/
+  - rsync -av --exclude-from='exclude list.txt' /source/ user@remote:/destination/
+  - rsync -av --include='*.txt' --exclude='*' /source/ user@remote:/destination/
+  - rsync -av --bwlimit=1000 /source/ user@remote:/destination/
+  - rsync -av --checksum /source/ user@remote:/destination/
+  - rsync -av --append /source/file user@remote:/destination/file
+  - rsync -av --append-verify /source/file user@remote:/destination/file
+  - rsync -av --copy-links /source/ user@remote:/destination/
+  - rsync -av --copy-unsafe-links /source/ user@remote:/destination
+  - rsync -av --safe-links /source/ user@remote:/destination/
+  - rsync -av --link-dest=/previous/backup/ /source/ user@remote:/destination/
+  - rsync -av --log-file=rsync.log /source/ user@remote:/destination/
+  - rsync -av --log-file-format='%t %o %f %b' /source/ user@remote:/destination/
+  - rsync -av --iconv=utf-8,iso-8859-1 /source/ user@remote:/destination/
