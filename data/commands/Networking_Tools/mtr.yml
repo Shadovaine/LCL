@@ -1,0 +1,135 @@
+#--------------------------------
+# Command YAML Template
+#--------------------------------
+
+# The name of the command (must match the actual Linux command)
+name: mtr
+
+
+# Category this command belongs to (text_processing, file_management, user_group_mgmt, networking)
+category: Networking Tools
+
+# One-Line description of what the command does
+description: Combines the functionality of the 'traceroute' and 'ping' programs to provide a more comprehensive view of network performance.
+
+# General syntax of the command
+syntax: mtr [OPTIONS]...[HOST]...
+
+# Options: each flag (or set of flags) with an explanation
+# Use " flags" as a list if there are multiple aliases (e.g. ["-i", "--ignore-case"])
+# Optional: add "arg" if the optin expects a value
+options:
+  - flag: ["-4"]
+    explains: Use IPv4 only
+  - flag: ["-6"]
+    explains: Use IPv6 only
+  - flag: ["-r"]
+    explains: Report mode - output is displayed in a format suitable for parsing
+  - flag: ["-c"]
+    explains: Set the number of pings to send
+    arg:
+      name: COUNT
+      required: true
+  - flag: ["-n"]
+    explains: Show line numbers
+  - flag: ["-a"]
+    explains: Show all hosts
+  - flag: ["-f"]
+    explains: Set the first hop to start from
+    arg:
+      name: HOP
+      required: true
+  - flag: ["-m"]
+    explains: Set the maximum number of hops
+    arg:
+      name: MAX_HOPS
+      required: true
+  - flag: ["-p"]
+    explains: Displays the actual packet path
+  - flag: ["-z"]
+    explains: Shows ASN information
+  - flag: ["-w"]
+    explains: Wide output format
+  - flag: ["-i"]
+    explains: Set the interval between pings
+    arg:
+      name: SECONDS
+      required: true
+  - flag: ["-s"]
+    explains: Set the packet size
+    arg:
+      name: BYTES
+      required: true
+  - flag: ["-b"]
+    explains: Show both hostnames and IP addresses
+  - flag: ["-l"]
+    explains: Use a specified interface
+    arg:
+      name: IFACE
+      required: true
+  - flag: ["-u"]
+    explains: Use UDP packets instead of ICMP
+  - flag: ["-T"]
+    explains: Use TCP packets instead of ICMP
+  - flag: ["-I"]  
+    explains: Use ICMP ECHO for probes instead of UDP
+  - flag: ["-S"]  
+    explains: Show the summary statistics
+
+# Examples: List of example usages
+examples:
+  - mtr example.com
+  - mtr -r -c 10 example.com
+  - mtr -4 -i 2 example.com
+  - mtr -6 -w example.com
+  - mtr -p -z example.com
+  - mtr -f 5 -m 20 example.com
+  - mtr -b -s 64 example.com
+  - mtr -u -c 5 example.com
+  - mtr -T -c 5 example.com
+  - mtr -I -c 5 example.com
+  - mtr -S -c 5 example.com
+  - mtr -l eth0 example.com
+  - mtr -n example.com
+  - mtr -r -c 15 -i 1 example.com
+  - mtr -r -c 20 -w example.com
+  - mtr -r -c 10 -p -z example.com
+  - mtr -r -c 5 -f 3 -m 15 example.com
+  - mtr -r -c 10 -b -s 128 example.com
+  - mtr -r -c 5 -u example.com
+  - mtr -r -c 5 -T example.com
+  - mtr -r -c 5 -I example.com
+  - mtr -r -c 5 -S example.com example.com
+  - mtr -r -c 10 -i 2 -w example.com
+  - mtr -r -c 10 -p -z -b example.com
+  - mtr -r -c 10 -f 5 -m 20 -s 64 example.com
+  - mtr -r -c 5 -u -I example.com
+  - mtr -r -c 5 -T -S example.com
+  - mtr -r -c 10 -i 1 -w -p example.com
+  - mtr -r -c 10 -b -s 128 -f 3 example.com
+  - mtr -r -c 5 -u -I -S example.com
+  - mtr -r -c 5 -T -I example.com
+  - mtr -r -c 5 -S -w example.com
+  - mtr -r -c 10 -i 2 -p -z example.com
+  - mtr -r -c 10 -b -s 64 -f 5 example.com
+  - mtr -r -c 5 -u -I -S example.com
+  - mtr -r -c 5 -T -I -w example.com
+  - mtr -r -c 5 -S -w -p example.com
+  - mtr -r -c 10 -i 1 -p -z -b example.com
+  - mtr -r -c 10 -b -s 128 -f 3 -m 15 example.com
+  - mtr -r -c 5 -u -I -S -w example.com
+  - mtr -r -c 5 -T -I -w -p example.com
+  - mtr -r -c 5 -S -w -p -z example.com
+  - mtr -r -c 10 -i 2 -p -z -b -s 64 example.com
+  - mtr -r -c 10 -b -s 64 -f 5 -m 20 -u example.com
+  - mtr -r -c 5 -u -I -S -w -p example.com
+  - mtr -r -c 5 -T -I -w -p -z example.com
+  - mtr -r -c 5 -S -w -p -z -b example.com
+  - mtr -r -c 10 -i 1 -p -z -b -s 128 example.com
+  - mtr -r -c 10 -b -s 128 -f 3 -m 15 -u example.com
+  - mtr -r -c 5 -u -I -S -w -p -z example.com
+  - mtr -r -c 5 -T -I -w -p -z -b example.com
+  - mtr -r -c 5 -S -w -p -z -b example.com
+  - mtr -r -c 10 -i 2 -p -z -b -s 64 -f 5 example.com
+
+  
