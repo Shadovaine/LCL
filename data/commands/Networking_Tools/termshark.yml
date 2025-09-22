@@ -1,0 +1,73 @@
+#--------------------------------
+# Command YAML Template
+#--------------------------------
+
+# The name of the command (must match the actual Linux command)
+name: termshark
+
+# Category this command belongs to (text_processing, file_management, user_group_mgmt, networking)
+category: Networking Tools
+
+# One-Line description of what the command does
+description: Terminal user interface for tshark
+
+# General syntax of the command
+syntax: termshark [OPTIONS]...[ARGS]...
+
+# Options: each flag (or set of flags) with an explanation
+# Use " flags" as a list if there are multiple aliases (e.g. ["-i", "--ignore-case"])
+# Optional: add "arg" if the optin expects a value
+options:
+  - flag: ["r"]
+    explains: Read packets from FILE
+    arg:
+      name: FILE     # the placeholder name for the argument
+      required: true # true if mandatory, false if optional
+  - flag: ["-i"]
+    explains: Capture live traffic from the specified interface.
+    arg:
+      name: INTERFACE # the placeholder name for the argument
+      required: true # true if mandatory, false if optional
+  - flag: ["D"]
+    explains: Dump a list of avaiable network interfaces and exit.
+  - flag: ["-f"]
+    explains: Apply a BPF-style filter during capture.  
+    arg:
+      name: FILE     # the placeholder name for the argument
+      required: true # true if mandatory, false if optional
+  - flag: ["-Y"]
+    explains: Apply a Wireshark-style filter.
+    arg:
+      name: FILE     # the placeholder name for the argument
+      required: true # true if mandatory, false if optional
+  - flag: ["-P"]
+    explains: Print the version and exit.
+  - flag: ["-s <snaplen>"]
+    explains: Define the snapshot length to use when capturing packets.
+    arg:
+      name: snaplen  # the placeholder name for the argument
+      required: true # true if mandatory, false if optional
+  - flag: ["-l"]
+    explains: Launch directly into live capture mode.
+
+# Examples: List of example usages
+examples:
+  - termshark -i eth0
+  - termshark -r capture.pcap
+  - termshark -i eth0 -f "tcp port 80"
+  - termshark -r capture.pcap -Y "http"
+  - termshark -D
+  - termshark -P
+  - termshark -i eth0 -s 65535
+  - termshark -i eth0 -l
+  - termshark -i eth0 -f "tcp port 80" -Y "http"
+  - termshark -r capture.pcap -Y "ip.addr == 192. 168.1.1"
+  - termshark -i wlan0 -f "udp port 53" -Y "dns"
+  - termshark -i eth0 -s 65535 -l
+  - termshark -r capture.pcap -Y "tcp.flags.syn == 1"
+  - termshark -i eth0 -f "tcp port 443" -Y "ssl"
+  - termshark -r capture.pcap -Y "http.request.method == 'GET'"
+  - termshark -i eth0 -f "icmp"
+  - termshark -r capture.pcap -Y "tcp.analysis.retransmission"
+  - termshark -i eth0 -s 65535 -f "tcp port 80" -Y "http"
+  - termshark -r capture.pcap -Y "ip.src ==
