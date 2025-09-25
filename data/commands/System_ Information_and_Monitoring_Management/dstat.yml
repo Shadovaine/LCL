@@ -1,1 +1,24 @@
 # dstat yml file
+name: "dstat"
+category: "system information and monitoring management"
+description: "Versatile real-time system resource monitor (vmstat+iostat+netstat...)."
+syntax: "dstat [OPTIONS] [DELAY [COUNT]]"
+options:
+  - flag: ["-c"]
+    explains: "CPU stats."
+  - flag: ["-m"]
+    explains: "Memory usage."
+  - flag: ["-d"]
+    explains: "Disk I/O."
+  - flag: ["-n"]
+    explains: "Network stats."
+  - flag: ["-g"]
+    explains: "Page stats."
+  - flag: ["-y"]
+    explains: "System stats."
+  - flag: ["-p"]
+    explains: "Process stats."
+examples:
+  - |
+    # Mix multiple modules + timestamp
+    dstat -cdngyt
