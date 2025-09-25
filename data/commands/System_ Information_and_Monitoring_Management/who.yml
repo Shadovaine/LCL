@@ -1,1 +1,36 @@
 # who yml file
+name: "who"
+category: "system information and monitoring management"
+description: "Show logged-in users (from /var/run/utmp)."
+syntax: "who [OPTIONS] [FILE]"
+options:
+  - flag: ["-a","--all"]
+    explains: "All available info."
+  - flag: ["-b","--boot"]
+    explains: "Last system boot time."
+  - flag: ["-d","--dead"]
+    explains: "Dead processes."
+  - flag: ["-H","--heading"]
+    explains: "Print column headers."
+  - flag: ["-l","--login"]
+    explains: "Login processes."
+  - flag: ["-m"]
+    explains: "Only current terminal (like whoami)."
+  - flag: ["-p","--process"]
+    explains: "Init-spawned processes."
+  - flag: ["-q","--count"]
+    explains: "Usernames + user count."
+  - flag: ["-r","--runlevel"]
+    explains: "Current runlevel."
+  - flag: ["-s","--short"]
+    explains: "Default short output."
+  - flag: ["-T","--mesg","-w","--write"]
+    explains: "Message permission status."
+  - flag: ["-u","--users"]
+    explains: "Idle times."
+  - flag: ["--ips"]
+    explains: "Show IPs instead of hostnames."
+examples:
+  - |
+    # With headers
+    who -H
