@@ -1,1 +1,20 @@
 # awk yml file
+name: "awk"
+category: "search and filter management"
+description: "Text processing and reporting language."
+syntax: "awk [options] 'pattern { action }' [file...]"
+options:
+  - flag: ["-F <sep>"]
+    explains: "Set input field separator."
+  - flag: ["-v var=value"]
+    explains: "Define a variable."
+  - flag: ["-f FILE"]
+    explains: "Run an AWK script from a file."
+  - flag: ["-W compat"]
+    explains: "Compatibility mode."
+  - flag: ["-W posix"]
+    explains: "Strict POSIX mode."
+examples:
+  - |
+    # Print first column
+    awk '{print $1}' file.txt
