@@ -1,1 +1,55 @@
 # grep.yml file
+name: "grep"
+category: "search and filter management"
+description: "Classic text and content search command."
+syntax: "grep [options] pattern [file...]"
+options:
+  - flag: ["-i"]
+    explains: "Case-insensitive search."
+  - flag: ["-c"]
+    explains: "Count matches."
+  - flag: ["-n"]
+    explains: "Show line numbers."
+  - flag: ["-v"]
+    explains: "Invert match (show non-matching lines)."
+  - flag: ["-w"]
+    explains: "Match whole words only."
+  - flag: ["-x"]
+    explains: "Match whole lines only."
+  - flag: ["-r", "-R"]
+    explains: "Recursive search."
+  - flag: ["-l"]
+    explains: "Show only filenames with matches."
+  - flag: ["-L"]
+    explains: "Show only filenames without matches."
+  - flag: ["-o"]
+    explains: "Show only matching part."
+  - flag: ["-B <N>"]
+    explains: "Print N lines before match."
+  - flag: ["-A <N>"]
+    explains: "Print N lines after match."
+  - flag: ["-C <N>"]
+    explains: "Print N lines around match."
+  - flag: ["-E"]
+    explains: "Use extended regex."
+  - flag: ["-F"]
+    explains: "Match fixed strings (not regex)."
+  - flag: ["-h"]
+    explains: "Suppress filename in output."
+  - flag: ["-H"]
+    explains: "Force show filename."
+  - flag: ["-q"]
+    explains: "Quiet mode."
+  - flag: ["-a"]
+    explains: "Search binary files as text."
+  - flag: ["--exclude"]
+    explains: "Exclude files or directories."
+  - flag: ["--color"]
+    explains: "Highlight matches."
+examples:
+  - |
+    # Case-insensitive search for 'password' in /etc/passwd
+    grep -i "password" /etc/passwd
+  - |
+    # Recursive search for 'error'
+    grep -r "error" /var/log/
