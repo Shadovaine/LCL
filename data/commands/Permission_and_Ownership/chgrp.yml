@@ -1,0 +1,27 @@
+name: "chgrp"
+category: "file permissions and ownership"
+description: "Set, view, or modify group ownership of files."
+syntax: "chgrp [options] group file"
+options:
+  - flag: ["-c"]
+    explains: "Report only when a change actually occurs."
+  - flag: ["-f"]
+    explains: "Suppress most error messages."
+  - flag: ["-v"]
+    explains: "Report every file processed."
+  - flag: ["-R"]
+    explains: "Recursively apply to directories and contents."
+  - flag: ["-H"]
+    explains: "Follow symlinks on the command line with -R."
+  - flag: ["-h"]
+    explains: "Affect the symlink itself."
+  - flag: ["-L"]
+    explains: "Follow all symlinks with -R."
+  - flag: ["-P"]
+    explains: "Never follow symlinks with -R."
+  - flag: ["--reference=RFILE"]
+    explains: "Match group ownership to another file."
+examples:
+  - |
+    # Change group of file.txt to staff
+    chgrp staff file.txt
