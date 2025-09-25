@@ -1,1 +1,30 @@
 # findmnt yml file
+name: "findmnt"
+category: "system information and monitoring management"
+description: "Display a tree of mounted filesystems; query by device or mountpoint."
+syntax: "findmnt [OPTIONS] [DEVICE] [MOUNTPOINT]"
+options:
+  - flag: ["(default)"]
+    explains: "Show current mount tree."
+  - flag: ["-l"]
+    explains: "List view."
+  - flag: ["-t <type>"]
+    explains: "Filter by filesystem type."
+  - flag: ["-x <type>"]
+    explains: "Exclude filesystem type."
+  - flag: ["-o <columns>"]
+    explains: "Select output columns."
+  - flag: ["-J"]
+    explains: "JSON output."
+  - flag: ["-r"]
+    explains: "Resolve only real (mounted) or not-yet-mounted."
+  - flag: ["-m"]
+    explains: "Show only mounted filesystems."
+  - flag: ["-p"]
+    explains: "Poll for changes."
+  - flag: ["-s"]
+    explains: "fstab-style output."
+examples:
+  - |
+    # JSON output for auditing
+    findmnt -J
