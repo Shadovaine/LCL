@@ -1,0 +1,25 @@
+name: "setfacl"
+category: "file permissions and ownership"
+description: "Set Access Control Lists (ACLs) for files/directories."
+syntax: "setfacl [OPTIONS] [ACL] FILE"
+options:
+  - flag: ["-m"]
+    explains: "Modify ACL by adding/changing permissions."
+  - flag: ["-x"]
+    explains: "Remove an entry from ACL."
+  - flag: ["-b"]
+    explains: "Remove all ACL entries."
+  - flag: ["-k"]
+    explains: "Remove default ACLs."
+  - flag: ["-R"]
+    explains: "Apply recursively."
+  - flag: ["-d"]
+    explains: "Set default ACLs for directories."
+  - flag: ["--set"]
+    explains: "Set ACLs from string."
+  - flag: ["--set-file"]
+    explains: "Set ACLs from file."
+examples:
+  - |
+    # Remove user from ACL
+    setfacl -x u:name file.txt
