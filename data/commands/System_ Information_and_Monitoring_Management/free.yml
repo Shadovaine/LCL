@@ -1,1 +1,30 @@
 # free yml file
+name: "file"
+category: "system information and monitoring management"
+description: "Identify file type by inspecting content (magic), not extension."
+syntax: "file [OPTIONS] FILE..."
+options:
+  - flag: ["-b"]
+    explains: "Omit filenames in output."
+  - flag: ["-i"]
+    explains: "Print MIME type."
+  - flag: ["-e <test>"]
+    explains: "Exclude specific tests."
+  - flag: ["-f <namefile>"]
+    explains: "Read file list from <namefile>."
+  - flag: ["-F <sep>"]
+    explains: "Use custom field separator."
+  - flag: ["-h"]
+    explains: "Do not follow symlinks."
+  - flag: ["-k"]
+    explains: "Keep going after first match."
+  - flag: ["-Z"]
+    explains: "Show SELinux context."
+  - flag: ["-z"]
+    explains: "Examine compressed files."
+  - flag: ["-s"]
+    explains: "Read block/char devices."
+examples:
+  - |
+    # Quick MIME type
+    file -i picture.jpg
