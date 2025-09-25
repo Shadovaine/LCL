@@ -1,1 +1,28 @@
 # lsblk yml file
+name: "fsck"
+category: "system information and monitoring management"
+description: "Filesystem consistency check/repair (do NOT run on mounted, active FS)."
+syntax: "fsck [OPTIONS] [FILESYSTEM...]"
+options:
+  - flag: ["-A"]
+    explains: "Check all filesystems in /etc/fstab."
+  - flag: ["-y"]
+    explains: "Assume 'yes' to all fixes."
+  - flag: ["-r"]
+    explains: "Interactive repair mode."
+  - flag: ["-f"]
+    explains: "Force check even if clean."
+  - flag: ["-v"]
+    explains: "Verbose output."
+  - flag: ["-C"]
+    explains: "Check on root at boot (progress)."
+  - flag: ["-t <type>"]
+    explains: "Specify filesystem type."
+  - flag: ["-N"]
+    explains: "No action; print what would be done."
+  - flag: ["-M"]
+    explains: "Skip mounted filesystems."
+examples:
+  - |
+    # Safe all-FS check per fstab (skip root), auto-fix
+    fsck -AR -y
