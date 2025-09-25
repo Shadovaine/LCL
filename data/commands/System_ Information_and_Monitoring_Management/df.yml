@@ -1,1 +1,26 @@
 # df yml file
+name: "df"
+category: "system information and monitoring management"
+description: "Report disk usage of filesystems."
+syntax: "df [OPTIONS] [FILESYSTEM]"
+options:
+  - flag: ["-h"]
+    explains: "Human-readable sizes."
+  - flag: ["-i"]
+    explains: "Show inode usage."
+  - flag: ["-a"]
+    explains: "Include pseudo/duplicate/unreachable filesystems."
+  - flag: ["-k","-m","-B <size>"]
+    explains: "Block size control."
+  - flag: ["-l"]
+    explains: "Local filesystems only."
+  - flag: ["-t <type>"]
+    explains: "Only include given FS type."
+  - flag: ["-T"]
+    explains: "Print filesystem type."
+  - flag: ["--total"]
+    explains: "Add grand total line."
+examples:
+  - |
+    # Disk usage in human-readable format
+    df -h
