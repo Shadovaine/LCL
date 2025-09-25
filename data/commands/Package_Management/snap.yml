@@ -1,0 +1,75 @@
+name: "snap"
+category: "package management"
+description: "Snap package manager for sandboxed applications (default on Ubuntu)."
+syntax: "snap [OPTIONS] COMMAND [PACKAGE...]"
+options:
+  - flag: ["install <pkg>"]
+    explains: "Install a snap package."
+  - flag: ["remove <pkg>"]
+    explains: "Remove a snap package."
+  - flag: ["refresh <pkg>"]
+    explains: "Update a snap package."
+  - flag: ["revert <pkg>"]
+    explains: "Roll back to previous version."
+  - flag: ["list"]
+    explains: "List installed snap packages."
+  - flag: ["find <term>"]
+    explains: "Search Snap Store."
+  - flag: ["info <pkg>"]
+    explains: "Show snap details."
+  - flag: ["run <pkg>"]
+    explains: "Run a snap package."
+  - flag: ["--channel=<track>/<risk>"]
+    explains: "Install from a specific channel."
+  - flag: ["--revision=<number>"]
+    explains: "Install a specific revision."
+  - flag: ["--classic"]
+    explains: "Install with classic confinement."
+  - flag: ["enable <pkg>"]
+    explains: "Enable a snap."
+  - flag: ["disable <pkg>"]
+    explains: "Disable a snap without uninstalling."
+  - flag: ["connections"]
+    explains: "Show snap interface connections."
+  - flag: ["connect"]
+    explains: "Manually connect an interface."
+  - flag: ["disconnect"]
+    explains: "Disconnect an interface."
+  - flag: ["interface <int>"]
+    explains: "Show details of a specific interface."
+  - flag: ["aliases"]
+    explains: "Show snap aliases."
+  - flag: ["alias"]
+    explains: "Create a command alias."
+  - flag: ["unalias"]
+    explains: "Remove a snap alias."
+  - flag: ["warnings"]
+    explains: "Show snap warnings."
+  - flag: ["changes"]
+    explains: "List recent snap changes."
+  - flag: ["change <id>"]
+    explains: "Show details for a specific change ID."
+  - flag: ["abort <id>"]
+    explains: "Abort a pending change."
+  - flag: ["services"]
+    explains: "List snap services."
+  - flag: ["start <svc>"]
+    explains: "Start a snap service."
+  - flag: ["stop <svc>"]
+    explains: "Stop a snap service."
+  - flag: ["restart <svc>"]
+    explains: "Restart a snap service."
+  - flag: ["set <pkg> key=value"]
+    explains: "Set snap configuration."
+  - flag: ["get <pkg>"]
+    explains: "Get snap configuration."
+examples:
+  - |
+    # Search for VS Code
+    snap find code
+  - |
+    # Install VS Code
+    sudo snap install code --classic
+  - |
+    # Update snaps
+    sudo snap refresh
