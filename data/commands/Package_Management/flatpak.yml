@@ -1,0 +1,47 @@
+name: "flatpak"
+category: "package management"
+description: "Cross-distro package manager for sandboxed desktop applications."
+syntax: "flatpak [OPTIONS] COMMAND [PACKAGE...]"
+options:
+  - flag: ["search"]
+    explains: "Search for apps."
+  - flag: ["install REMOTE APP"]
+    explains: "Install an app from a remote."
+  - flag: ["uninstall [APP_ID]"]
+    explains: "Remove an installed app."
+  - flag: ["run APP"]
+    explains: "Run an installed app."
+  - flag: ["update"]
+    explains: "Update installed apps."
+  - flag: ["history"]
+    explains: "Show history of installs/updates/removals."
+  - flag: ["config"]
+    explains: "Show or change Flatpak configuration."
+  - flag: ["repair"]
+    explains: "Check and fix Flatpak installation."
+  - flag: ["permission-reset [APP_ID]"]
+    explains: "Reset an app's permissions."
+  - flag: ["permission-list"]
+    explains: "List app permissions."
+  - flag: ["list"]
+    explains: "List installed apps and runtimes."
+  - flag: ["info [APP_ID]"]
+    explains: "Show detailed app info."
+  - flag: ["override [APP_ID] [OPTIONS]"]
+    explains: "Change app permissions."
+  - flag: ["remote-delete [NAME]"]
+    explains: "Remove a remote."
+  - flag: ["remote-add [NAME] [URL]"]
+    explains: "Add a new remote."
+  - flag: ["remote-list"]
+    explains: "List configured remotes."
+examples:
+  - |
+    # Search for Spotify
+    flatpak search spotify
+  - |
+    # Install Spotify
+    sudo flatpak install flathub com.spotify.Client
+  - |
+    # Run Spotify
+    flatpak run com.spotify.Client
