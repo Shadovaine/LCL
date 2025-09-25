@@ -1,1 +1,26 @@
 # visudo yml profile
+name: "visudo"
+category: "system administration"
+description: "Safely edit the sudoers file with syntax checking."
+syntax: "sudo visudo [OPTIONS]"
+options:
+  - flag: ["-c"]
+    explains: "Check sudoers file for syntax errors."
+  - flag: ["-f <file>"]
+    explains: "Edit an alternate sudoers file (e.g., /etc/sudoers.d/...)."
+  - flag: ["-s"]
+    explains: "Enable strict checking mode."
+  - flag: ["-x"]
+    explains: "Export parsed sudoers in JSON."
+  - flag: ["-q"]
+    explains: "Quiet mode."
+examples:
+  - |
+    # Open main sudoers file
+    sudo visudo
+  - |
+    # Check sudoers syntax
+    sudo visudo -c
+  - |
+    # Example entry (grant full sudo to user 'name'):
+    # name ALL=(ALL) ALL
