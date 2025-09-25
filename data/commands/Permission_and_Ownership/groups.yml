@@ -1,0 +1,13 @@
+name: "groups"
+category: "file permissions and ownership"
+description: "Show group memberships for current or specified user."
+syntax: "groups [username]"
+options:
+  - flag: ["(none)"]
+    explains: "Show groups for current user."
+  - flag: ["username"]
+    explains: "Show groups for specified user."
+examples:
+  - |
+    # Show groups for user 'name'
+    groups name
