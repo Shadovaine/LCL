@@ -1,0 +1,23 @@
+name: "namei"
+category: "file permissions and ownership"
+description: "Resolve and display each component of a file path, showing dirs, symlinks, and files."
+syntax: "namei [OPTIONS] PATH"
+options:
+  - flag: ["-l"]
+    explains: "Show long listing."
+  - flag: ["-m"]
+    explains: "Show mode bits for each component."
+  - flag: ["-o"]
+    explains: "Show owner and group."
+  - flag: ["-v"]
+    explains: "Verbose output."
+  - flag: ["-x"]
+    explains: "Show mount points."
+  - flag: ["-n"]
+    explains: "Do not follow symlinks."
+  - flag: ["-a"]
+    explains: "Show all components including . and .."
+examples:
+  - |
+    # Show owner and group for each component
+    namei -o /tmp/test
