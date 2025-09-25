@@ -1,0 +1,25 @@
+name: "id"
+category: "file permissions and ownership"
+description: "Display user and group identity info for current or specified user."
+syntax: "id [OPTIONS] [username]"
+options:
+  - flag: ["(none)"]
+    explains: "Show UID, GID, and groups for current user."
+  - flag: ["username"]
+    explains: "Show info for a specified user."
+  - flag: ["-u"]
+    explains: "Show only user ID."
+  - flag: ["-g"]
+    explains: "Show only group ID."
+  - flag: ["-G"]
+    explains: "Show all group IDs."
+  - flag: ["-n"]
+    explains: "Print name instead of number."
+  - flag: ["-r"]
+    explains: "Print real ID instead of effective."
+  - flag: ["-Z"]
+    explains: "Show SELinux security context."
+examples:
+  - |
+    # Show identity info for user 'name'
+    id name
