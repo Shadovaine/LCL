@@ -1,1 +1,30 @@
 # progress yml file
+name: "progress"
+category: "system information and monitoring management"
+description: "Show progress of coreutils tools (cp, mv, dd, tar, etc.) by reading /proc."
+syntax: "progress [OPTIONS]"
+options:
+  - flag: ["-q","--quiet"]
+    explains: "Silent mode."
+  - flag: ["-d","--debug"]
+    explains: "Debug/warning messages."
+  - flag: ["-w","--wait"]
+    explains: "Estimate throughput and time remaining."
+  - flag: ["-W <secs>","--wait-delay <secs>"]
+    explains: "Delay before throughput calculation."
+  - flag: ["-m","--monitor"]
+    explains: "Loop while monitored processes run."
+  - flag: ["-M","--monitor-continuously"]
+    explains: "Monitor indefinitely."
+  - flag: ["-c <cmd>","--command <cmd>"]
+    explains: "Only monitor processes named <cmd>."
+  - flag: ["-a <cmd>","--add-command <cmd>"]
+    explains: "Add <cmd> to default monitored list."
+  - flag: ["-p <pid>","--pid <pid>"]
+    explains: "Only monitor specific PID."
+  - flag: ["-i <file>","--ignore-file <file>"]
+    explains: "Ignore processes handling file."
+examples:
+  - |
+    # Monitor continuously
+    progress -m
