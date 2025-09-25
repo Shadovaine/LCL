@@ -1,1 +1,51 @@
 # sudo yml files
+name: "sudo"
+category: "system administration"
+description: "Run commands with elevated privileges or as another user."
+syntax: "sudo [OPTIONS] COMMAND"
+options:
+  - flag: ["-h"]
+    explains: "Show help."
+  - flag: ["-V"]
+    explains: "Display version and exit."
+  - flag: ["-v"]
+    explains: "Update cached credentials (extend timestamp)."
+  - flag: ["-k"]
+    explains: "Invalidate timestamp (force password next time)."
+  - flag: ["-K"]
+    explains: "Remove cached credentials entirely."
+  - flag: ["-l"]
+    explains: "List allowed/forbidden commands for current user."
+  - flag: ["-L"]
+    explains: "List all sudoers options and defaults."
+  - flag: ["-u <user>"]
+    explains: "Run command as another user."
+  - flag: ["-g <group>"]
+    explains: "Run with primary group set to <group>."
+  - flag: ["-U <user>"]
+    explains: "List privileges for another user (with -l)."
+  - flag: ["-s"]
+    explains: "Run in the invoking user's default shell."
+  - flag: ["-i"]
+    explains: "Run a login shell as root (like logging in)."
+  - flag: ["-E"]
+    explains: "Preserve environment variables."
+  - flag: ["-H"]
+    explains: "Set HOME to target user's home."
+  - flag: ["-b"]
+    explains: "Run command in background."
+  - flag: ["-n"]
+    explains: "Non-interactive; fail if password is required."
+  - flag: ["-p <prompt>"]
+    explains: "Use a custom password prompt."
+  - flag: ["-S"]
+    explains: "Read password from stdin."
+  - flag: ["-A"]
+    explains: "Use external program for password prompt."
+examples:
+  - |
+    # Run apt update as root
+    sudo apt update
+  - |
+    # Run a command as another user
+    sudo -u name ls /home/name
