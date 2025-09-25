@@ -1,0 +1,19 @@
+name: "umask"
+category: "file permissions and ownership"
+description: "Set default permissions for new files/directories by subtracting from system defaults."
+syntax: "umask [OPTIONS] [MASK]"
+options:
+  - flag: ["(none)"]
+    explains: "Show current umask in octal."
+  - flag: ["-S"]
+    explains: "Show current umask in symbolic form."
+  - flag: ["octal"]
+    explains: "Set umask directly with octal numbers."
+  - flag: ["symbolic"]
+    explains: "Set umask with symbolic notation."
+  - flag: ["temporary"]
+    explains: "Set umask for current shell session."
+examples:
+  - |
+    # Set file perms 644, dir perms 755
+    umask 022
