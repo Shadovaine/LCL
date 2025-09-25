@@ -1,1 +1,26 @@
 # watch yml file
+name: "watch"
+category: "system information and monitoring management"
+description: "Run a command repeatedly at fixed intervals and show full-screen output."
+syntax: "watch [OPTIONS] command"
+options:
+  - flag: ["-n <secs>","--interval <secs>"]
+    explains: "Refresh interval."
+  - flag: ["-d","--differences[=permanent]"]
+    explains: "Highlight changes between updates."
+  - flag: ["-t","--no-title"]
+    explains: "Hide header."
+  - flag: ["-g","--chgexit"]
+    explains: "Exit when command output changes."
+  - flag: ["-e","--errexit"]
+    explains: "Exit on non-zero status."
+  - flag: ["-c","--color"]
+    explains: "Honor ANSI colors."
+  - flag: ["-b","--beep"]
+    explains: "Beep on non-zero status."
+  - flag: ["-p","--precise"]
+    explains: "Attempt precise intervals."
+examples:
+  - |
+    # Monitor disk usage every 10 seconds
+    watch -n 10 df -h
