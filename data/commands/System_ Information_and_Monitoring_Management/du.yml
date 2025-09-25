@@ -1,1 +1,32 @@
 # du yml file
+name: "du"
+category: "system information and monitoring management"
+description: "Estimate file/directory space usage."
+syntax: "du [OPTIONS] [FILE...]"
+options:
+  - flag: ["-a"]
+    explains: "Show sizes of all files and dirs."
+  - flag: ["-h"]
+    explains: "Human-readable units."
+  - flag: ["-s"]
+    explains: "Display only total per argument."
+  - flag: ["-c"]
+    explains: "Produce grand total."
+  - flag: ["-d <N>","--max-depth=<N>"]
+    explains: "Limit recursion depth."
+  - flag: ["-x"]
+    explains: "Stay on one filesystem."
+  - flag: ["--apparent-size"]
+    explains: "Show apparent size, not blocks."
+  - flag: ["-k","-m","-B <SIZE>"]
+    explains: "Force size units."
+  - flag: ["--time"]
+    explains: "Show last modification time."
+  - flag: ["--exclude=PATTERN"]
+    explains: "Exclude matches."
+  - flag: ["--inodes"]
+    explains: "List inode usage."
+examples:
+  - |
+    # Total size of home directory
+    du -sh ~
