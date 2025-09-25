@@ -1,0 +1,49 @@
+name: "rpm"
+category: "package management"
+description: "Low-level package manager for .rpm files."
+syntax: "rpm [OPTIONS] PACKAGE"
+options:
+  - flag: ["-i"]
+    explains: "Install an .rpm file."
+  - flag: ["-e"]
+    explains: "Remove a package."
+  - flag: ["-q"]
+    explains: "Query package status."
+  - flag: ["-U"]
+    explains: "Upgrade a package."
+  - flag: ["-F"]
+    explains: "Freshen a package."
+  - flag: ["-qa"]
+    explains: "Query all installed packages."
+  - flag: ["-ql"]
+    explains: "List installed files from a package."
+  - flag: ["-qf"]
+    explains: "Find which package owns a file."
+  - flag: ["-qi"]
+    explains: "Show detailed package info."
+  - flag: ["-qip"]
+    explains: "Show info from an .rpm file."
+  - flag: ["-qp"]
+    explains: "Query a package file."
+  - flag: ["-qpl"]
+    explains: "List files inside an .rpm file."
+  - flag: ["-v"]
+    explains: "Verify installed package."
+  - flag: ["-Vp"]
+    explains: "Verify an .rpm file."
+  - flag: ["-test"]
+    explains: "Test install/remove without changes."
+  - flag: ["--nodeps"]
+    explains: "Ignore dependencies."
+  - flag: ["--force"]
+    explains: "Force install/upgrade."
+examples:
+  - |
+    # Install a .rpm file
+    sudo rpm -i package.rpm
+  - |
+    # Query installed package
+    rpm -q httpd
+  - |
+    # List files installed by package
+    rpm -ql httpd
