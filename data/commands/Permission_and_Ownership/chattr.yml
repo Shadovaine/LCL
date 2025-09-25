@@ -1,0 +1,22 @@
+name: "chattr"
+category: "file permissions and ownership"
+description: "Change file attributes (immutable, append-only, etc.)."
+syntax: "chattr [OPTIONS] [ATTRIBUTES] FILE"
+options:
+  - flag: ["(none)"]
+    explains: "Change attributes for a file."
+  - flag: ["-R"]
+    explains: "Recursively change attributes."
+  - flag: ["-V"]
+    explains: "Show program version."
+  - flag: ["-f"]
+    explains: "Suppress most error messages."
+  - flag: ["-v version"]
+    explains: "Set file's version number."
+examples:
+  - |
+    # Make file immutable
+    chattr +i file.txt
+  - |
+    # Make /var/log append-only
+    chattr -R +a /var/log
