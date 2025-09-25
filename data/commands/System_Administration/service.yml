@@ -1,1 +1,25 @@
 # service yml file
+name: "service"
+category: "system administration"
+description: "Legacy SysVinit service control (still present on many systems)."
+syntax: "service [SERVICE_NAME] COMMAND"
+options:
+  - flag: ["start"]
+    explains: "Start a service."
+  - flag: ["stop"]
+    explains: "Stop a service."
+  - flag: ["restart"]
+    explains: "Restart a service."
+  - flag: ["reload"]
+    explains: "Reload configuration."
+  - flag: ["status"]
+    explains: "Show service status."
+  - flag: ["--status-all"]
+    explains: "List all services."
+examples:
+  - |
+    # Start Apache
+    sudo service apache2 start
+  - |
+    # Check cron status
+    sudo service cron status
