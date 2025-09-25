@@ -1,1 +1,18 @@
 # w yml file
+name: "w"
+category: "system information and monitoring management"
+description: "Show who is logged in and what they are doing."
+syntax: "w [OPTIONS] [USER]"
+options:
+  - flag: ["-h"]
+    explains: "Hide header."
+  - flag: ["-u"]
+    explains: "Ignore username when computing idle time."
+  - flag: ["-s"]
+    explains: "Short format."
+  - flag: ["-f"]
+    explains: "Toggle display of FROM field."
+examples:
+  - |
+    # All active users and activity
+    w
