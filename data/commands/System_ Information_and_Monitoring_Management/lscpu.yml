@@ -1,1 +1,20 @@
 # lscpu yml file
+name: "lscpu"
+category: "system information and monitoring management"
+description: "Display CPU architecture details from sysfs and /proc/cpuinfo."
+syntax: "lscpu [OPTIONS]"
+options:
+  - flag: ["(default)"]
+    explains: "Readable key/value summary."
+  - flag: ["-J"]
+    explains: "JSON output."
+  - flag: ["-e=<cols>"]
+    explains: "Tabular output with selected columns."
+  - flag: ["-e=ALL"]
+    explains: "All columns."
+  - flag: ["-p"]
+    explains: "CSV-like parsable format."
+examples:
+  - |
+    # Extended column view
+    lscpu -e=CPU,CORE,SOCKET,NODE,ONLINE
