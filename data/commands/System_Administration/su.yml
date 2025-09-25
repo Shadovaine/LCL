@@ -1,1 +1,25 @@
 # su yml profile
+name: "su"
+category: "system administration"
+description: "Switch user identity mid-session (default to root)."
+syntax: "su [OPTIONS] [-] [USERNAME [ARG]...]"
+options:
+  - flag: ["(none)"]
+    explains: "Switch to root account."
+  - flag: ["- <username>", "-l <username>"]
+    explains: "Start a login shell as target user."
+  - flag: ["-c <command>"]
+    explains: "Run a single command as another user."
+  - flag: ["-s <shell>"]
+    explains: "Specify shell to use."
+  - flag: ["-m", "-p"]
+    explains: "Preserve environment."
+  - flag: ["-"]
+    explains: "Shortcut for full login shell (same as -l)."
+examples:
+  - |
+    # Switch to root
+    su
+  - |
+    # Switch to user 'name'
+    su name
