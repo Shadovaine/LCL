@@ -1,0 +1,19 @@
+name: "stat"
+category: "file permissions and ownership"
+description: "Display detailed file and filesystem metadata."
+syntax: "stat [OPTIONS] FILE"
+options:
+  - flag: ["(none)"]
+    explains: "Return default output."
+  - flag: ["-L"]
+    explains: "Follow symlinks and show info on target."
+  - flag: ["-f"]
+    explains: "Display filesystem information."
+  - flag: ["-c"]
+    explains: "Custom output format."
+  - flag: ["--print=FORMAT"]
+    explains: "Print with format string without newline."
+examples:
+  - |
+    # Return default output for /etc/passwd
+    stat /etc/passwd
