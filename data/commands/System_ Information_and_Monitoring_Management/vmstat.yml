@@ -1,1 +1,22 @@
 # vmstat yml file
+name: "iostat"
+category: "system information and monitoring management"
+description: "CPU and block device I/O statistics (sysstat package)."
+syntax: "iostat [OPTIONS] [INTERVAL [COUNT]]"
+options:
+  - flag: ["-c"]
+    explains: "CPU stats only."
+  - flag: ["-d"]
+    explains: "Device stats only."
+  - flag: ["-x"]
+    explains: "Extended stats."
+  - flag: ["-h"]
+    explains: "Human-readable units."
+  - flag: ["-k","-m"]
+    explains: "Report KB/s or MB/s."
+  - flag: ["-t"]
+    explains: "Timestamp each report."
+examples:
+  - |
+    # Extended device stats updated every second (3 times)
+    iostat -x 1 3
