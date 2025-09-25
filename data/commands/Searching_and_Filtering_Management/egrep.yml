@@ -1,1 +1,49 @@
 # egrep yml file
+name: "egrep"
+category: "search and filter management"
+description: "Same as grep -E, enables extended regex by default."
+syntax: "egrep [options] PATTERN [file...]"
+options:
+  - flag: ["-i"]
+    explains: "Ignore case."
+  - flag: ["-v"]
+    explains: "Invert match."
+  - flag: ["-r", "-R"]
+    explains: "Recursive search."
+  - flag: ["-c"]
+    explains: "Count matches."
+  - flag: ["-n"]
+    explains: "Show line numbers."
+  - flag: ["-H"]
+    explains: "Show filename."
+  - flag: ["-h"]
+    explains: "Suppress filename."
+  - flag: ["-l"]
+    explains: "List files with matches."
+  - flag: ["-o"]
+    explains: "Show only match text."
+  - flag: ["-q"]
+    explains: "Quiet mode."
+  - flag: ["-s"]
+    explains: "Suppress file errors."
+  - flag: ["-w"]
+    explains: "Match whole words."
+  - flag: ["-x"]
+    explains: "Match whole lines."
+  - flag: ["-A <N>"]
+    explains: "Print N lines after match."
+  - flag: ["-B <N>"]
+    explains: "Print N lines before match."
+  - flag: ["-C <N>"]
+    explains: "Print N lines of context."
+  - flag: ["-m <N>"]
+    explains: "Stop after N matches."
+  - flag: ["-Z", "--null"]
+    explains: "Separate filenames with NULL instead of newline."
+examples:
+  - |
+    # Find lines with error or fail
+    egrep "error|fail" logfile.txt
+  - |
+    # Recursive case-insensitive search
+    egrep -ri "warning" /etc/
