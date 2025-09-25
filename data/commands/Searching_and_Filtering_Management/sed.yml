@@ -1,1 +1,18 @@
 # sed yml file
+name: "sed"
+category: "search and filter management"
+description: "Stream editor for text manipulation."
+syntax: "sed [options] 'script' [file...]"
+options:
+  - flag: ["-n"]
+    explains: "Suppress automatic printing."
+  - flag: ["-e SCRIPT"]
+    explains: "Add a script to run."
+  - flag: ["-f FILE"]
+    explains: "Run commands from script file."
+  - flag: ["-i"]
+    explains: "Edit files in place."
+examples:
+  - |
+    # Replace foo with bar globally
+    sed 's/foo/bar/g' file.txt
