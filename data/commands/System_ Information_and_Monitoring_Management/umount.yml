@@ -1,1 +1,24 @@
 # umount yml file
+name: "umount"
+category: "system information and monitoring management"
+description: "Detach a filesystem from the directory tree."
+syntax: "umount [OPTIONS] <target>"
+options:
+  - flag: ["-a"]
+    explains: "Unmount all filesystems from /etc/mtab."
+  - flag: ["-r","--read-only"]
+    explains: "If unmount fails, remount read-only."
+  - flag: ["-f","--force"]
+    explains: "Force unmount."
+  - flag: ["-l","--lazy"]
+    explains: "Lazy unmount."
+  - flag: ["-d"]
+    explains: "Also free loop device."
+  - flag: ["-t <type>","--types <type>"]
+    explains: "Limit to filesystem type."
+  - flag: ["--fake","-n"]
+    explains: "Fake or no-mtab write."
+examples:
+  - |
+    # Unmount USB
+    umount /mnt/usb
