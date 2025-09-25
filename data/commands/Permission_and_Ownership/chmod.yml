@@ -1,0 +1,19 @@
+name: "chmod"
+category: "file permissions and ownership"
+description: "Set or modify who can read, write, or execute a file."
+syntax: "chmod [options] MODE file"
+options:
+  - flag: ["-R"]
+    explains: "Recursively change permissions for directories and contents."
+  - flag: ["-v"]
+    explains: "Verbose output, show changes made."
+  - flag: ["-c"]
+    explains: "Like -v but only reports actual changes."
+  - flag: ["--reference=RFILE"]
+    explains: "Set permissions to match another file."
+  - flag: ["--preserve-root"]
+    explains: "Do not operate recursively on root (/)."
+examples:
+  - |
+    # Allow user read permission on myprog
+    chmod u+r myprog
