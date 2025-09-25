@@ -1,0 +1,50 @@
+name: "dpkg"
+category: "package management"
+description: "Low-level Debian package manager for handling .deb files."
+syntax: "dpkg [OPTIONS] PACKAGE"
+options:
+  - flag: ["-i"]
+    explains: "Install a .deb file."
+  - flag: ["-r"]
+    explains: "Remove a package."
+  - flag: ["-P"]
+    explains: "Purge and remove configs too."
+  - flag: ["-l"]
+    explains: "List installed packages."
+  - flag: ["-L"]
+    explains: "List files installed by a package."
+  - flag: ["-S"]
+    explains: "Find which package owns a file."
+  - flag: ["-s"]
+    explains: "Show package status info."
+  - flag: ["-I"]
+    explains: "Show info about a .deb file."
+  - flag: ["-x"]
+    explains: "Extract .deb contents to a folder."
+  - flag: ["--configure <package>"]
+    explains: "Reconfigure an unpacked package."
+  - flag: ["--unpack <file.deb>"]
+    explains: "Unpack without configuring."
+  - flag: ["--audit"]
+    explains: "Show partially installed packages."
+  - flag: ["--get-selections"]
+    explains: "List selection states of packages."
+  - flag: ["--set-selections"]
+    explains: "Mark packages for install/remove."
+  - flag: ["--update-avail"]
+    explains: "Update available package info."
+  - flag: ["--clear-avail"]
+    explains: "Clear available package info."
+examples:
+  - |
+    # Install a .deb file
+    sudo dpkg -i google-chrome.deb
+  - |
+    # Remove a package
+    sudo dpkg -r google-chrome-stable
+  - |
+    # List installed packages
+    dpkg -l
+  - |
+    # List package contents
+    dpkg -L vim
