@@ -1,1 +1,37 @@
 # systemctl yml file
+name: "systemctl"
+category: "system administration"
+description: "Control and inspect systemd services, units, and system state."
+syntax: "systemctl [OPTIONS] COMMAND [UNIT]"
+options:
+  - flag: ["start <service>"]
+    explains: "Start a service."
+  - flag: ["stop <service>"]
+    explains: "Stop a service."
+  - flag: ["reload <service>"]
+    explains: "Reload configuration without restart."
+  - flag: ["reload-or-restart <service>"]
+    explains: "Reload if supported, else restart."
+  - flag: ["enable <service>"]
+    explains: "Enable service at boot."
+  - flag: ["disable <service>"]
+    explains: "Disable service at boot."
+  - flag: ["mask <service>"]
+    explains: "Prevent manual/automatic starts."
+  - flag: ["unmask <service>"]
+    explains: "Undo mask."
+  - flag: ["status <service>"]
+    explains: "Show detailed status."
+  - flag: ["is-active <service>"]
+    explains: "Check if service is active."
+  - flag: ["is-enabled <service>"]
+    explains: "Check if service is enabled at boot."
+  - flag: ["is-failed <service>"]
+    explains: "Check if service has failed."
+examples:
+  - |
+    # Start Apache
+    sudo systemctl start apache2
+  - |
+    # List all services
+    sudo systemctl list-units --type=service
