@@ -1,0 +1,21 @@
+name: "lsattr"
+category: "file permissions and ownership"
+description: "List special file attributes (immutable, append-only, etc.)."
+syntax: "lsattr [OPTIONS] [FILES]"
+options:
+  - flag: ["(none)"]
+    explains: "List attributes for files in current directory."
+  - flag: ["-a"]
+    explains: "Include hidden files."
+  - flag: ["-R"]
+    explains: "Recursively list attributes."
+  - flag: ["-d"]
+    explains: "List attributes of directories themselves."
+  - flag: ["-v"]
+    explains: "List file version/generation number."
+  - flag: ["-V"]
+    explains: "Show program version."
+examples:
+  - |
+    # List attributes including hidden files
+    lsattr -a
