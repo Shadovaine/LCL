@@ -1,0 +1,25 @@
+name: "kill"
+category: "process management"
+description: "Send a signal to a process."
+syntax: "kill [OPTIONS] PID..."
+options:
+  - flag: ["-s <SIGNAL>"]
+    explains: "Send a specific signal (e.g., SIGKILL, SIGHUP)."
+  - flag: ["-9"]
+    explains: "SIGKILL: force terminate."
+  - flag: ["-1"]
+    explains: "SIGHUP: reload/rehangup."
+  - flag: ["-l"]
+    explains: "List signal names."
+  - flag: ["-L"]
+    explains: "List signals in table format."
+examples:
+  - |
+    # Graceful terminate
+    kill 1234
+  - |
+    # Force kill
+    kill -9 1234
+  - |
+    # List signals
+    kill -l
