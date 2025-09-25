@@ -1,0 +1,27 @@
+name: "iotop"
+category: "process management"
+description: "Display and monitor per-process disk I/O."
+syntax: "iotop [OPTIONS]   # usually run with sudo"
+options:
+  - flag: ["-o"]
+    explains: "Show only processes/threads doing I/O."
+  - flag: ["-a"]
+    explains: "Show total I/O since start."
+  - flag: ["-b"]
+    explains: "Non-interactive (batch) mode."
+  - flag: ["-n <N>"]
+    explains: "Number of iterations (use with -b)."
+  - flag: ["-d <seconds>"]
+    explains: "Delay between updates."
+  - flag: ["-p <PID>"]
+    explains: "Monitor a specific PID."
+  - flag: ["-u <user>"]
+    explains: "Filter by user."
+  - flag: ["-k"]
+    explains: "Show I/O in KB."
+  - flag: ["-q"]
+    explains: "Suppress header lines (repeat to reduce)."
+examples:
+  - |
+    # Show only active I/O
+    sudo iotop -o
