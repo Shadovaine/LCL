@@ -1,0 +1,59 @@
+name: "apt"
+category: "package management"
+description: "Advanced Package Tool for Debian-based systems (Ubuntu, Mint, Kali)."
+syntax: "apt [OPTIONS] COMMAND [PACKAGE...]"
+options:
+  - flag: ["update"]
+    explains: "Refresh the package index from repositories."
+  - flag: ["upgrade"]
+    explains: "Upgrade all upgradable packages."
+  - flag: ["full-upgrade"]
+    explains: "Upgrade packages and handle changing dependencies."
+  - flag: ["install <pkg>"]
+    explains: "Install a package."
+  - flag: ["remove <pkg>"]
+    explains: "Remove a package."
+  - flag: ["purge <pkg>"]
+    explains: "Remove a package and its configuration files."
+  - flag: ["autoremove"]
+    explains: "Remove automatically installed packages no longer needed."
+  - flag: ["search <term>"]
+    explains: "Search for a package by name or description."
+  - flag: ["show <pkg>"]
+    explains: "Display detailed package information."
+  - flag: ["list"]
+    explains: "List packages based on filters."
+  - flag: ["download <pkg>"]
+    explains: "Download a package .deb file without installing."
+  - flag: ["edit-sources"]
+    explains: "Open the sources list for editing."
+  - flag: ["-y"]
+    explains: "Assume yes to prompts."
+  - flag: ["-q"]
+    explains: "Quiet mode."
+  - flag: ["-qq"]
+    explains: "Super quiet mode."
+  - flag: ["-s", "--simulate"]
+    explains: "Simulate actions without changes."
+  - flag: ["-d", "--download-only"]
+    explains: "Download packages without installing."
+  - flag: ["--reinstall"]
+    explains: "Reinstall specified packages."
+  - flag: ["--fix-broken"]
+    explains: "Fix broken dependencies."
+examples:
+  - |
+    # Update repositories
+    sudo apt update
+  - |
+    # Upgrade all packages
+    sudo apt upgrade
+  - |
+    # Install nmap
+    sudo apt install nmap
+  - |
+    # Remove apache2 but keep configs
+    sudo apt remove apache2
+  - |
+    # Purge apache2 (remove configs too)
+    sudo apt purge apache2
