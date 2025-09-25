@@ -1,1 +1,28 @@
 # uname yml file
+name: "uname"
+category: "system information and monitoring management"
+description: "Show system information (kernel, architecture, etc.)."
+syntax: "uname [OPTIONS]"
+options:
+  - flag: ["-s"]
+    explains: "Kernel name."
+  - flag: ["-n"]
+    explains: "Node (hostname)."
+  - flag: ["-r"]
+    explains: "Kernel release."
+  - flag: ["-v"]
+    explains: "Kernel version."
+  - flag: ["-m"]
+    explains: "Machine hardware name."
+  - flag: ["-p"]
+    explains: "Processor type (may be unknown)."
+  - flag: ["-i"]
+    explains: "Hardware platform (may be unknown)."
+  - flag: ["-o"]
+    explains: "Operating system."
+  - flag: ["-a"]
+    explains: "All info."
+examples:
+  - |
+    # All system details
+    uname -a
