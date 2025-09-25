@@ -1,1 +1,22 @@
 # mount yml file
+name: "mount"
+category: "system information and monitoring management"
+description: "Attach a filesystem to the directory tree."
+syntax: "mount [OPTIONS] DEVICE DIR"
+options:
+  - flag: ["(default)"]
+    explains: "List current mounts."
+  - flag: ["-t <fstype>"]
+    explains: "Specify filesystem type."
+  - flag: ["-o ro"]
+    explains: "Read-only mount."
+  - flag: ["--bind"]
+    explains: "Bind mount an existing path."
+  - flag: ["--move"]
+    explains: "Move a mount point."
+  - flag: ["--make-private","--make-shared"]
+    explains: "Change mount propagation."
+examples:
+  - |
+    # Read-only USB mount (forensics-friendly)
+    sudo mount -o ro,noload /dev/sdb1 /mnt/usb
