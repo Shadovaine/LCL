@@ -1,1 +1,23 @@
 # reboot yml file
+name: "reboot"
+category: "system administration"
+description: "Restart the system."
+syntax: "reboot [OPTIONS]"
+options:
+  - flag: ["-f"]
+    explains: "Force immediate reboot (unsafe)."
+  - flag: ["-p"]
+    explains: "Power off system (like shutdown -P)."
+  - flag: ["-w"]
+    explains: "Write wtmp entry but do not actually reboot."
+  - flag: ["-d"]
+    explains: "Do not write wtmp entry."
+  - flag: ["-n"]
+    explains: "Do not sync disks before reboot."
+examples:
+  - |
+    # Safe reboot
+    sudo reboot
+  - |
+    # Force immediate reboot
+    sudo reboot -f
