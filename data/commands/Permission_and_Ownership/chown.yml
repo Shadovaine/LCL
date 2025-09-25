@@ -1,0 +1,25 @@
+name: "chown"
+category: "file permissions and ownership"
+description: "Set, view, or modify ownership of a file."
+syntax: "chown [options] [owner][:group] file"
+options:
+  - flag: ["-c"]
+    explains: "Report when a change is made."
+  - flag: ["-f"]
+    explains: "Suppress most error messages."
+  - flag: ["-v"]
+    explains: "Report for every file processed."
+  - flag: ["--dereference"]
+    explains: "Act on the referenced file instead of symlink target."
+  - flag: ["-h"]
+    explains: "Affect the symlink itself, not the target."
+  - flag: ["-R"]
+    explains: "Apply recursively to directories and files."
+  - flag: ["--from=CURRENT_OWNER:CURRENT_GROUP"]
+    explains: "Change ownership only if current owner/group match."
+  - flag: ["--reference=RFILE"]
+    explains: "Set ownership to match another file."
+examples:
+  - |
+    # Change owner of file.txt to user 'name'
+    chown name file.txt
