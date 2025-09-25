@@ -1,1 +1,32 @@
 # blkid yml file
+name: "blkid"
+category: "system information and monitoring management"
+description: "Locate and print block device attributes (UUID, TYPE, LABEL, etc.)."
+syntax: "blkid [OPTIONS] [DEVICE...]"
+options:
+  - flag: ["-c <cachefile>"]
+    explains: "Use specified cache file."
+  - flag: ["-o <format>"]
+    explains: "Output format (full,value,list,udev)."
+  - flag: ["-s <tag>"]
+    explains: "Show only a specific attribute (e.g., UUID)."
+  - flag: ["-t <token>"]
+    explains: "Filter by attribute (e.g., TYPE=ext4)."
+  - flag: ["-L <label>"]
+    explains: "Find by filesystem label."
+  - flag: ["-U <uuid>"]
+    explains: "Find by UUID."
+  - flag: ["-g"]
+    explains: "Garbage collect cache."
+  - flag: ["-k"]
+    explains: "List known filesystem types."
+  - flag: ["-i"]
+    explains: "Show I/O limits."
+  - flag: ["-p"]
+    explains: "Probe device directly (bypass cache)."
+  - flag: ["-w <cachefile>"]
+    explains: "Write results to cache file."
+examples:
+  - |
+    # Find device with label 'backup'
+    blkid -L backup
