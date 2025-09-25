@@ -1,1 +1,24 @@
 # uniq yml file
+name: "uniq"
+category: "search and filter management"
+description: "Filter adjacent duplicate lines from input."
+syntax: "uniq [options] [input [output]]"
+options:
+  - flag: ["-c"]
+    explains: "Count occurrences."
+  - flag: ["-d"]
+    explains: "Only show duplicates."
+  - flag: ["-u"]
+    explains: "Only show unique lines."
+  - flag: ["-f N"]
+    explains: "Skip first N fields."
+  - flag: ["-s N"]
+    explains: "Skip N characters."
+  - flag: ["-w N"]
+    explains: "Compare only first N characters."
+  - flag: ["-i"]
+    explains: "Ignore case."
+examples:
+  - |
+    # Count unique sorted lines
+    sort file.txt | uniq -c
