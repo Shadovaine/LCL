@@ -1,0 +1,51 @@
+name: "yum"
+category: "package management"
+description: "Package manager for RHEL/CentOS 7 and earlier (mostly replaced by dnf)."
+syntax: "yum [OPTIONS] COMMAND [PACKAGE...]"
+options:
+  - flag: ["install"]
+    explains: "Install a package."
+  - flag: ["remove", "erase"]
+    explains: "Remove a package."
+  - flag: ["update"]
+    explains: "Update all packages."
+  - flag: ["upgrade"]
+    explains: "Update packages and handle obsolete ones."
+  - flag: ["check-update"]
+    explains: "Check for available updates."
+  - flag: ["list"]
+    explains: "List installed, available, or updates."
+  - flag: ["info"]
+    explains: "Show detailed info about a package."
+  - flag: ["search"]
+    explains: "Search for a package."
+  - flag: ["provides", "whatprovides"]
+    explains: "Find package that provides a file/capability."
+  - flag: ["clean"]
+    explains: "Clear cached package data."
+  - flag: ["makecache"]
+    explains: "Download fresh repository metadata."
+  - flag: ["history"]
+    explains: "Show or manage transaction history."
+  - flag: ["reinstall"]
+    explains: "Reinstall a package."
+  - flag: ["downgrade"]
+    explains: "Revert to an older package version."
+  - flag: ["group list"]
+    explains: "List package groups."
+  - flag: ["group install"]
+    explains: "Install all packages in a group."
+  - flag: ["group remove"]
+    explains: "Remove all packages in a group."
+  - flag: ["update-to"]
+    explains: "Update a package to a specific version."
+examples:
+  - |
+    # Install httpd
+    sudo yum install httpd
+  - |
+    # Update all packages
+    sudo yum update
+  - |
+    # Search for nginx
+    yum search nginx
