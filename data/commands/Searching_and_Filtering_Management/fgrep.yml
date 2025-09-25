@@ -1,1 +1,46 @@
 # fgrep yml file
+name: "fgrep"
+category: "search and filter management"
+description: "Fixed-string grep — searches literal text, not regex."
+syntax: "fgrep [options] PATTERN [file...]"
+options:
+  - flag: ["-i"]
+    explains: "Ignore case."
+  - flag: ["-c"]
+    explains: "Count matches."
+  - flag: ["-n"]
+    explains: "Show line numbers."
+  - flag: ["-H"]
+    explains: "Show filename."
+  - flag: ["-h"]
+    explains: "Suppress filename."
+  - flag: ["-l"]
+    explains: "List files with matches."
+  - flag: ["-L"]
+    explains: "List files without matches."
+  - flag: ["-o"]
+    explains: "Show only match text."
+  - flag: ["-q"]
+    explains: "Quiet mode."
+  - flag: ["-s"]
+    explains: "Suppress errors."
+  - flag: ["-w"]
+    explains: "Match whole words."
+  - flag: ["-x"]
+    explains: "Match whole lines."
+  - flag: ["-A <N>"]
+    explains: "Print N lines after match."
+  - flag: ["-B <N>"]
+    explains: "Print N lines before match."
+  - flag: ["-C <N>"]
+    explains: "Print N lines of context."
+  - flag: ["-m <N>"]
+    explains: "Stop after N matches."
+  - flag: ["-r", "-R"]
+    explains: "Recursive search."
+  - flag: ["-Z", "--null"]
+    explains: "Separate filenames with NULL."
+examples:
+  - |
+    # Search literally for '127.0.0.1'
+    fgrep -r "127.0.0.1" /etc/
