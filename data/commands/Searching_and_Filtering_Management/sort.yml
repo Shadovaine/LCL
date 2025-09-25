@@ -1,1 +1,30 @@
 # sort yml file
+name: "sort"
+category: "search and filter management"
+description: "Sort text lines by keys, numeric, or custom rules."
+syntax: "sort [options] [file...]"
+options:
+  - flag: ["-n"]
+    explains: "Numeric sort."
+  - flag: ["-r"]
+    explains: "Reverse sort."
+  - flag: ["-k N"]
+    explains: "Sort by specific field."
+  - flag: ["-t CHAR"]
+    explains: "Field separator."
+  - flag: ["-u"]
+    explains: "Unique lines only."
+  - flag: ["-f"]
+    explains: "Ignore case."
+  - flag: ["-M"]
+    explains: "Sort by month name."
+  - flag: ["-b"]
+    explains: "Ignore leading blanks."
+  - flag: ["-o FILE"]
+    explains: "Write output to file."
+  - flag: ["--parallel=N"]
+    explains: "Use multiple threads."
+examples:
+  - |
+    # Sort numerically on column 2
+    sort -n -k2 file.txt
