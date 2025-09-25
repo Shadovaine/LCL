@@ -1,0 +1,23 @@
+name: "htop"
+category: "process management"
+description: "Improved interactive process viewer."
+syntax: "htop [OPTIONS]"
+options:
+  - flag: ["-d <delay>"]
+    explains: "Set delay between updates (tenths of seconds)."
+  - flag: ["-u <user>"]
+    explains: "Show only a user's processes."
+  - flag: ["-p <PID[,PID2,...]>"]
+    explains: "Show only specific PIDs."
+  - flag: ["-s <column>"]
+    explains: "Sort by column (e.g., PERCENT_CPU)."
+  - flag: ["-C", "--no-color"]
+    explains: "Disable colors."
+  - flag: ["-t"]
+    explains: "Enable tree view by default."
+  - flag: ["--sort-key <column>"]
+    explains: "Alternative way to set sort column."
+examples:
+  - |
+    # Launch htop
+    htop
