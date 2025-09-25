@@ -1,0 +1,55 @@
+name: "dnf"
+category: "package management"
+description: "Modern replacement for yum on RHEL/CentOS 8+ and Fedora."
+syntax: "dnf [OPTIONS] COMMAND [PACKAGE...]"
+options:
+  - flag: ["install"]
+    explains: "Install a package."
+  - flag: ["remove"]
+    explains: "Remove a package."
+  - flag: ["upgrade"]
+    explains: "Upgrade all packages."
+  - flag: ["update"]
+    explains: "Update all or specific packages."
+  - flag: ["check-update"]
+    explains: "Check for available updates."
+  - flag: ["list"]
+    explains: "List installed, available, or updates."
+  - flag: ["info"]
+    explains: "Show detailed info about a package."
+  - flag: ["search"]
+    explains: "Search for a package by keyword."
+  - flag: ["provides", "whatprovides"]
+    explains: "Find which package provides a file/capability."
+  - flag: ["clean"]
+    explains: "Clear cached package data."
+  - flag: ["makecache"]
+    explains: "Download fresh repository metadata."
+  - flag: ["history"]
+    explains: "Show/manage transaction history."
+  - flag: ["reinstall"]
+    explains: "Reinstall a package."
+  - flag: ["downgrade"]
+    explains: "Revert to an older version."
+  - flag: ["group list"]
+    explains: "List package groups."
+  - flag: ["group install"]
+    explains: "Install all packages in a group."
+  - flag: ["group remove"]
+    explains: "Remove all packages in a group."
+  - flag: ["update-to"]
+    explains: "Update a package to a specific version."
+  - flag: ["repoquery"]
+    explains: "Query info from enabled repos."
+  - flag: ["autoremove"]
+    explains: "Remove unneeded dependency packages."
+examples:
+  - |
+    # Install git
+    sudo dnf install git
+  - |
+    # Upgrade all packages
+    sudo dnf upgrade
+  - |
+    # Search for docker
+    dnf search docker
