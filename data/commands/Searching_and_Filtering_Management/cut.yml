@@ -1,1 +1,27 @@
 # cut yml file
+name: "cut"
+category: "search and filter management"
+description: "Extract sections of text by byte, character, or field."
+syntax: "cut [options] [file...]"
+options:
+  - flag: ["-b LIST"]
+    explains: "Select specific bytes."
+  - flag: ["-c LIST"]
+    explains: "Select specific characters."
+  - flag: ["-f LIST"]
+    explains: "Select specific fields."
+  - flag: ["-d DELIM"]
+    explains: "Field delimiter (default: tab)."
+  - flag: ["-s"]
+    explains: "Suppress lines without delimiter."
+  - flag: ["--complement"]
+    explains: "Invert selection."
+  - flag: ["--output-delimiter=STR"]
+    explains: "Change output delimiter."
+examples:
+  - |
+    # Get first field from passwd
+    cut -d ":" -f 1 /etc/passwd
+  - |
+    # Get field 1 then sort
+    cut -d ":" -f 1 /etc/passwd | sort
