@@ -1,1 +1,26 @@
 # dmesg yml file
+name: "dmesg"
+category: "system information and monitoring management"
+description: "Print kernel ring buffer (boot logs, driver messages)."
+syntax: "dmesg [OPTIONS]"
+options:
+  - flag: ["-C"]
+    explains: "Clear ring buffer."
+  - flag: ["-c"]
+    explains: "Print then clear."
+  - flag: ["-D"]
+    explains: "Disable console printing."
+  - flag: ["-E"]
+    explains: "Re-enable console printing."
+  - flag: ["-e"]
+    explains: "Print human-readable timestamps."
+  - flag: ["-H"]
+    explains: "Human-friendly output (pager-like)."
+  - flag: ["-k"]
+    explains: "Kernel messages only."
+  - flag: ["-T"]
+    explains: "Show human time instead of monotonic."
+examples:
+  - |
+    # Boot messages with readable timestamps
+    dmesg -T | less
