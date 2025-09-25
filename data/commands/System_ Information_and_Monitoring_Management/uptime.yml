@@ -1,1 +1,16 @@
 # uptime yml file
+name: "uptime"
+category: "system information and monitoring management"
+description: "Show how long the system has been running, users, and load averages."
+syntax: "uptime [OPTIONS]"
+options:
+  - flag: ["(none)"]
+    explains: "Default output (time, uptime, users, loads)."
+  - flag: ["-p"]
+    explains: "Pretty (human-friendly) uptime."
+  - flag: ["-s"]
+    explains: "Show exact boot time."
+examples:
+  - |
+    # Default output
+    uptime
