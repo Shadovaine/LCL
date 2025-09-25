@@ -1,1 +1,26 @@
 # shutdown yml files
+name: "shutdown"
+category: "system administration"
+description: "Bring the system down in a secure way (halt, power off, or reboot)."
+syntax: "shutdown [OPTIONS] [TIME] [MESSAGE]"
+options:
+  - flag: ["-h now"]
+    explains: "Halt and power off immediately."
+  - flag: ["-r now"]
+    explains: "Reboot immediately."
+  - flag: ["-c"]
+    explains: "Cancel a scheduled shutdown."
+  - flag: ["+m"]
+    explains: "Shutdown in m minutes."
+  - flag: ["time string"]
+    explains: "Specify shutdown time (e.g., 23:00)."
+examples:
+  - |
+    # Shutdown immediately
+    sudo shutdown -h now
+  - |
+    # Reboot in 5 minutes
+    sudo shutdown -r +5 "Rebooting in 5 minutes!"
+  - |
+    # Cancel a shutdown
+    sudo shutdown -c
