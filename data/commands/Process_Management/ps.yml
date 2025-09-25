@@ -1,0 +1,39 @@
+name: "ps"
+category: "process management"
+description: "Show a snapshot of current processes."
+syntax: "ps [OPTIONS]"
+options:
+  - flag: ["-e", "-A"]
+    explains: "Show all running processes."
+  - flag: ["-f"]
+    explains: "Full-format listing."
+  - flag: ["-u <user>"]
+    explains: "Show processes for a specific user."
+  - flag: ["-x"]
+    explains: "Include processes not attached to a terminal."
+  - flag: ["-o <fields>"]
+    explains: "Customize output columns."
+  - flag: ["--forest"]
+    explains: "Display process tree."
+  - flag: ["--sort <key>"]
+    explains: "Sort by a field (e.g., %mem, %cpu)."
+  - flag: ["-p <PID>"]
+    explains: "Show a specific process ID."
+  - flag: ["--ppid <PID>"]
+    explains: "Show children of a specific process."
+examples:
+  - |
+    # All processes
+    ps -e
+  - |
+    # Full details
+    ps -ef
+  - |
+    # Processes for a user
+    ps -u username
+  - |
+    # BSD style
+    ps aux
+  - |
+    # Only PID and command
+    ps -eo pid,cmd
