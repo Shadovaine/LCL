@@ -1,0 +1,25 @@
+name: "top"
+category: "process management"
+description: "Real-time view of processes and resource usage."
+syntax: "top [OPTIONS]"
+options:
+  - flag: ["-d <seconds>"]
+    explains: "Refresh delay between updates."
+  - flag: ["-n <count>"]
+    explains: "Run for N iterations and exit."
+  - flag: ["-b"]
+    explains: "Batch mode (for logging/scripting)."
+  - flag: ["-u <user>"]
+    explains: "Show only processes for a user."
+  - flag: ["-p <PID>"]
+    explains: "Monitor specific PID."
+examples:
+  - |
+    # Interactive top
+    top
+  - |
+    # Filter by user
+    top -u username
+  - |
+    # Monitor a single PID
+    top -p 1234
