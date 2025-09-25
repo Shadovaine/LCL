@@ -1,0 +1,20 @@
+name: "getfacl"
+category: "file permissions and ownership"
+description: "Display ACLs for files and directories."
+syntax: "getfacl [OPTIONS] FILE"
+options:
+  - flag: ["(none)"]
+    explains: "Show ACLs for file/directory."
+  - flag: ["-R"]
+    explains: "Recursively list ACLs."
+  - flag: ["--absolute-names"]
+    explains: "Print absolute pathnames."
+  - flag: ["--tabular"]
+    explains: "Output in tabular format (if supported)."
+examples:
+  - |
+    # Show ACLs for file.txt
+    getfacl file.txt
+  - |
+    # List ACLs recursively for /var/log
+    getfacl -R /var/log
