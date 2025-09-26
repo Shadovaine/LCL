@@ -1,0 +1,16 @@
+# finger yml file
+name: "finger"
+category: "user_and_group_management"
+description: "Show information about system users."
+syntax: "finger [OPTIONS] [USER...]"
+options:
+  - flag: ["-l"]
+    explains: "Long format."
+  - flag: ["-s"]
+    explains: "Short format."
+  - flag: ["-m"]
+    explains: "Exact match username."
+examples:
+  - |
+    # Show user info
+    finger -s name
