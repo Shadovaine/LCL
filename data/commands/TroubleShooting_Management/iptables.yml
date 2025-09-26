@@ -1,0 +1,25 @@
+# iptables yml file
+name: "iptables"
+category: "troubleshooting"
+description: "Manage packet filtering rules (IPv4 firewall)."
+syntax: "sudo iptables [OPTIONS] COMMAND"
+options:
+  - flag: ["-A"]
+    explains: "Append a rule."
+  - flag: ["-I"]
+    explains: "Insert a rule."
+  - flag: ["-D"]
+    explains: "Delete a rule."
+  - flag: ["-L"]
+    explains: "List current rules."
+  - flag: ["-F"]
+    explains: "Flush all rules."
+  - flag: ["-P"]
+    explains: "Set default policy."
+examples:
+  - |
+    # List rules
+    sudo iptables -L
+  - |
+    # Flush all rules
+    sudo iptables -F
