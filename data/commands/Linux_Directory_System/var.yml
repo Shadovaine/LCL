@@ -1,0 +1,15 @@
+# var yml file
+name: "/var"
+description: "Variable data — logs, mail, cache, temporary files"
+contents:
+  - dir: "/var/log"
+    purpose: "System and application logs"
+  - dir: "/var/spool"
+    purpose: "Queued tasks (cron, mail, print)"
+  - dir: "/var/cache"
+    purpose: "Cached application data"
+examples:
+  - command: "tail -f /var/log/auth.log"
+    explanation: "Follow authentication log in real-time"
+  - command: "sudo du -sh /var/cache/apt"
+    explanation: "Check space used by package cache"
