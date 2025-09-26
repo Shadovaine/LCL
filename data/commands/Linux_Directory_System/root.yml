@@ -1,0 +1,13 @@
+# root yml file
+name: "/root"
+description: "Root user's home directory (not to be confused with /)"
+contents:
+  - file: ".bashrc"
+    purpose: "Root’s custom shell config"
+  - file: ".ssh/"
+    purpose: "Root SSH keys"
+examples:
+  - command: "sudo su"
+    explanation: "Switch into root’s environment"
+security_notes:
+  - "Only root has access to /root by default."
