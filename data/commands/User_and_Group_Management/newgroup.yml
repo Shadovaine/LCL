@@ -1,0 +1,12 @@
+# newgrp yml file
+name: "newgrp"
+category: "user_and_group_management"
+description: "Temporarily switch primary group of a user."
+syntax: "newgrp [OPTIONS] GROUP"
+options:
+  - flag: ["-"]
+    explains: "Start a login shell."
+examples:
+  - |
+    # Switch group
+    newgrp developers
