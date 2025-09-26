@@ -1,0 +1,33 @@
+# useradd yml file
+name: "useradd"
+category: "user_and_group_management"
+description: "Creates a new user account, assigns home directories, shells, groups, and expiration settings."
+syntax: "useradd [OPTIONS] USERNAME"
+options:
+  - flag: ["-d", "--home DIR"]
+    explains: "Specify custom home directory."
+  - flag: ["-m", "--create-home"]
+    explains: "Force creation of home directory."
+  - flag: ["-M"]
+    explains: "Do not create a home directory."
+  - flag: ["-s", "--shell SHELL"]
+    explains: "Assign login shell."
+  - flag: ["-u", "--uid UID"]
+    explains: "Set custom user ID."
+  - flag: ["-g", "--gid GROUP"]
+    explains: "Assign primary group."
+  - flag: ["-G", "--groups GROUPS"]
+    explains: "Assign supplementary groups."
+  - flag: ["-r", "--system"]
+    explains: "Create a system account."
+  - flag: ["-e", "--expiredate DATE"]
+    explains: "Set account expiration date (YYYY-MM-DD)."
+  - flag: ["-f", "--inactive DAYS"]
+    explains: "Set days after password expires before account is disabled."
+examples:
+  - |
+    # Create a user with defaults
+    sudo useradd name
+  - |
+    # Create user with home and bash shell
+    sudo useradd -m -s /bin/bash name
