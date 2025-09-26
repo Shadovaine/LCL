@@ -1,0 +1,15 @@
+# lib yml file
+name: "/lib"
+description: "Shared libraries and kernel modules needed by /bin and /sbin"
+contents:
+  - file: "libc.so.*"
+    purpose: "Core GNU C library"
+  - file: "ld-linux.so.*"
+    purpose: "Dynamic linker/loader"
+  - dir: "modules/"
+    purpose: "Kernel modules (*.ko)"
+examples:
+  - command: "ls /lib/modules"
+    explanation: "List available kernel modules"
+notes:
+  - "Critical for boot. Removing this breaks the system."
