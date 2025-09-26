@@ -1,0 +1,31 @@
+# usermod yml file
+name: "usermod"
+category: "user_and_group_management"
+description: "Modify an existing user’s account."
+syntax: "usermod [OPTIONS] USERNAME"
+options:
+  - flag: ["-c", "--comment COMMENT"]
+    explains: "Change GECOS comment."
+  - flag: ["-d", "--home DIR"]
+    explains: "Set new home directory."
+  - flag: ["-f", "--inactive DAYS"]
+    explains: "Days after password expiration until account disabled."
+  - flag: ["-g", "--gid GROUP"]
+    explains: "Change primary group."
+  - flag: ["-G", "--groups GROUPS"]
+    explains: "Change supplementary groups."
+  - flag: ["-a", "--append"]
+    explains: "Append to supplementary group."
+  - flag: ["-l", "--login NEW"]
+    explains: "Change username."
+  - flag: ["-L"]
+    explains: "Lock account password."
+  - flag: ["-U"]
+    explains: "Unlock account password."
+examples:
+  - |
+    # Change username
+    sudo usermod -l newname oldname
+  - |
+    # Change user shell to zsh
+    sudo usermod -s /bin/zsh name
