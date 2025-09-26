@@ -1,0 +1,24 @@
+# strings yml file
+name: "strings"
+category: "file viewing and editing management"
+description: "Extract printable strings from binaries or dumps."
+syntax: "strings [OPTIONS] FILE"
+options:
+  - flag: ["-a"]
+    explains: "Scan entire file."
+  - flag: ["-n <N>", "--bytes=<N>"]
+    explains: "Minimum string length."
+  - flag: ["-t <radix>"]
+    explains: "Print offset (o=oct, d=dec, x=hex)."
+  - flag: ["-e <encoding>"]
+    explains: "Set character encoding."
+  - flag: ["-f"]
+    explains: "Prefix each string with filename."
+  - flag: ["-o"]
+    explains: "Legacy: same as -t d (decimal offset)."
+  - flag: ["-T <encoding>"]
+    explains: "Terminal output encoding."
+examples:
+  - |
+    # Quick readable text from a binary
+    strings /usr/bin/whoami
