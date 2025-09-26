@@ -1,0 +1,26 @@
+# nmap yml file
+name: "nmap"
+category: "troubleshooting"
+description: "Discover hosts, open ports, services, and OS details."
+syntax: "nmap [OPTIONS] TARGET"
+options:
+  - flag: ["-sS", "-sT", "-sU"]
+    explains: "Scan types (SYN, Connect, UDP)."
+  - flag: ["-p <ports>"]
+    explains: "Scan specific ports or ranges."
+  - flag: ["-sV"]
+    explains: "Detect service version."
+  - flag: ["-O"]
+    explains: "Detect operating system."
+  - flag: ["-T0..T5"]
+    explains: "Timing template (stealthy to aggressive)."
+examples:
+  - |
+    # Quick scan
+    nmap 192.168.1.1
+  - |
+    # Scan common ports
+    nmap -F 192.168.1.1
+  - |
+    # Service detection
+    nmap -sV 192.168.1.1
