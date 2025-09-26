@@ -1,0 +1,13 @@
+# boot yml file
+name: "/boot"
+description: "Bootloader and kernel files"
+contents:
+  - file: "vmlinuz-*"
+    purpose: "Compressed Linux kernel"
+  - file: "initrd.img-*"
+    purpose: "Initial RAM disk"
+  - dir: "grub/"
+    purpose: "GRUB bootloader configs"
+examples:
+  - command: "cat /boot/grub/grub.cfg"
+    explanation: "View bootloader configuration"
