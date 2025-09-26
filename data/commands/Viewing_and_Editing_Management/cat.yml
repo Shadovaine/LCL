@@ -1,0 +1,26 @@
+# cat yml file
+name: "cat"
+category: "file viewing and editing management"
+description: "Concatenate and print files; show non-printing chars or line numbers."
+syntax: "cat [OPTIONS] [FILE...]"
+options:
+  - flag: ["-A"]
+    explains: "Show all: tabs, ends, non-printing."
+  - flag: ["-b"]
+    explains: "Number non-blank lines."
+  - flag: ["-e"]
+    explains: "Show $ at line ends; show non-printing."
+  - flag: ["-E"]
+    explains: "Show $ at line ends."
+  - flag: ["-n"]
+    explains: "Number all lines."
+  - flag: ["-s"]
+    explains: "Squeeze multiple blank lines."
+  - flag: ["-T"]
+    explains: "Show tabs as ^I."
+  - flag: ["-v"]
+    explains: "Show non-printing characters."
+examples:
+  - |
+    # Number all lines
+    cat -n script.sh
