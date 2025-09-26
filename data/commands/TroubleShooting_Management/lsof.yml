@@ -1,1 +1,23 @@
 # lsof yml file
+name: "lsof"
+category: "troubleshooting"
+description: "List open files and processes using them."
+syntax: "lsof [OPTIONS] [names...]"
+options:
+  - flag: ["-p <PID>"]
+    explains: "Files for specific process ID."
+  - flag: ["-u <user>"]
+    explains: "Files opened by user."
+  - flag: ["-i"]
+    explains: "Show network connections."
+  - flag: ["-t"]
+    explains: "Print only PID."
+  - flag: ["+D <dir>"]
+    explains: "All open files under directory (recursive)."
+examples:
+  - |
+    # All open files
+    sudo lsof
+  - |
+    # Files for user 'name'
+    sudo lsof -u name
