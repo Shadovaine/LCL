@@ -1,0 +1,15 @@
+# proc yml file
+name: "/proc"
+description: "Virtual filesystem showing live kernel and process info"
+contents:
+  - file: "cpuinfo"
+    purpose: "CPU details"
+  - file: "meminfo"
+    purpose: "Memory statistics"
+  - dir: "[PID]/"
+    purpose: "Process info directories"
+examples:
+  - command: "cat /proc/cpuinfo"
+    explanation: "Show CPU details"
+  - command: "echo 1 > /proc/sys/net/ipv4/ip_forward"
+    explanation: "Enable IP forwarding"
