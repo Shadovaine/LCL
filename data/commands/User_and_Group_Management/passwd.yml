@@ -1,0 +1,27 @@
+# passwd yml file
+name: "passwd"
+category: "user_and_group_management"
+description: "Change or create user passwords and update authentication tokens."
+syntax: "passwd [OPTIONS] [USERNAME]"
+options:
+  - flag: ["-d", "--delete"]
+    explains: "Delete password."
+  - flag: ["-e", "--expire"]
+    explains: "Expire password immediately."
+  - flag: ["-i", "--inactive DAYS"]
+    explains: "Set days after expiration before account disabled."
+  - flag: ["-l", "--lock"]
+    explains: "Lock password."
+  - flag: ["-u", "--unlock"]
+    explains: "Unlock password."
+  - flag: ["-n", "--min DAYS"]
+    explains: "Minimum days between password changes."
+  - flag: ["-x", "--max DAYS"]
+    explains: "Maximum password age."
+examples:
+  - |
+    # Change own password
+    passwd
+  - |
+    # Set password for user
+    sudo passwd name
