@@ -1,0 +1,14 @@
+# delgroup yml file
+name: "delgroup"
+category: "user_and_group_management"
+description: "Delete groups or remove a user from a group."
+syntax: "delgroup [OPTIONS] GROUP | USER GROUP"
+options:
+  - flag: ["--quiet"]
+    explains: "Run silently."
+  - flag: ["--only-if-empty"]
+    explains: "Only delete if group has no members."
+examples:
+  - |
+    # Remove user from docker group
+    sudo delgroup namex docker
