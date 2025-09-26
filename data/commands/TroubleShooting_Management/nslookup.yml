@@ -1,0 +1,21 @@
+# nslookup yml file
+name: "nslookup"
+category: "troubleshooting"
+description: "Query DNS servers for hostnames, IPs, or records."
+syntax: "nslookup [OPTIONS] HOSTNAME [SERVER]"
+options:
+  - flag: ["<hostname>"]
+    explains: "Forward lookup."
+  - flag: ["<IP>"]
+    explains: "Reverse lookup."
+  - flag: ["-debug"]
+    explains: "Debug mode."
+  - flag: ["-timeout=<s>"]
+    explains: "Set query timeout."
+examples:
+  - |
+    # Resolve domain
+    nslookup google.com
+  - |
+    # Reverse lookup
+    nslookup 8.8.8.8
