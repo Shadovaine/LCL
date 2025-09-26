@@ -1,0 +1,16 @@
+# groupadd yml file
+name: "groupadd"
+category: "user_and_group_management"
+description: "Create new groups on the system."
+syntax: "groupadd [OPTIONS] GROUPNAME"
+options:
+  - flag: ["-g", "--gid GID"]
+    explains: "Specify group ID."
+  - flag: ["-p", "--password ENCRYPTED"]
+    explains: "Set encrypted password."
+  - flag: ["-f", "--force"]
+    explains: "Exit successfully if group exists."
+examples:
+  - |
+    # Create admins group
+    sudo groupadd admins
