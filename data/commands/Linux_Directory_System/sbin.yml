@@ -1,0 +1,19 @@
+# sbin yml file
+name: "/sbin"
+description: "System binaries for administration, primarily used by root."
+contents:
+  - binary: "fsck"
+    purpose: "Check and repair filesystems"
+  - binary: "mount"
+    purpose: "Mount filesystems"
+  - binary: "umount"
+    purpose: "Unmount filesystems"
+  - binary: "iptables"
+    purpose: "Configure firewall rules"
+  - binary: "reboot"
+    purpose: "Reboot the system"
+examples:
+  - command: "sudo /sbin/fsck /dev/sda1"
+    explanation: "Run filesystem check on disk"
+notes:
+  - "Root privileges required for most commands here."
