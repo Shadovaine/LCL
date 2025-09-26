@@ -1,0 +1,30 @@
+# tail yml file
+name: "tail"
+category: "file viewing and editing management"
+description: "Output the end of files (default: last 10 lines) and follow growth."
+syntax: "tail [OPTIONS] [FILE]"
+options:
+  - flag: ["-n <NUM>", "--lines=<NUM>"]
+    explains: "Show last NUM lines."
+  - flag: ["-c <NUM>", "--bytes=<NUM>"]
+    explains: "Show last NUM bytes."
+  - flag: ["-f"]
+    explains: "Follow file as it grows."
+  - flag: ["--retry"]
+    explains: "Keep trying to open if initially inaccessible."
+  - flag: ["-F"]
+    explains: "Follow by name and retry."
+  - flag: ["-q"]
+    explains: "Suppress headers for multiple files."
+  - flag: ["-v"]
+    explains: "Always output headers."
+  - flag: ["--pid=<PID>"]
+    explains: "Follow until PID exits."
+  - flag: ["--max-unchanged-stats=<N>"]
+    explains: "Reopen after N iterations (with --follow=name)."
+  - flag: ["--sleep-interval=<N>"]
+    explains: "Seconds between checks in follow mode."
+examples:
+  - |
+    # Follow syslog
+    tail -F /var/log/syslog
