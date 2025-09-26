@@ -1,0 +1,11 @@
+# dollar yml file
+name: "$"
+description: "Expands variables or expressions"
+examples:
+  - command: "USER=\"shadowman76\""
+    explanation: "Assigns the value 'shadowman76' to USER"
+  - command: "echo $USER"
+    explanation: "Prints the value of the USER variable"
+notes:
+  - "Without $, the variable name is referenced literally, not its value"
+  - "Used heavily in shell scripting and environment variables"
