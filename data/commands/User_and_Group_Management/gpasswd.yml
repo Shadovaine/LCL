@@ -1,0 +1,18 @@
+# gpasswd yml file
+name: "gpasswd"
+category: "user_and_group_management"
+description: "Manage group passwords and memberships."
+syntax: "gpasswd [OPTIONS] GROUP"
+options:
+  - flag: ["-a USER"]
+    explains: "Add user to group."
+  - flag: ["-d USER"]
+    explains: "Remove user from group."
+  - flag: ["-A USER1,USER2"]
+    explains: "Set group admins."
+  - flag: ["-M USER1,USER2"]
+    explains: "Define group members."
+examples:
+  - |
+    # Add user to docker
+    sudo gpasswd -a name docker
