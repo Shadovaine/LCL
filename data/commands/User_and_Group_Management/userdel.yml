@@ -1,0 +1,14 @@
+# userdel yml file
+name: "userdel"
+category: "user_and_group_management"
+description: "Delete user accounts and related files."
+syntax: "userdel [OPTIONS] USERNAME"
+options:
+  - flag: ["-r", "--remove"]
+    explains: "Remove home directory and mail spool."
+  - flag: ["-f", "--force"]
+    explains: "Force removal even if logged in."
+examples:
+  - |
+    # Remove user and home
+    sudo userdel -r name
