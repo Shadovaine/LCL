@@ -1,0 +1,14 @@
+# groupmod yml file
+name: "groupmod"
+category: "user_and_group_management"
+description: "Modify existing group (rename, change GID, update password)."
+syntax: "groupmod [OPTIONS] GROUP"
+options:
+  - flag: ["-g GID"]
+    explains: "Change GID."
+  - flag: ["-n NEW"]
+    explains: "Rename group."
+examples:
+  - |
+    # Rename qa to quality
+    sudo groupmod -n quality qa
