@@ -1,0 +1,11 @@
+# tmp yml file
+name: "/tmp"
+description: "Temporary files (cleared on reboot)"
+examples:
+  - command: "ls -ld /tmp"
+    explanation: "View permissions and sticky bit"
+  - command: "echo 'test' > /tmp/file.txt"
+    explanation: "Create a temporary file"
+notes:
+  - "World-writable, protected by sticky bit"
+  - "Mounted with noexec/nosuid for security"
