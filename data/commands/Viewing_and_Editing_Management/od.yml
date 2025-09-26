@@ -1,0 +1,30 @@
+# od yml file
+name: "od"
+category: "file viewing and editing management"
+description: "Octal/hex/ASCII/binary dump of files; raw byte-level viewer."
+syntax: "od [OPTIONS] [FILE]"
+options:
+  - flag: ["(none)", "-o"]
+    explains: "Octal bytes."
+  - flag: ["-x"]
+    explains: "Hexadecimal."
+  - flag: ["-c"]
+    explains: "Character dump (ASCII)."
+  - flag: ["-b"]
+    explains: "Octal bytes (alias)."
+  - flag: ["-d"]
+    explains: "Unsigned decimal."
+  - flag: ["-t <type>"]
+    explains: "Select output type (e.g., x1, u2, d4, f8)."
+  - flag: ["-N <NUM>"]
+    explains: "Read only NUM bytes."
+  - flag: ["-j <NUM>"]
+    explains: "Skip NUM bytes before dumping."
+  - flag: ["-v"]
+    explains: "Do not suppress repeated lines."
+notes:
+  - "Common -t formats: x1/x2 (hex), u1/u2/u4 (unsigned), d2/d4 (signed), f4/f8 (floats)."
+examples:
+  - |
+    # Dump stdin as hex bytes
+    cat | od -tx1
