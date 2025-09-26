@@ -1,0 +1,10 @@
+# dotdot yml file
+name: ".."
+description: "Represents the parent directory"
+examples:
+  - command: "cd .."
+    explanation: "Moves one directory up"
+  - command: "ls ../"
+    explanation: "Lists contents of the parent directory"
+notes:
+  - "Can be chained (../../) to move up multiple levels"
