@@ -1,0 +1,19 @@
+# bin yml file
+name: "/bin"
+description: "Essential binaries (compiled programs) needed to boot and run basic user commands."
+contents:
+  - binary: "bash"
+    purpose: "Command shell interpreter"
+  - binary: "ls"
+    purpose: "Lists directory contents"
+  - binary: "cp"
+    purpose: "Copies files and directories"
+  - binary: "mv"
+    purpose: "Moves or renames files and directories"
+  - binary: "rm"
+    purpose: "Removes files or directories"
+examples:
+  - command: "ls /bin"
+    explanation: "Lists all essential binaries available"
+notes:
+  - "In some distros, /bin is symlinked to /usr/bin."
