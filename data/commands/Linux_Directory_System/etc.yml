@@ -1,0 +1,20 @@
+# etc yml file
+name: "/etc"
+description: "System-wide configuration directory"
+contents:
+  - file: "passwd"
+    purpose: "Stores user account info (not passwords)"
+  - file: "shadow"
+    purpose: "Stores hashed passwords"
+  - file: "hosts"
+    purpose: "Maps hostnames to IP addresses"
+  - file: "fstab"
+    purpose: "Mount filesystems at boot"
+examples:
+  - command: "cat /etc/hostname"
+    explanation: "Display system hostname"
+  - command: "sudo nano /etc/ssh/sshd_config"
+    explanation: "Edit SSH configuration"
+security_notes:
+  - "Back up /etc before making major changes."
+  - "Misconfiguration here can break boot or networking."
