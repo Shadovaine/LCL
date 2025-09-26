@@ -1,0 +1,24 @@
+# more yml file
+name: "more"
+category: "file viewing and editing management"
+description: "Simple pager; forward scrolling only."
+syntax: "more [OPTIONS] [FILE]"
+options:
+  - flag: ["-d"]
+    explains: "Helpful prompts instead of bell."
+  - flag: ["-c"]
+    explains: "Repaint screen from top."
+  - flag: ["-p"]
+    explains: "Clear screen then display text page-by-page."
+  - flag: ["-s"]
+    explains: "Squeeze multiple blank lines."
+  - flag: ["-u"]
+    explains: "Suppress underline/bold."
+  - flag: ["+<NUMBER>"]
+    explains: "Start at line number."
+  - flag: ["+/<pattern>"]
+    explains: "Start at first search match."
+examples:
+  - |
+    # Start at line 20
+    more +20 bigfile.txt
