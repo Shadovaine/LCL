@@ -1,0 +1,15 @@
+# dev yml file
+name: "/dev"
+description: "Device files representing hardware and virtual devices"
+contents:
+  - file: "/dev/null"
+    purpose: "Black hole — discard output"
+  - file: "/dev/zero"
+    purpose: "Infinite stream of zeros"
+  - file: "/dev/random"
+    purpose: "Random data generator"
+  - file: "/dev/sda"
+    purpose: "First hard disk device"
+examples:
+  - command: "sudo dd if=/dev/zero of=/dev/sdb bs=1M"
+    explanation: "Overwrite drive with zeros"
