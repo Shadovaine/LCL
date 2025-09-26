@@ -1,0 +1,52 @@
+# less yml file
+name: "less"
+category: "file viewing and editing management"
+description: "View files one page at a time; supports search, colors, wide files."
+syntax: "less [OPTIONS] [FILE]"
+options:
+  - flag: ["-N"]
+    explains: "Show line numbers."
+  - flag: ["-S"]
+    explains: "Chop long lines (no wrap)."
+  - flag: ["-X"]
+    explains: "Do not clear screen on exit."
+  - flag: ["-F"]
+    explains: "Quit if file fits on one screen."
+  - flag: ["-M"]
+    explains: "Verbose prompt."
+  - flag: ["-m"]
+    explains: "Short prompt."
+  - flag: ["-P <prompt>"]
+    explains: "Custom prompt format."
+  - flag: ["-i"]
+    explains: "Ignore case in searches unless pattern has caps."
+  - flag: ["-I"]
+    explains: "Ignore case in all searches."
+  - flag: ["-G"]
+    explains: "Disable match highlighting."
+  - flag: ["-p <pattern>"]
+    explains: "Start at first match of pattern."
+  - flag: ["-+<opt>"]
+    explains: "Disable an option (e.g., -+i)."
+  - flag: ["-e"]
+    explains: "Quit at end of file."
+  - flag: ["-f"]
+    explains: "Force open non-text/binary."
+  - flag: ["-r"]
+    explains: "Output raw control characters."
+  - flag: ["-R"]
+    explains: "Raw control chars; keep color."
+  - flag: ["-s"]
+    explains: "Squeeze blank lines."
+  - flag: ["-u"]
+    explains: "Suppress underlining."
+  - flag: ["-U"]
+    explains: "Allow underlining."
+  - flag: ["-w"]
+    explains: "Highlight first new line after movement."
+  - flag: ["-# <NUM>"]
+    explains: "Horizontal scroll columns."
+examples:
+  - |
+    # View a wide log without wrapping
+    less -S /var/log/syslog
