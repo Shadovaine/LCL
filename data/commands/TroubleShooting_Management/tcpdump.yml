@@ -1,1 +1,28 @@
 # tcpdump yml file
+name: "tcpdump"
+category: "troubleshooting"
+description: "Capture and analyze network packets."
+syntax: "tcpdump [OPTIONS] [FILTER]"
+options:
+  - flag: ["-i <iface>"]
+    explains: "Capture on interface."
+  - flag: ["-c <count>"]
+    explains: "Stop after N packets."
+  - flag: ["-w <file>"]
+    explains: "Write packets to file."
+  - flag: ["-r <file>"]
+    explains: "Read from capture file."
+  - flag: ["-nn"]
+    explains: "Do not resolve hostnames or ports."
+  - flag: ["-X", "-A", "-xx"]
+    explains: "Print payload in hex/ASCII."
+examples:
+  - |
+    # Capture on eth0
+    sudo tcpdump -i eth0
+  - |
+    # Save to file
+    sudo tcpdump -w cap.pcap -i eth0
+  - |
+    # Read from file
+    tcpdump -r cap.pcap
