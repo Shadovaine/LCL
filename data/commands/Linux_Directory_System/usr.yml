@@ -1,0 +1,16 @@
+# usr yml file
+name: "/usr"
+description: "User system resources (applications and libraries)"
+subdirs:
+  - dir: "/usr/bin"
+    purpose: "Non-essential user commands"
+    examples: ["python3", "git", "nano"]
+  - dir: "/usr/sbin"
+    purpose: "Non-essential admin tools"
+    examples: ["sshd", "iptables"]
+  - dir: "/usr/local/bin"
+    purpose: "Locally installed user-level programs"
+  - dir: "/usr/local/sbin"
+    purpose: "Locally installed admin-only programs"
+notes:
+  - "/usr contains software not needed for boot but used once system is up."
