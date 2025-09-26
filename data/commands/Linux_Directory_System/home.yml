@@ -1,0 +1,15 @@
+# home yml file
+name: "/home"
+description: "Personal directories for all users"
+contents:
+  - file: ".bashrc"
+    purpose: "User shell configuration"
+  - file: ".ssh/"
+    purpose: "SSH keys and configs"
+  - file: ".config/"
+    purpose: "App-specific configuration files"
+examples:
+  - command: "cd /home/jake/Documents"
+    explanation: "Navigate to Jake's Documents folder"
+notes:
+  - "User data and configs stay isolated from system files."
