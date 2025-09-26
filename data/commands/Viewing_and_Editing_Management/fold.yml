@@ -1,0 +1,14 @@
+# fold yml file
+name: "fold"
+category: "file viewing and editing management"
+description: "Wrap long lines to fit terminal width."
+syntax: "fold [OPTIONS] [FILE]"
+options:
+  - flag: ["-w <WIDTH>", "--width=<WIDTH>"]
+    explains: "Max line width."
+  - flag: ["-s", "--spaces"]
+    explains: "Break at spaces (no mid-word splits)."
+examples:
+  - |
+    # Wrap at 40 characters, don’t split words
+    fold -s -w 40 longfile.txt
