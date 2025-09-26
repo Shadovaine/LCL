@@ -1,0 +1,22 @@
+# chage yml file
+name: "chage"
+category: "user_and_group_management"
+description: "Manage password expiration, aging, and inactivity settings."
+syntax: "chage [OPTIONS] USERNAME"
+options:
+  - flag: ["-d", "--lastday DATE"]
+    explains: "Set last password change date."
+  - flag: ["-E", "--expiredate DATE"]
+    explains: "Set account expiration."
+  - flag: ["-I", "--inactive DAYS"]
+    explains: "Days of inactivity before lock."
+  - flag: ["-m", "--mindays DAYS"]
+    explains: "Minimum days between password changes."
+  - flag: ["-M", "--maxdays DAYS"]
+    explains: "Maximum password age."
+  - flag: ["-W", "--warndays DAYS"]
+    explains: "Days before expiration warning."
+examples:
+  - |
+    # Expire account end of 2025
+    sudo chage -E 2025-12-31 name
