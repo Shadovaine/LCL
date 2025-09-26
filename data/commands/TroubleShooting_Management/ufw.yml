@@ -1,0 +1,21 @@
+# ufw yml file
+name: "ufw"
+category: "troubleshooting"
+description: "Simplified firewall management frontend for iptables."
+syntax: "ufw [OPTIONS] [COMMAND]"
+options:
+  - flag: ["enable", "disable"]
+    explains: "Turn firewall on/off."
+  - flag: ["status"]
+    explains: "Show firewall rules."
+  - flag: ["allow <port>"]
+    explains: "Allow traffic to port."
+  - flag: ["deny <port>", "reject <port>"]
+    explains: "Deny traffic or actively reject."
+  - flag: ["limit <service>"]
+    explains: "Rate-limit service to prevent brute-force."
+examples:
+  - |
+    # Allow SSH and enable
+    sudo ufw allow 22/tcp
+    sudo ufw enable
