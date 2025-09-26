@@ -1,0 +1,10 @@
+# groupdel yml file
+name: "groupdel"
+category: "user_and_group_management"
+description: "Delete groups from the system (removes entry in /etc/group)."
+syntax: "groupdel GROUP"
+options: []
+examples:
+  - |
+    # Delete group
+    sudo groupdel testers
