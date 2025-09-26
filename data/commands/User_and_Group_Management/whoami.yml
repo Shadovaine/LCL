@@ -1,0 +1,10 @@
+# whoami yml file
+name: "whoami"
+category: "user_and_group_management"
+description: "Displays current effective username."
+syntax: "whoami"
+options: []
+examples:
+  - |
+    # Show current username
+    whoami
