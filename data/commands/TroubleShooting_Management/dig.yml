@@ -1,0 +1,21 @@
+# dig yml file
+name: "dig"
+category: "troubleshooting"
+description: "Query DNS records (modern, script-friendly)."
+syntax: "dig [@server] [name] [type] [options]"
+options:
+  - flag: ["+short"]
+    explains: "Minimal output."
+  - flag: ["+trace"]
+    explains: "Trace delegation from root."
+  - flag: ["+dnssec"]
+    explains: "Request DNSSEC info."
+  - flag: ["-t <type>"]
+    explains: "Query specific record type (A, MX, etc.)."
+examples:
+  - |
+    # Quick IP lookup
+    dig +short example.com
+  - |
+    # Trace DNS delegation
+    dig example.com +trace
