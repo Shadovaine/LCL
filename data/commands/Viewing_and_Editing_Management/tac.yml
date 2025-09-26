@@ -1,0 +1,16 @@
+# tac yml file
+name: "tac"
+category: "file viewing and editing management"
+description: "Print files in reverse (last line first)."
+syntax: "tac [OPTIONS] [FILE...]"
+options:
+  - flag: ["-b"]
+    explains: "Attach separator before."
+  - flag: ["-r"]
+    explains: "Treat separator as regex (use with -s)."
+  - flag: ["-s <sep>"]
+    explains: "Use custom separator instead of newline."
+examples:
+  - |
+    # Reverse a file line-by-line
+    tac notes.txt
