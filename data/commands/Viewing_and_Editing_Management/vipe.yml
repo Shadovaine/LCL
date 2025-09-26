@@ -1,0 +1,15 @@
+# vipe yml file
+name: "vipe"
+category: "file viewing and editing management"
+description: "Edit stdin in your $EDITOR within a pipeline, then pass edited content onward."
+syntax: "[producer] | vipe | [consumer]"
+options:
+  - flag: ["(none)"]
+    explains: "Uses $EDITOR; set EDITOR for the session if needed."
+examples:
+  - |
+    # Interactively edit pipeline text before saving
+    echo "Note to self..." | vipe > notes.txt
+  - |
+    # Pause-and-edit in the middle of a pipeline
+    cat /etc/passwd | vipe | grep bash
