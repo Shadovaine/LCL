@@ -1,0 +1,18 @@
+# getent yml file
+name: "getent"
+category: "user_and_group_management"
+description: "Query system databases (passwd, group, hosts, etc.)."
+syntax: "getent DATABASE [KEY...]"
+options:
+  - flag: ["passwd"]
+    explains: "List users."
+  - flag: ["group"]
+    explains: "List groups."
+  - flag: ["hosts"]
+    explains: "Query hostnames."
+  - flag: ["services"]
+    explains: "Query services."
+examples:
+  - |
+    # List all groups
+    getent group
