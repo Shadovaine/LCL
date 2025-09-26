@@ -1,0 +1,18 @@
+# deluser yml file
+name: "deluser"
+category: "user_and_group_management"
+description: "Interactive account removal tool (extended version of userdel)."
+syntax: "deluser [OPTIONS] USERNAME [GROUP]"
+options:
+  - flag: ["--remove-home"]
+    explains: "Delete home directory."
+  - flag: ["--remove-all-files"]
+    explains: "Remove all user files."
+  - flag: ["--backup"]
+    explains: "Backup files before deletion."
+  - flag: ["--system"]
+    explains: "Remove a system account."
+examples:
+  - |
+    # Remove user and home
+    sudo deluser --remove-home name
