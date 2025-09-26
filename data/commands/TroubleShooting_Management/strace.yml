@@ -1,1 +1,39 @@
 # strace yml file
+name: "strace"
+category: "troubleshooting"
+description: "Trace system calls and signals made by a process."
+syntax: "strace [OPTIONS] COMMAND [args...]"
+options:
+  - flag: ["-o <FILE>"]
+    explains: "Write trace output to a file."
+  - flag: ["-p <PID>"]
+    explains: "Attach to an already running process."
+  - flag: ["-c"]
+    explains: "Count syscalls."
+  - flag: ["-f"]
+    explains: "Follow forks."
+  - flag: ["-ff"]
+    explains: "Follow forks, write separate files."
+  - flag: ["-t", "-tt", "-ttt"]
+    explains: "Add timestamps (seconds, microseconds, epoch)."
+  - flag: ["-T"]
+    explains: "Show syscall time."
+  - flag: ["-r"]
+    explains: "Relative timestamps."
+  - flag: ["-i"]
+    explains: "Show syscall instruction pointer."
+  - flag: ["-k"]
+    explains: "Print kernel stack trace for each syscall."
+  - flag: ["-e trace=<set>"]
+    explains: "Trace only specified sets (file, network, process, etc.)."
+examples:
+  - |
+    # Trace a command
+    strace ls
+  - |
+    # Attach to PID
+    sudo strace -p 1234
+  - |
+    # Trace only open syscalls
+    strace -e trace=open ls
+
