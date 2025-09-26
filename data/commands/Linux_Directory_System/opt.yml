@@ -1,0 +1,12 @@
+# opt yml file
+name: "/opt"
+description: "Optional, third-party or custom software packages"
+examples:
+  - dir: "/opt/google/"
+    purpose: "Google Chrome installation"
+  - dir: "/opt/vmware/"
+    purpose: "VMware Workstation"
+  - dir: "/opt/myapp/"
+    purpose: "Custom manually installed app"
+notes:
+  - "Keeps third-party software isolated from system directories."
