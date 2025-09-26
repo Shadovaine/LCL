@@ -1,0 +1,26 @@
+# adduser yml file
+name: "adduser"
+category: "user_and_group_management"
+description: "Frontend shell script for useradd. Interactive and user-friendly."
+syntax: "adduser [OPTIONS] USERNAME"
+options:
+  - flag: ["--home DIR"]
+    explains: "Custom home directory."
+  - flag: ["--shell SHELL"]
+    explains: "Choose login shell."
+  - flag: ["--uid UID"]
+    explains: "Set custom UID."
+  - flag: ["--gid GID"]
+    explains: "Set primary GID."
+  - flag: ["--ingroup GROUP"]
+    explains: "Put user in a specific group."
+  - flag: ["--system"]
+    explains: "Create system account."
+  - flag: ["--disabled-password"]
+    explains: "Account with no usable password."
+  - flag: ["--disabled-login"]
+    explains: "Account disabled for login."
+examples:
+  - |
+    # Create dev01 with bash shell and dev group
+    sudo adduser --shell /bin/bash --ingroup devs dev01
