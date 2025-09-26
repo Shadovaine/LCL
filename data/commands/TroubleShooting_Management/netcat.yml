@@ -1,0 +1,26 @@
+# nc yml file
+name: "nc"
+category: "troubleshooting"
+description: "Read/write data across TCP or UDP connections."
+syntax: "nc [OPTIONS] HOST PORT"
+options:
+  - flag: ["-l"]
+    explains: "Listen mode."
+  - flag: ["-v", "-vv"]
+    explains: "Verbose output."
+  - flag: ["-u"]
+    explains: "Use UDP."
+  - flag: ["-z"]
+    explains: "Zero-I/O (port scanning)."
+  - flag: ["-p <port>"]
+    explains: "Source port."
+examples:
+  - |
+    # Listen on port 1234
+    nc -l 1234
+  - |
+    # Simple client
+    nc 192.168.1.1 1234
+  - |
+    # Quick port scan
+    nc -zv 192.168.1.1 20-80
