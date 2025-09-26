@@ -1,0 +1,14 @@
+# head yml file
+name: "head"
+category: "file viewing and editing management"
+description: "Output the beginning of files (default: first 10 lines)."
+syntax: "head [OPTIONS] [FILE]"
+options:
+  - flag: ["-n <NUM>", "--lines=<NUM>"]
+    explains: "Show first NUM lines."
+  - flag: ["-c <NUM>", "--bytes=<NUM>"]
+    explains: "Show first NUM bytes."
+examples:
+  - |
+    # First 5 lines
+    head -n 5 myfile.txt
