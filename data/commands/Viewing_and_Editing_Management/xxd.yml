@@ -1,0 +1,31 @@
+# xxd yml file
+name: "xxd"
+category: "file viewing and editing management"
+description: "Create hexdumps (and reverse them back to binary)."
+syntax: "xxd [OPTIONS] [FILE] [OUTFILE]"
+options:
+  - flag: ["-p"]
+    explains: "Plain hexdump (no addresses/ASCII)."
+  - flag: ["-r"]
+    explains: "Reverse: hex to binary."
+  - flag: ["-c <cols>"]
+    explains: "Bytes per line."
+  - flag: ["-g <bytes>"]
+    explains: "Group bytes."
+  - flag: ["-s <offset>"]
+    explains: "Start at offset (decimal or hex)."
+  - flag: ["-l <length>"]
+    explains: "Limit output length."
+  - flag: ["-u"]
+    explains: "Uppercase hex."
+  - flag: ["-i"]
+    explains: "Output as C include array."
+  - flag: ["-e"]
+    explains: "Little-endian dump."
+examples:
+  - |
+    # First 64 bytes of a file
+    xxd -l 64 myfile
+  - |
+    # Reverse a plain hexdump back to binary
+    xxd -r -p dump.hex > recovered.bin
