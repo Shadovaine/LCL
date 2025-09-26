@@ -1,0 +1,8 @@
+# bang yml file
+name: "!"
+description: "Negates a character set inside []"
+examples:
+  - command: "ls file[!a-c].txt"
+    explanation: "Lists files that do not end with a, b, or c"
+notes:
+  - "Shell-specific behavior: in zsh with EXTENDED_GLOB, use [^...] for negation"
