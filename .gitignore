@@ -1,0 +1,35 @@
+# Python cache / bytecode
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# Virtual environments
+.venv/
+env/
+venv/
+ENV/
+
+# Build / packaging
+build/
+dist/
+*.egg-info/
+*.spec
+
+# Logs / reports
+*.log
+*.out
+*.tmp
+
+# OS cruft
+.DS_Store
+Thumbs.db
+
+# IDE / editor junk
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Project specific
+app/progress.json   # your quiz/progress tracking file
