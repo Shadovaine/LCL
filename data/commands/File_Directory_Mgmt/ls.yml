@@ -30,7 +30,7 @@ options:
     explains: Sort by file sizes. 
   - flag: ["-A"]
     explains: Show all files except `.` and `..` 
-  -flag: ["-d"]
+  - flag: ["-d"]
     explains: List directories themselves.
   - flag: ["-F"]
     explains: Append '/' to directories, '*' to executables, `@` to symlinks.
