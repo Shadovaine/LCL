@@ -24,7 +24,7 @@ options:
   - flag: ["-l"]
     explains: List filenames only.
   - flag: ["-S"]
-    explains: Smart case: case-insensitive unless the pattern has upper case letters.
+    explains: Smart case case-insensitive unless the pattern has upper case letters.
   - flag: ["-e <pattern>"]
     explains: Explicitly specific a search pattern.
     arg:
