@@ -29,9 +29,9 @@ options:
   - flag: ["rc:<name>=<value>"]
     explains: Temporarily override config settings.
   - flag: ["+<tag>"]
-    explains: Filter: has this tag.
+    explains: Filter has this tag.
   - flag: ["-<tag>"]
-    explains: Filter: Does not have this tag.
+    explains: Filter Does not have this tag.
   - flag: ["add"]
     explains: Add a new task.
   - flag: ["list"]
