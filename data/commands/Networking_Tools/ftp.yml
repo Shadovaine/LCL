@@ -44,7 +44,7 @@ examples:
   - <<ftp ftp.example.com>
   - <<ftp -p ftp.example.com>
   - <<ftp -i ftp.example.com>
-  = <<ftp -n ftp.example.com>
+  - <<ftp -n ftp.example.com>
   - <<ftp -g ftp.example.com>
   - <<ftp -v ftp.example.com>
   - <<ftp -d ftp.example.com>
