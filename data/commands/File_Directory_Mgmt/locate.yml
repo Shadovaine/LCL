@@ -27,7 +27,7 @@ options:
     arg:
       name: NUM      # the placeholder name for the argument
       required: true # true if mandatory, false if optional
-  - flag: ["-r REGEX
+  - flag: ["-r REGEX"]
     explains: Interpret PATTERN as a regular expression
   - flag: ["-w"]
     explains: Match only whole words
