@@ -1,0 +1,39 @@
+name: "systemd-analyze"
+category: "system information and monitoring management"
+description: "Analyze and debug system boot performance, service timings, and critical chain dependencies in a systemd-based Linux system."
+syntax: "systemd-analyze [COMMAND] [OPTIONS]"
+options:
+  - flag: ["time"]
+    explains: "Show how long the kernel, initrd, and userspace took during boot."
+  - flag: ["blame"]
+    explains: "List all running units ordered by the time they took to initialize."
+  - flag: ["critical-chain [UNIT]"]
+    explains: "Show which services were critical to the boot process and their dependencies."
+  - flag: ["plot"]
+    explains: "Generate an SVG graphic showing service startup timeline."
+  - flag: ["dot"]
+    explains: "Generate dependency graph in DOT format for Graphviz."
+  - flag: ["dump"]
+    explains: "Show internal state of systemd manager for debugging."
+  - flag: ["unit-paths"]
+    explains: "Print search paths for units."
+  - flag: ["exit-status"]
+    explains: "Print exit status of failed services."
+  - flag: ["verify <FILE>..."]
+    explains: "Check unit files for correctness."
+examples:
+  - |
+    # Show overall boot time
+    systemd-analyze time
+  - |
+    # Show slowest services
+    systemd-analyze blame
+  - |
+    # Show boot critical path
+    systemd-analyze critical-chain
+  - |
+    # Export boot performance graph
+    systemd-analyze plot > boot.svg
+  - |
+    # Verify correctness of unit files
+    systemd-analyze verify /etc/systemd/system/*.service
