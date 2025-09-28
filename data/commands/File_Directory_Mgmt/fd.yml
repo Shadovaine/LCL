@@ -31,7 +31,7 @@ options:
       name: TYPE     # the placeholder name for the argument
       required: true # true if mandatory, false if optional
   - flag: ["-I"]
-      explains: Include Ignore files in the search results
+    explains: Include Ignore files in the search results
   - flag: ["-u"]
     explains: Include hidden files in the search results
   - flag: ["-e <EXTENSION>"]
