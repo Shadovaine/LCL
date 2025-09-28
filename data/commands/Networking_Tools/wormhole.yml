@@ -33,4 +33,4 @@ options:
 examples:
   - wormhole send myfile.txt
   - wormhole receive 7-crimson-swan
-  = wormhole send myfolder | wormhole receive 7-crimson-swan  > received_folder
+  - wormhole send myfolder | wormhole receive 7-crimson-swan  > received_folder
