@@ -9,7 +9,7 @@ name: unp
 category: Archiving_and_Compression_Management
 
 # One-Line description of what the command does
-description: Smart extractor for multiple compressed file formats. Supported formats: .zip, .tar, .gz, .bz2, .7z, .rar, etc
+description: "Smart extractor for multiple compressed file formats. Supported formats: .zip, .tar, .gz, .bz2, .7z, .rar, etc."
 
 # General syntax of the command
 syntax: unp [Options] [archive1] [archive2...]
