@@ -46,7 +46,7 @@ options:
         example: "echo -e '\\Hello\\'"
       - sequence: "\c"
         meaning: "Suppress further output"
-        example: "echo -e \cHello'"
+        example: "echo -e '\cHello'"
   - flag: ["-E"]
     explains: Disable interpretation of escape sequence. 
     
