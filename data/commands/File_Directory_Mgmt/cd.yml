@@ -28,7 +28,7 @@ options:
     explains: Change to the previous directory
   - flag: ["cd .."]
     explains: Change to the parent directory
-  - flag: ["cd /path/to/directory
+  - flag: ["cd /path/to/directory"]
     explains: Change to the specified absolute path
   - flag: ["cd ../.."]
     explains: Change to the grandparent directory
