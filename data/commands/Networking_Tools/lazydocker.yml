@@ -1,0 +1,31 @@
+command: lazydocker
+description: >
+  A simple terminal UI for both Docker and Docker Compose.  
+  Provides an interactive interface for managing containers, images, volumes, and logs.
+usage: |
+  lazydocker
+options:
+  - flag: "--version"
+    description: Show version information
+    example: "lazydocker --version"
+  - flag: "--config"
+    description: Specify an alternate config directory
+    example: "lazydocker --config ~/.config/lazydocker"
+  - flag: "--debug"
+    description: Enable debug mode
+    example: "lazydocker --debug"
+examples:
+  - description: Launch LazyDocker in the current shell
+    command: "lazydocker"
+  - description: Run LazyDocker with debug output
+    command: "lazydocker --debug"
+  - description: Run LazyDocker with a custom config directory
+    command: "lazydocker --config ~/my-docker-config"
+notes: |
+  - Requires Docker and/or Docker Compose installed and running.
+  - Useful for visualizing logs, monitoring container health, restarting services,
+    and cleaning up resources without typing long docker commands.
+related_commands:
+  - "docker"
+  - "docker-compose"
+category: "Container Management"
