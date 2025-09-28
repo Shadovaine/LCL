@@ -58,10 +58,10 @@ options:
   - flag: ["-u"]
     explains: Move job up in queue.
   - flag: ["-w <ID>"]
-    Wait for job to finish.
+    explains: Wait for job to finish.
     arg:
       name: pattern
-      required:
+      required: true
   - flag: ["-o <ID>"]
     explains: Shows output file path.
     arg:
