@@ -36,12 +36,12 @@ options:
         - p: named pipe (FIFO)
         - s: socket
   - flag: ["-size"]
-    explains: "Filter files by size. Use [+|-]N[unit]: +N = greater than, -N = less than, N = exactly.""
+    explains: "Filter files by size. Use [+|-]N[unit]: +N = greater than, -N = less than, N = exactly."
     arg:
       name: size
       required: true
   - flag: ["-size"]
-    explains: "Filter files by size. Use [+|-]N[unit]: +N = greater than, -N = less than, N = exactly.""
+    explains: "Filter files by size. Use [+|-]N[unit]: +N = greater than, -N = less than, N = exactly."
     arg:
       name: size
       required: true
