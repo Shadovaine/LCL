@@ -25,10 +25,10 @@ options:
     escape_sequences:
       - sequence: "\n"
         meaning: "New line"
-        example: "echo -e 'Hello\\nWorld'"
+        example: "echo -e 'Hello\nWorld'"
       - sequence: "\t"
         meaning: "Horizontal tab"
-        example: "echo -e 'Column1\\tColumn2'"
+        example: "echo -e 'Column1\tColumn2'"
       - sequence: "\v"
         meaning: "Vertical tab"
         example: "echo -e 'Row1\\vRow2'"
@@ -43,10 +43,7 @@ options:
         example: "echo -e '\aHello'"
       - sequence: "\\"
         meaning: "Backslash"
-        example: "echo -e '\\Hello\\'"
-      - sequence: "\c"
-        meaning: "Suppress further output"
-        example: "echo -e '\cHello'"
+        example: "echo -e '\\Hello\\'"     
   - flag: ["-E"]
     explains: Disable interpretation of escape sequence. 
     
@@ -54,5 +51,6 @@ options:
 examples:
   - echo -n "back up"
   - echo -e "back\nup"
+  
   
   
