@@ -67,7 +67,7 @@ examples:
   - fzf --nth 2,3 --delimiter ":" --multi-select
   - fzf --no-sort --no-mouse --preview "bat --style=numbers --color=always {}"
   - fzf --query "error" --preview "tail -n 100 {}"  
-- fzf --query "log" --preview "head -n 50 {}"
+  - fzf --query "log" --preview "head -n 50 {}"
   - fzf --query "config" --preview "cat {} | grep 'setting'"
   - fzf --query "data" --preview "jq '.' {}"
   - fzf --query "image" --preview "imgcat {}"
