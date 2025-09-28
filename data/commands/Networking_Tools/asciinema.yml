@@ -1,0 +1,38 @@
+name: "asciinema"
+category: "file viewing and editing management"
+description: "Record and share terminal sessions as lightweight text-based casts (not videos). Useful for tutorials, demos, and reproducing command-line work."
+syntax: "asciinema [COMMAND] [OPTIONS]"
+options:
+  - flag: ["rec [FILE]"]
+    explains: "Start recording. Save to local FILE or upload if no file given."
+  - flag: ["play <FILE/URL>"]
+    explains: "Replay a recorded cast from local file or URL."
+  - flag: ["upload <FILE>"]
+    explains: "Upload existing recording to asciinema.org."
+  - flag: ["cat <FILE>"]
+    explains: "Print recording to stdout (for piping/processing)."
+  - flag: ["auth"]
+    explains: "Authenticate with asciinema.org (link local install to your account)."
+  - flag: ["--stdin"]
+    explains: "Capture stdin as well."
+  - flag: ["--cols <N>", "--rows <N>"]
+    explains: "Force terminal size for recording."
+  - flag: ["--command <CMD>"]
+    explains: "Run a specific command inside the recording instead of default shell."
+  - flag: ["--raw"]
+    explains: "Record unprocessed stream (low-level, not typical)."
+  - flag: ["--overwrite"]
+    explains: "Overwrite output file if it exists."
+examples:
+  - |
+    # Record a terminal session and upload
+    asciinema rec
+  - |
+    # Record and save locally
+    asciinema rec demo.cast
+  - |
+    # Play back a session
+    asciinema play demo.cast
+  - |
+    # Record running only 'htop'
+    asciinema rec -c htop
