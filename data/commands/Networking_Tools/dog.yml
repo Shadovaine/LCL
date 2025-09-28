@@ -49,14 +49,14 @@ examples:
   - dog -q example.com -t A
   - dog -q example.com -s
   - dog -q example.com -t AAAA -4
-  = dog -q example.com -t CNAME > output.txt
-  = dog -q example.com -t MX | grep mail
+  - dog -q example.com -t CNAME > output.txt
+  - dog -q example.com -t MX | grep mail
   - dog -q example.com -p 5353
   - dog -q example.com -t TXT -6
-  = dog -q example.com -t NS >> dns_records.txt
-  = dog -q example.com -t A | sort
+  - dog -q example.com -t NS >> dns_records.txt
+  - dog -q example.com -t A | sort
   - dog -q example.com -t SOA
   - dog -q example.com -t PTR
   - dog -q example.com -t SRV
   - dog -q example.com -t CAA
-  = dog -q example.com -t A -s 8.8.8.8
+  - dog -q example.com -t A -s 8.8.8.8
