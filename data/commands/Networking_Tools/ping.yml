@@ -43,7 +43,7 @@ options:
       required: true
   - flag: ["-4"]
     explains: Force IPv4 ping 
-  - flag" ["-6"]
+  - flag: ["-6"]
     explains: Force IPv6 ping 
 
 # Examples: List of example usages
