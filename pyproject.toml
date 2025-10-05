@@ -1,23 +1,37 @@
-[project]
-name = "lcl"
-version = "0.1.0"
-requires-python = ">=3.10"
-dependencies = [
-  "typer>=0.12.3", 
-  "pyyaml>=6.0.1", 
-  "rich>=13.7.1"
-]
-
-[project.scripts]
-# Typer app object named 'app' in app/cli/main.py
-lcl = "app.cli.main:app"
-
 [build-system]
 requires = ["setuptools>=68", "wheel"]
 build-backend = "setuptools.build_meta"
 
-[tool.setuptools]
-package-dir = {"" = "."}
+[project]
+name = "linux-command-library"
+version = "0.3.0"
+description = "Interactive Linux Command Library TUI"
+readme = "README.md"
+requires-python = ">=3.10"
 
+# PEP 621 wants a list of author tables
+authors = [{ name = "ShadoVaine", email = "shado.sec@proton.me" }]
+
+# Pin Textual a bit to match your older API (no show_key_bindings kwarg)
+dependencies = [
+  "textual>=0.35,<0.50",
+  "rapidfuzz>=3.0.0",
+  "watchdog>=3.0.0"
+]
+
+# This creates the 'lcl' command that calls app/app.py:main()
+[project.scripts]
+lcl = "app.app:main"
+
+# Let setuptools discover packages under the project root
 [tool.setuptools.packages.find]
 where = ["."]
+include = ["app*"]
+
+# Include your non-Python assets if you ship them (adjust paths as needed)
+[tool.setuptools.package-data]
+"app" = [
+  "data/commands/**/*.yml",
+  "templates/**/*.yml",
+  ".exports/*.md"
+]
