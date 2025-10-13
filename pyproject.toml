@@ -14,7 +14,7 @@ authors = [{ name = "ShadoVaine", email = "shado.sec@proton.me" }]
 
 # Pin Textual a bit to match your older API (no show_key_bindings kwarg)
 dependencies = [
-  "textual>=0.35,<0.50",
+  "textual>=0.69.0",
   "rapidfuzz>=3.0.0",
   "watchdog>=3.0.0"
 ]
