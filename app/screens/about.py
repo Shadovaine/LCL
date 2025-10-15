@@ -1,57 +1,97 @@
 #==================================================
-# ABOUT_MD, keys_markdown, AboutScreen
+# ABOUT_MD, AboutScreen
 #==================================================
 
 from __future__ import annotations
 
-#--------------------Textual UI IMPORTS--------------
 from textual.app import ComposeResult
-from textual.screen import ModalScreen
-from textual.widgets import Button, Markdown
+from textual.screen import ModalScreen  # Make sure this is ModalScreen, not Screen
+from textual.widgets import Static, Button, Markdown
+from textual.containers import Vertical, Center, Middle
 
-#--------------------ABOUT_MD-------------------
-ABOUT_MD = """
-# Linux Command Library — About
+class AboutScreen(ModalScreen[None]):  # Must be ModalScreen
+    """About screen with application information."""
 
-I built *Linux Command Library* to transform a static cheatsheet into a living, interactive way to learn Bash.
-I am ShadoVaine, and my goal was to create a TUI (Text User Interface) that runs directly inside a Bash terminal.
-The Library contains over 180 Linux commands, all organized by category. Users can search by name, category, description,
- or even by specific options.
-As I worked to become more proficient in Linux, I wanted to create a resource that would help others learn alongside me.
-My hope is that the Linux Command Library supports you on your own journey.
+    CSS = """
+    AboutScreen {
+        align: center middle;
+        background: rgba(0, 0, 0, 0.8);  # Semi-transparent overlay
+    }
+    
+    #about_container {
+        width: 70;
+        height: 25;
+        border: round $accent;
+        padding: 2;
+        background: $surface;
+    }
+    
+    #about_title {
+        text-align: center;
+        text-style: bold;
+        color: $accent;
+        margin: 0 0 1 0;
+        height: 1;
+    }
+    
+    #about_content {
+        height: 1fr;
+        overflow-y: auto;
+        padding: 1;
+        border: round $primary;
+        background: $background;
+    }
+    
+    .close_button {
+        width: 20;
+        margin: 1 0 0 0;
+    }
+    """
 
-## What it does
-- Curated commands organized by category
-- Examples, usage/syntax, options (with meanings)
-- Fast fuzzy search
-- Add new commands with a form
+    BINDINGS = [
+        ("escape", "close", "ESC: close"),
+        ("q", "close", "q: close"),
+    ]
 
-
-## Keys
-{keys_md}
-
-*Remain curious. Learn daily.*
-"""
-
-#-------------------_keys_markdown-------------------
-def _keys_markdown(app: "CommandApp") -> str:
-    lines = []
-    for key, action, desc in app.BINDINGS:
-        if key and desc:
-            lines.append(f"- `{key}` — {desc}")
-    return "\n".join(lines)
-
-#-------------------AboutScreen-------------------
-class AboutScreen(ModalScreen[None]):
     def compose(self) -> ComposeResult:
-        text = ABOUT_MD.replace("{keys_md}", _keys_markdown(self.app))
-        try:
-            yield Markdown(text, show_table_of_contents=False)
-        except TypeError:
-            # Older Textual: Markdown widget doesn’t accept show_table_of_contents
-            yield Markdown(text)
-        yield Button("close", id="about_close")
+        """Compose the about screen."""
+        about_text = """
+# Linux Command Library
 
-    def on_button_pressed(self, ev: Button.Pressed):
-        if (ev.button.id or "") == "about_close":
+**Version:** 2.0  
+A comprehensive command reference tool for Linux users
+
+## 🚀 FEATURES
+• 500+ Linux commands organized by category
+• Detailed explanations and usage examples
+• Fast search and navigation interface
+• Clean, responsive TUI design
+
+## 📚 CATEGORIES
+• File & Directory Management
+• System Administration
+• Network & Security Tools
+• And many more...
+
+## 💡 PURPOSE
+Created to help Linux users quickly find command syntax,
+options, and real-world examples.
+
+Enjoy exploring Linux commands! 🐧
+        """
+
+        with Center():
+            with Middle():
+                with Vertical(id="about_container"):
+                    yield Static("About", id="about_title")
+                    yield Markdown(about_text.strip(), id="about_content")
+                    yield Button("Close", id="close_btn", classes="close_button")
+
+    def on_button_pressed(self, event: Button.Pressed) -> None:
+        """Handle button press."""
+        if event.button.id == "close_btn":
             self.dismiss(None)
+
+    def action_close(self) -> None:
+        """Close the about screen."""
+        self.dismiss(None)

@@ -10,24 +10,27 @@ from typing import Any, Dict
 # ======================================================================================
 # CATEGORY WHITELIST
 # ======================================================================================
-STRICT_CATEGORIES = False
-ALLOWED_CATEGORIES = {
-    "Archive_Compression_Mgmt",
-    "File_Directory_Mgmt",
-    "Hardware_Kernel_Tools",
-    "Linux_Directory_System",
-    "Networking_Tools",
-    "Package_Management",
-    "Permission_and_Ownership",
-    "Process_Management",
-    "Searching_and_Filtering_Management",
+# STRICT_CATEGORIES = False
+ALLOWED_CATEGORIES = [
+    "File_and_Directory_Management",
+    "Archive_Compression_Management", 
     "System_Administration",
-    "System_Information_and_Monitoring_Management",
-    "TroubleShooting_Management",
-    "User_and_Group_Management",
-    "Viewing_and_Editing_Management",
-    "WildCards",
-}
+    "Network_Security",
+    "Process_Management",
+    "Text_Processing",
+    "Package_Management",
+    "Hardware_Information",
+    "User_Management",
+    "Disk_Management",
+    "Environment_Variables",
+    "Job_Control",
+    "Remote_Access",
+    "Development_Tools",
+    "Monitoring_Performance"
+]
+
+# For backwards compatibility
+STRICT_CATEGORIES = ALLOWED_CATEGORIES
 
 #-------------------------------------------------------
 CommandDoc = Dict[str, Any]

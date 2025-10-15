@@ -335,6 +335,20 @@ class CommandApp(App):
             )
             details_content.mount(error_box)
 
+    @property
+    def is_admin(self) -> bool:
+        """Check if user has admin privileges."""
+        from .config import is_admin
+        return is_admin()
+
+    def reload_from_disk(self) -> None:
+        """Reload commands from disk - alias for load_data."""
+        self.load_data()
+
+    async def load_commands(self) -> None:
+        """Async version of load_data for compatibility."""
+        self.load_data()
+
 
 #=========================================================
 # Entry Point

@@ -4,33 +4,103 @@
 
 from __future__ import annotations
 
-#--------------------Textual UI IMPORTS--------------------
 from textual.app import ComposeResult
-from textual.screen import ModalScreen
-from textual.widgets import Button, Markdown
+from textual.screen import ModalScreen  # Change from Screen to ModalScreen
+from textual.widgets import Static, Button, Markdown
+from textual.containers import Vertical, Center, Middle
 
-#--------------------ABOUT_MD------------------------------
+# Your help content
 HELP_MD = """
-# Help
+# Linux Command Library Help
 
-**Search**
-- Type in the box then press **Enter** to filter
-- Results grouped by category; ↑/↓ to move, Enter to show details
+## NAVIGATION
+• Use arrow keys to navigate through commands in the left panel
+• Press **Enter** on a command to view detailed information
+• Use the scroll bars to browse through options and examples
 
-**Common Keys**
-- `/` focus search, `m` menu, `q` quit, `esc` clear search
+## SEARCH
+• Type in the search box to find commands
+• Exact matches appear first, followed by partial matches
+• Search works on command names and descriptions
+
+## KEYBOARD SHORTCUTS
+• **m**: Open the main menu
+• **r**: Reload command data from files
+• **q**: Quit the application
+• **ESC**: Go back to previous screen
+
+## DETAILS PANEL
+The right panel shows comprehensive information:
+• **Command Name**: The actual command
+• **Category**: Which category the command belongs to
+• **Description**: What the command does
+• **Options**: Available flags with explanations (scrollable)
+• **Examples**: Real usage examples (scrollable)
+
+## TIPS
+• Commands are organized by categories like File Management, System Administration, etc.
+• Each command includes practical examples you can copy and use
+• Use the scroll bars in the Details panel to see all options
 """
 
-#--------------------HelpScreen---------------------------
-class HelpScreen(ModalScreen[None]):
-    def compose(self) -> ComposeResult:
-        try:
-            yield Markdown(HELP_MD, show_table_of_contents=False)
-        except TypeError:
-            # Older Textual: Markdown widget doesn’t accept show_table_of_contents
-            yield Markdown(HELP_MD)
-        yield Button("close", id="help_close")
+class HelpScreen(ModalScreen[None]):  # Change to ModalScreen
+    """Help screen with usage instructions."""
 
-    def on_button_pressed(self, ev: Button.Pressed):
-        if (ev.button.id or "") == "help_close":
+    CSS = """
+    HelpScreen {
+        align: center middle;
+        background: rgba(0, 0, 0, 0.8);  # Semi-transparent overlay
+    }
+    
+    #help_container {
+        width: 80;
+        height: 30;
+        border: round $accent;
+        padding: 2;
+        background: $surface;
+    }
+    
+    #help_title {
+        text-align: center;
+        text-style: bold;
+        color: $accent;
+        margin: 0 0 1 0;
+        height: 1;
+    }
+    
+    #help_content {
+        height: 1fr;
+        overflow-y: auto;
+        padding: 1;
+        border: round $primary;
+        background: $background;
+    }
+    
+    .close_button {
+        width: 20;
+        margin: 1 0 0 0;
+    }
+    """
+
+    BINDINGS = [
+        ("escape", "close", "ESC: close"),
+        ("q", "close", "q: close"),
+    ]
+
+    def compose(self) -> ComposeResult:
+        """Compose the help screen."""
+        with Center():
+            with Middle():
+                with Vertical(id="help_container"):
+                    yield Static("Help", id="help_title")
+                    yield Markdown(HELP_MD, id="help_content")
+                    yield Button("Close", id="close_btn", classes="close_button")
+
+    def on_button_pressed(self, event: Button.Pressed) -> None:
+        """Handle button press."""
+        if event.button.id == "close_btn":
             self.dismiss(None)
+
+    def action_close(self) -> None:
+        """Close the help screen."""
+        self.dismiss(None)
