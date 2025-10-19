@@ -10,11 +10,11 @@ options:
     explains: "Show inode usage."
   - flag: ["-a"]
     explains: "Include pseudo/duplicate/unreachable filesystems."
-  - flag: ["-k","-m","-B <size>"]
+  - flag: ["-k","-m","-B size"]
     explains: "Block size control."
   - flag: ["-l"]
     explains: "Local filesystems only."
-  - flag: ["-t <type>"]
+  - flag: ["-t type"]
     explains: "Only include given FS type."
   - flag: ["-T"]
     explains: "Print filesystem type."

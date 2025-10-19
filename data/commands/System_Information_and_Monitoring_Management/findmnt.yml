@@ -8,11 +8,11 @@ options:
     explains: "Show current mount tree."
   - flag: ["-l"]
     explains: "List view."
-  - flag: ["-t <type>"]
+  - flag: ["-t type"]
     explains: "Filter by filesystem type."
-  - flag: ["-x <type>"]
+  - flag: ["-x type"]
     explains: "Exclude filesystem type."
-  - flag: ["-o <columns>"]
+  - flag: ["-o columns"]
     explains: "Select output columns."
   - flag: ["-J"]
     explains: "JSON output."

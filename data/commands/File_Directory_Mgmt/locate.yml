@@ -19,38 +19,38 @@ syntax: locate [OPTIONS]... PATTERN...
 # Optional: add "arg" if the optin expects a value
 options:
   - flag: ["-i", "--ignore-case"]
-    explains: Ignore case distinctions
+    explains: "Ignore case distinctions
   - flag: ["-c"]
-    explains: Only print the count of matching entries
+    explains: "Only print the count of matching entries
   - flag: ["-n NUM"]
-    explains: Limit the number of results to NUM
+    explains: "Limit the number of results to NUM
     arg:
       name: NUM      # the placeholder name for the argument
       required: true # true if mandatory, false if optional
   - flag: ["-r REGEX"]
-    explains: Interpret PATTERN as a regular expression
+    explains: "Interpret PATTERN as a regular expression
   - flag: ["-w"]
-    explains: Match only whole words
+    explains: "Match only whole words
   - flag: ["-b"]
-    explains: Match only the base name of the file
+    explains: "Match only the base name of the file
   - flag: ["-l NUM"]
-    explains: Limit the number of results to NUM
+    explains: "Limit the number of results to NUM
     arg:
       name: number
       required: true
   - flag: ["-0"]
-    explains: Output results to stated amount.
+    explains: "Output results to stated amount.
   - flag: ["-q"]
-    explains: Quiet mode.
+    explains: "Quiet mode.
   - flag: ["-d DBPATH"]
-    explains: Uses a specific database and not the default database.
+    explains: "Uses a specific database and not the default database.
     arg:
       name: PATTERN
       required: true
   - flag: ["-e"]
-    explains: Existing files are only displayed.
+    explains: "Existing files are only displayed.
   - flag: ["-S"]
-    explains: Show database statistics.
+    explains: "Show database statistics.
 
 # Examples: List of example usages
 examples:

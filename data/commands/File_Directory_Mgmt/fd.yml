@@ -19,76 +19,76 @@ syntax: fd [OPTIONS]...[PATTERN]...[PATH]...
 # Optional: add "arg" if the optin expects a value
 options:
   - flag: ["-e"]
-    explains: Only search for files with the specified extension
+    explains: "Only search for files with the specified extension
     arg:
       name: EXTENSION  # the placeholder name for the argument
       required: true  # true if mandatory, false if optional
   - flag: ["-H", "--hidden"]
-    explains: Search hidden files and directories
-  - flag: ["-t <TYPE>"]
-    explains: Specify the type of file to search for
+    explains: "Search hidden files and directories
+  - flag: ["-t TYPE"]
+    explains: "Specify the type of file to search for
     arg:
       name: TYPE     # the placeholder name for the argument
       required: true # true if mandatory, false if optional
   - flag: ["-I"]
-    explains: Include Ignore files in the search results
+    explains: "Include Ignore files in the search results
   - flag: ["-u"]
-    explains: Include hidden files in the search results
-  - flag: ["-e <EXTENSION>"]
-    explains: Only search for files with the specified extension
+    explains: "Include hidden files in the search results
+  - flag: ["-e EXTENSION"]
+    explains: "Only search for files with the specified extension
     arg:
       name: EXTENSION  # the placeholder name for the argument
       required: true  # true if mandatory, false if optional
-  - flag: ["-g <GLOB>"]
-    explains: Only search files matching the GLOB pattern
+  - flag: ["-g GLOB"]
+    explains: "Only search files matching the GLOB pattern
     arg:
       name: GLOB     # the placeholder name for the argument
       required: true # true if mandatory, false if optional
-  - flag: ["-t <TYPE>"]
-    explains: Specify the type of file to search for
+  - flag: ["-t TYPE"]
+    explains: "Specify the type of file to search for
     arg:
       name: TYPE     # the placeholder name for the argument
       required: true # true if mandatory, false if optional
-  - flag: ["-E <EXTENSION>"]
-    explains: Only search for files with the specified extension
+  - flag: ["-E EXTENSION"]
+    explains: "Only search for files with the specified extension
     arg:
       name: EXTENSION  # the placeholder name for the argument
       required: true  # true if mandatory, false if optional
   - flag: ["-l"]
-    explains: Long form format. Display detailed information about each file found
+    explains: "Long form format. Display detailed information about each file found
   - flag: ["-0"]
-    explains: Use null character as the delimiter between file names in the output
-  - flag: ["-x <COMMAND>"]
-    explains: Execute the specified COMMAND on each file found
-  - flag: ["-j <NUMBER>"]
-    explains: Limit the number of concurrent jobs to the specified NUMBER
+    explains: "Use null character as the delimiter between file names in the output
+  - flag: ["-x COMMAND"]
+    explains: "Execute the specified COMMAND on each file found
+  - flag: ["-j NUMBER"]
+    explains: "Limit the number of concurrent jobs to the specified NUMBER
     arg:
       name: NUMBER   # the placeholder name for the argument
       required: true # true if mandatory, false if optional
-  - flag: ["-d <DEPTH>"]
-    explains: Limit the search to the specified DEPTH of directories
+  - flag: ["-d DEPTH"]
+    explains: "Limit the search to the specified DEPTH of directories
     arg:
       name: DEPTH    # the placeholder name for the argument
       required: true # true if mandatory, false if optional
   - flag: ["-p"]
-    explains: Print the full path of each file found
+    explains: "Print the full path of each file found
   - flag: ["-a"]
-    explains: Print absolute paths instead of relative paths for each file found
-  - flag: ["-c <Color>"]
-    explains: Specify the color scheme for the output
+    explains: "Print absolute paths instead of relative paths for each file found
+  - flag: ["-c Color"]
+    explains: "Specify the color scheme for the output
     arg:
       name: Color    # the placeholder name for the argument
       required: true # true if mandatory, false if optional
   - flag: ["-s"]
-    explains: Search all files, including those that are normally ignored by default (e.g., files in .gitignore)
+    explains: "Search all files, including those that are normally ignored by default (e.g., files in .gitignore)
   - flag: ["-i"]
-    explains: Ignore case distinctions in the search pattern
+    explains: "Ignore case distinctions in the search pattern
   - flag: ["-F"]
-    explains: Interpret the search pattern as a fixed string, not a regular expression
+    explains: "Interpret the search pattern as a fixed string, not a regular expression
   - flag: ["-r"]
-    explains: Recursively search through directories for files matching the pattern
-  - flag: ["-m <MAX_DEPTH>"]
-    explains: Limit the maximum depth of directory traversal to the specified MAX_DEPTH
+    explains: "Recursively search through directories for files matching the pattern
+  - flag: ["-m MAX_DEPTH"]
+    explains: "Limit the maximum depth of directory traversal to the specified MAX_DEPTH
     arg:
       name: MAX_DEPTH  # the placeholder name for the argument
       required: true   # true if mandatory, false if optional

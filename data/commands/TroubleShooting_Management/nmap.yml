@@ -6,7 +6,7 @@ syntax: "nmap [OPTIONS] TARGET"
 options:
   - flag: ["-sS", "-sT", "-sU"]
     explains: "Scan types (SYN, Connect, UDP)."
-  - flag: ["-p <ports>"]
+  - flag: ["-p ports"]
     explains: "Scan specific ports or ranges."
   - flag: ["-sV"]
     explains: "Detect service version."

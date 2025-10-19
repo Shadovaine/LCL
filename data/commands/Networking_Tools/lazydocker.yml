@@ -1,5 +1,5 @@
 command: lazydocker
-description: >
+description: 
   A simple terminal UI for both Docker and Docker Compose.  
   Provides an interactive interface for managing containers, images, volumes, and logs.
 usage: |

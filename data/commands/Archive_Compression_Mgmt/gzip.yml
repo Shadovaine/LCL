@@ -19,36 +19,36 @@ syntax: gzip [OPTIONS] FILE
 # Optional: add "arg" if the optin expects a value
 options:
   - flag: ["-k"]
-    explains: Keep (don't delete) input files
+    explains: "Keep (don't delete) input files
   - flag: ["-r"]
-    explains: Recursively compress files in directories
+    explains: "Recursively compress files in directories
   - flag: ["-d"]
-    explains: Decompress (same as gunzip)
+    explains: "Decompress (same as gunzip)
   - flag: ["-c"]
-    explains: Write output to standard output and keep original files
+    explains: "Write output to standard output and keep original files
   - flag: ["-f"]
-    explains: Force compression even if the file has multiple links or the corresponding compressed file already exists
+    explains: "Force compression even if the file has multiple links or the corresponding compressed file already exists
   - flag: ["-l"]
-    explains: List compressed file contents
+    explains: "List compressed file contents
   - flag: ["-t"]
-    explains: Test compressed file integrity
+    explains: "Test compressed file integrity
   - flag: ["-v"]
-    explains: Verbosely list files processed
+    explains: "Verbosely list files processed
   - flag: ["-q"]
-    explains: Suppress all warnings
+    explains: "Suppress all warnings
   - flag: ["-s"]
-    explains: Suppress all output except for errors
+    explains: "Suppress all output except for errors
   - flag: ["-1"]
-    explains: Fastest compression (least compression)
+    explains: "Fastest compression (least compression)
   - flag: ["-9"]
-    explains: Best compression (slowest compression) 
+    explains: "Best compression (slowest compression) 
 
 # Examples: List of example usages
 examples:
   - gzip -k file.txt
   - gzip -r directory/
   - gzip -d file.txt.gz
-  - gzip -c file.txt > file.txt.gz
+  - gzip -c file.txt  file.txt.gz
   - gzip -f file1.txt file2.txt
   - gzip -l file.txt.gz
   - gzip -t file.txt.gz

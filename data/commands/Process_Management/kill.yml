@@ -3,7 +3,7 @@ category: "process management"
 description: "Send a signal to a process."
 syntax: "kill [OPTIONS] PID..."
 options:
-  - flag: ["-s <SIGNAL>"]
+  - flag: ["-s SIGNAL"]
     explains: "Send a specific signal (e.g., SIGKILL, SIGHUP)."
   - flag: ["-9"]
     explains: "SIGKILL: force terminate."

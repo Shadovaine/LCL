@@ -6,11 +6,11 @@ syntax: "grub-mkconfig, grub-install, grub-set-default [OPTIONS]"
 options:
   - flag: ["grub-mkconfig -o /boot/grub/grub.cfg"]
     explains: "Generate GRUB configuration file."
-  - flag: ["grub-install <device>"]
+  - flag: ["grub-install device"]
     explains: "Install GRUB on a device."
-  - flag: ["grub-set-default <N>"]
+  - flag: ["grub-set-default N"]
     explains: "Set default boot entry."
-  - flag: ["grub-reboot <N>"]
+  - flag: ["grub-reboot N"]
     explains: "Reboot once into a specific entry."
   - flag: ["--help"]
     explains: "Show help for GRUB commands."

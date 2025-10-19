@@ -24,11 +24,11 @@ options:
     explains: "Show only filenames without matches."
   - flag: ["-o"]
     explains: "Show only matching part."
-  - flag: ["-B <N>"]
+  - flag: ["-B N"]
     explains: "Print N lines before match."
-  - flag: ["-A <N>"]
+  - flag: ["-A N"]
     explains: "Print N lines after match."
-  - flag: ["-C <N>"]
+  - flag: ["-C N"]
     explains: "Print N lines around match."
   - flag: ["-E"]
     explains: "Use extended regex."

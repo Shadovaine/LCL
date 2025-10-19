@@ -19,22 +19,22 @@ syntax: sensors [Options]
 # Optional: add "arg" if the optin expects a value
 options:
   - flag: ["-s", "--set"]
-    explains: Apply settings from "/etc/sensors.conf".
+    explains: "Apply settings from "/etc/sensors.conf".
   - flag: ["-f", "--fahrenheit"]
-    explains: Display temperature in Fahrenheit instead of Celsius.
+    explains: "Display temperature in Fahrenheit instead of Celsius.
   - flag: ["-A", "--no-adapter"]
-    explains: Hides 'Adapter' lines in the output, showing only sensor readings.
+    explains: "Hides 'Adapter' lines in the output, showing only sensor readings.
   - flag: ["-u", "--units"]
-    explains: Displays raw sensor values.
+    explains: "Displays raw sensor values.
   - flag: ["-j", "--json"]
-    explains: Outputs results in JSON format.
-  - flag: ["-j <chip>"]
-    explains: JSON output for a specific chip only.
+    explains: "Outputs results in JSON format.
+  - flag: ["-j chip"]
+    explains: "JSON output for a specific chip only.
     arg:
       name: numbers
       required: true
   - flag: ["-jA"]
-    explains: JSON output with no adapter lines. 
+    explains: "JSON output with no adapter lines. 
     
 # Examples: List of example usages
 examples:

@@ -19,107 +19,107 @@ syntax: rsync [OPTIONS]...[SRC]... [DEST]
 # Optional: add "arg" if the optin expects a value
 options:
   - flag: ["-v"]
-    explains: Verbose mode
+    explains: "Verbose mode
   - flag: ["-a"]
-    explains: Archive mode; equals -rlptgoD (no -H,-A,-X)
+    explains: "Archive mode; equals -rlptgoD (no -H,-A,-X)
   - flag: ["-r"]
-    explains: Recurse into directories
+    explains: "Recurse into directories
   - flag: ["-l"]
-    explains: Copy symlinks as symlinks
+    explains: "Copy symlinks as symlinks
   - flag: ["-p"]
-    explains: Preserve permissions
+    explains: "Preserve permissions
   - flag: ["-t"]
-    explains: Preserve modification times
+    explains: "Preserve modification times
   - flag: ["-g"]
-    explains: Preserve group
+    explains: "Preserve group
   - flag: ["-o"]
-    explains: Preserve owner (super-user only)
+    explains: "Preserve owner (super-user only)
   - flag: ["-D"]
-    explains: Preserve device and special files
+    explains: "Preserve device and special files
   - flag: ["-u"]
-    explains: Skip files that are newer on the receiver
+    explains: "Skip files that are newer on the receiver
   - flag: ["-n:"]
-    explains: Perform a trial run with no changes made
+    explains: "Perform a trial run with no changes made
   - flag: ["-z"]
-    explains: Compress file data during the transfer
+    explains: "Compress file data during the transfer
   - flag: ["-p"]
-    explains: Preserve permissions
+    explains: "Preserve permissions
   - flag: ["--progress"]
-    explains: Show progress during transfer
+    explains: "Show progress during transfer
   - flag: ["--partial"]
-    explains: Keep partially transferred files
-  - flag: ["--rsync-path=<PATH>"]
-    explains: Specify the path to the rsync executable on the remote machine
+    explains: "Keep partially transferred files
+  - flag: ["--rsync-path=PATH"]
+    explains: "Specify the path to the rsync executable on the remote machine
     arg:
       name: PATH
       required: true
-  - flag: ["--chown=<USER>:<GROUP>"]
-    explains: Force the user and group of the files to the specified USER and GROUP
+  - flag: ["--chown=USER:GROUP"]
+    explains: "Force the user and group of the files to the specified USER and GROUP
     arg:
       name: USER:GROUP
       required: true
-  - flag: ["--chmod=<MODE>"]
-    explains: Affect file and directory permissions
+  - flag: ["--chmod=MODE"]
+    explains: "Affect file and directory permissions
     arg:
       name: MODE
       required: true
   - flag: ["--size-only"]
-    explains: Skip files that match in size
+    explains: "Skip files that match in size
   - flag: ["--ignore-existing"]
-    explains: Skip files that already exist on receiver
+    explains: "Skip files that already exist on receiver
   - flag: ["--remove-source-files"]
-    explains: Remove source files after transfer
+    explains: "Remove source files after transfer
   - flag: ["--delet"]
-    explains: Delete extraneous files from destination dirs
-  - flag: ["--exclude=<PATTERN>"]
-    explains: Exclude files matching PATTERN
+    explains: "Delete extraneous files from destination dirs
+  - flag: ["--exclude=PATTERN"]
+    explains: "Exclude files matching PATTERN
     arg:
       name: PATTERN
       required: true
-  - flag: ["--exclude-from=<FILE>"]
-    explains: Read exclude patterns from FILE
+  - flag: ["--exclude-from=FILE"]
+    explains: "Read exclude patterns from FILE
     arg:
       name: FILE
       required: true
-  - flag: ["--include=<PATTERN>"]
-    explains: Include files matching PATTERN
+  - flag: ["--include=PATTERN"]
+    explains: "Include files matching PATTERN
     arg:
       name: PATTERN
       required: true
-  - flag: ["--bwlimit=<RATE>"]
-    explains: Limit I/O bandwidth; KBytes per second
+  - flag: ["--bwlimit=RATE"]
+    explains: "Limit I/O bandwidth; KBytes per second
     arg:
       name: RATE
       required: true
   - flag: ["--checksum"]
-    explains: Skip based on checksum, not mod-time & size
+    explains: "Skip based on checksum, not mod-time & size
   - flag: ["--append"]
-    explains: Append data onto shorter files
+    explains: "Append data onto shorter files
   - flag: ["--append-verify"]
-    explains: Append data onto shorter files, but verify the data
+    explains: "Append data onto shorter files, but verify the data
   - flag: ["--copy-links"]
-    explains: Transform symlink into referent file/directory
+    explains: "Transform symlink into referent file/directory
   - flag: ["--copy-unsafe-links"]
-    explains: Only "unsafe" symlinks are transformed
+    explains: "Only "unsafe" symlinks are transformed
   - flag: ["--safe-links"]
-    explains: Ignore symlinks that point outside the source tree
-  - flag: ["--link-dest=<DIR>"]
-    explains: Hardlink to files in DIR when unchanged
+    explains: "Ignore symlinks that point outside the source tree
+  - flag: ["--link-dest=DIR"]
+    explains: "Hardlink to files in DIR when unchanged
     arg:
       name: DIR
       required: true
-  - flag: ["--log-file=<FILE>"]
-    explains: Log what we're doing to the specified FILE
+  - flag: ["--log-file=FILE"]
+    explains: "Log what we're doing to the specified FILE
     arg:
       name: FILE
       required: true
-  - flag: ["--log-file-format=<FORMAT>"]
-    explains: Log file format
+  - flag: ["--log-file-format=FORMAT"]
+    explains: "Log file format
     arg:
       name: FORMAT
       required: true
-  - flag: ["--iconv=<CONVERT_SPEC>"]
-    explains: Convert file names between character sets
+  - flag: ["--iconv=CONVERT_SPEC"]
+    explains: "Convert file names between character sets
     arg:
       name: CONVERT_SPEC
       required: true  

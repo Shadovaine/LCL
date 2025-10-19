@@ -6,7 +6,7 @@ syntax: "sudo visudo [OPTIONS]"
 options:
   - flag: ["-c"]
     explains: "Check sudoers file for syntax errors."
-  - flag: ["-f <file>"]
+  - flag: ["-f file"]
     explains: "Edit an alternate sudoers file (e.g., /etc/sudoers.d/...)."
   - flag: ["-s"]
     explains: "Enable strict checking mode."

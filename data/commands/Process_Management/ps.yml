@@ -7,19 +7,19 @@ options:
     explains: "Show all running processes."
   - flag: ["-f"]
     explains: "Full-format listing."
-  - flag: ["-u <user>"]
+  - flag: ["-u user"]
     explains: "Show processes for a specific user."
   - flag: ["-x"]
     explains: "Include processes not attached to a terminal."
-  - flag: ["-o <fields>"]
+  - flag: ["-o fields"]
     explains: "Customize output columns."
   - flag: ["--forest"]
     explains: "Display process tree."
-  - flag: ["--sort <key>"]
+  - flag: ["--sort key"]
     explains: "Sort by a field (e.g., %mem, %cpu)."
-  - flag: ["-p <PID>"]
+  - flag: ["-p PID"]
     explains: "Show a specific process ID."
-  - flag: ["--ppid <PID>"]
+  - flag: ["--ppid PID"]
     explains: "Show children of a specific process."
 examples:
   - |

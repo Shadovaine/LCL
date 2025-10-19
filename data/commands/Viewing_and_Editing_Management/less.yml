@@ -16,7 +16,7 @@ options:
     explains: "Verbose prompt."
   - flag: ["-m"]
     explains: "Short prompt."
-  - flag: ["-P <prompt>"]
+  - flag: ["-P prompt"]
     explains: "Custom prompt format."
   - flag: ["-i"]
     explains: "Ignore case in searches unless pattern has caps."
@@ -24,9 +24,9 @@ options:
     explains: "Ignore case in all searches."
   - flag: ["-G"]
     explains: "Disable match highlighting."
-  - flag: ["-p <pattern>"]
+  - flag: ["-p pattern"]
     explains: "Start at first match of pattern."
-  - flag: ["-+<opt>"]
+  - flag: ["-+opt"]
     explains: "Disable an option (e.g., -+i)."
   - flag: ["-e"]
     explains: "Quit at end of file."
@@ -44,7 +44,7 @@ options:
     explains: "Allow underlining."
   - flag: ["-w"]
     explains: "Highlight first new line after movement."
-  - flag: ["-# <NUM>"]
+  - flag: ["-# NUM"]
     explains: "Horizontal scroll columns."
 examples:
   - |

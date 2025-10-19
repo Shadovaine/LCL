@@ -2,13 +2,13 @@
 name: "dracut"
 category: "system administration"
 description: "Tool to generate initramfs images on Linux."
-syntax: "dracut [OPTIONS] [<image> [kernel-version]]"
+syntax: "dracut [OPTIONS] [image [kernel-version]]"
 options:
   - flag: ["--force"]
     explains: "Overwrite existing initramfs."
-  - flag: ["--add <module>"]
+  - flag: ["--add module"]
     explains: "Add a module to initramfs."
-  - flag: ["--omit <module>"]
+  - flag: ["--omit module"]
     explains: "Omit a module."
   - flag: ["--list-modules"]
     explains: "List available dracut modules."
@@ -16,7 +16,7 @@ options:
     explains: "Show included modules."
   - flag: ["--print-cmdline"]
     explains: "Print kernel command line."
-  - flag: ["-f <file>"]
+  - flag: ["-f file"]
     explains: "Specify config file."
 examples:
   - |

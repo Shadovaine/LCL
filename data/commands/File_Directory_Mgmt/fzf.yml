@@ -19,45 +19,45 @@ syntax: fzf [OPTIONS]...[ARGS]...
 # Optional: add "arg" if the optin expects a value
 options:
   - flag: ["-q", "--query"]
-    explains: Specify the search query to filter results
+    explains: "Specify the search query to filter results
     arg:
       name: QUERY     # the placeholder name for the argument
       required: true # true if mandatory, false if optional
   - flag: ["-e"]
-    explains: Enable exact match mode for the search query
-  - flag: ["--nth <FIELDS>"]
-    explains: Select specific fields to match against
+    explains: "Enable exact match mode for the search query
+  - flag: ["--nth FIELDS"]
+    explains: "Select specific fields to match against
     arg:
       name: FIELDS     # the placeholder name for the argument
       required: true # true if mandatory, false if optional 
-  - flag: ["-delimiter <CHARACTER>"]
-    explains: Specify a custom delimiter for fields
+  - flag: ["-delimiter CHARACTER"]
+    explains: "Specify a custom delimiter for fields
     arg:
       name: CHARACTER     # the placeholder name for the argument
       required: true # true if mandatory, false if optional
   - flag: ["-m"]
-    explains: Enable multi-select mode for selecting multiple items
+    explains: "Enable multi-select mode for selecting multiple items
   - flag: ["--no-sort"]
-    explains: Disable sorting of the results
+    explains: "Disable sorting of the results
   - flag: ["--no-mouse"]
-    explains: Disable mouse support
-  - flag: ["--height <HEIGHT>"]
-    explains: Set the height of the fzf window
+    explains: "Disable mouse support
+  - flag: ["--height HEIGHT"]
+    explains: "Set the height of the fzf window
     arg:
       name: HEIGHT     # the placeholder name for the argument
       required: true # true if mandatory, false if optional
-  - flag: ["--layout <LAYOUT>"]
-    explains: Specify the layout of the fzf window (default, reverse, etc.)
+  - flag: ["--layout LAYOUT"]
+    explains: "Specify the layout of the fzf window (default, reverse, etc.)
     arg:
       name: LAYOUT     # the placeholder name for the argument
       required: true # true if mandatory, false if optional
-  - flag: ["--preview-window <WINDOW>"]
-    explains: Specify the preview window for the fzf window
+  - flag: ["--preview-window WINDOW"]
+    explains: "Specify the preview window for the fzf window
     arg:
       name: WINDOW     # the placeholder name for the argument
       required: true # true if mandatory, false if optional 
   - flag: ["--ansi"]
-    explains: Show ANSI color codes in the preview window for better visual representation of the output
+    explains: "Show ANSI color codes in the preview window for better visual representation of the output
 
 # Examples: List of example usages
 examples:

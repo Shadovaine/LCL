@@ -18,38 +18,38 @@ syntax: scp [Options] SOURCE USER@HOST:DEST
 # Use " flags" as a list if there are multiple aliases (e.g. ["-i", "--ignore-case"])
 # Optional: add "arg" if the optin expects a value
 options:
-  - flag: ["-p <port>"]
-    explains: Specifies port.
+  - flag: ["-p port"]
+    explains: "Specifies port.
     arg:
       name: numbers
       required: true
   - flag: ["-P"]
-    explains: Preserves file attributes.
+    explains: "Preserves file attributes.
   - flag: ["-r"]
-    explains: Copy directories recursively.
+    explains: "Copy directories recursively.
   - flag: ["-C"]
-    explains: Enables compression during transfer.
+    explains: "Enables compression during transfer.
   - flag: ["-v"]
-    explains: Verbose mode.
-  - flag: ["-l <limit>"]
-    explains: Limits bandwidth.
+    explains: "Verbose mode.
+  - flag: ["-l limit"]
+    explains: "Limits bandwidth.
     arg:
       name: numbers
       required: true
-  - flag: ["-i <identity>"]
-    explains: Secifies an SSH private key file for authentication.
+  - flag: ["-i identity"]
+    explains: "Secifies an SSH private key file for authentication.
     arg: 
       name: PATTERN
       required: true
-  - flag: ["-o <option>"]
-    explains: Passes SSH options directly.
+  - flag: ["-o option"]
+    explains: "Passes SSH options directly.
     arg:
       name: PATTERN
       required: true
   - flag: ["-4"]
-    explains: Forces IPv4.
+    explains: "Forces IPv4.
   - flag: ["-6"]
-    explains: Forces IPv6.
+    explains: "Forces IPv6.
 
 # Examples: List of example usages
 examples:

@@ -18,29 +18,29 @@ syntax: zoxide [options] [directory|file ...]
 # Use " flags" as a list if there are multiple aliases (e.g. ["-i", "--ignore-case"])
 # Optional: add "arg" if the optin expects a value
 options:
-  - flag: ["-z <query>"]
-    explains: Jump to a directory matching the query
+  - flag: ["-z query"]
+    explains: "Jump to a directory matching the query
     arg:
       name: query    # the placeholder name for the argument
       required: true # true if mandatory, false if optional
   - flag: ["-i","--interactive"]
-    explains: Use fzf to interactively select a directory
+    explains: "Use fzf to interactively select a directory
   - flag: ["-l","--list"]
-    explains: List all known directories with their scores
+    explains: "List all known directories with their scores
   - flag: ["-s","--score"]
-    explains: Show scores when listing directories
-  - flag: ["-t","--type <type>"]
-    explains: Specify the type of directory to search
+    explains: "Show scores when listing directories
+  - flag: ["-t","--type type"]
+    explains: "Specify the type of directory to search
     arg:
       name: type     # the placeholder name for the argument
       required: true # true if mandatory, false if optional
-  - flag: ["-a","--add <path>"]
-    explains: Add a directory to the database
+  - flag: ["-a","--add path"]
+    explains: "Add a directory to the database
     arg:
       name: path     # the placeholder name for the argument
       required: true # true if mandatory, false if optional
-  - flag: ["-r","--remove <path>"]
-    explains: Remove a directory from the database
+  - flag: ["-r","--remove path"]
+    explains: "Remove a directory from the database
     arg:
       name: path     # the placeholder name for the argument
       required: true # true if mandatory, false if optional

@@ -19,41 +19,41 @@ syntax: curl [Options] URL
 # Optional: add "arg" if the optin expects a value
 options:
   - flag: ["-O"]
-    explains: Save file with original name.
+    explains: "Save file with original name.
   - flag: ["-L"]
-    explains: Follow redirects.
+    explains: "Follow redirects.
   - flag: ["-u"]
-    explains: Uses username:password authentication.
+    explains: "Uses username:password authentication.
   - flag: ["-C"]
-    explains: Resume a download.
+    explains: "Resume a download.
   - flag: ["-s"]
-    explains: Silent mode.
+    explains: "Silent mode.
   - flag: ["-S"]
-    explains: Shows errors even when `-s` is used.
+    explains: "Shows errors even when `-s` is used.
   - flag: ["-v"]
-    explains: Verbose mode.
+    explains: "Verbose mode.
   - flag: ["-u user:pass"]
-    explains: HTTP Basic authentication.
+    explains: "HTTP Basic authentication.
   - flag: ["-H HEADER:VALUE"]
-    explains: Add a cutstom header. 
+    explains: "Add a cutstom header. 
   - flag: ["--cookie NAME:VALUE"]
-    explains: Send cookies.
+    explains: "Send cookies.
   - flag: ["--cookie-jar FILE"]
-    explains: Saves cookie to a file. 
+    explains: "Saves cookie to a file. 
   - flag: ["--compressed"]
-    explains: Request compressed response.
-  - flag: ["-X <method>"]
-    explains: Specify HTTP request method.
+    explains: "Request compressed response.
+  - flag: ["-X method"]
+    explains: "Specify HTTP request method.
     arg:
       name: PATTERN
       required: true
-  - flag: ["--data-urlencode <data>"]
-    explains: URL-encode data before sending.
-  - flag: ["--limit-rate <speed>"]
+  - flag: ["--data-urlencode data"]
+    explains: "URL-encode data before sending.
+  - flag: ["--limit-rate speed"]
     arg:
       name: numbers
       required: true
-    explains: Limit download speed.
+    explains: "Limit download speed.
     arg:
       name: numbers
       requuired: true

@@ -2,17 +2,17 @@
 name: "tracepath"
 category: "troubleshooting"
 description: "Trace the path packets take to a destination host."
-syntax: "tracepath [OPTIONS] <destination> [PORT]"
+syntax: "tracepath [OPTIONS] destination [PORT]"
 options:
   - flag: ["-n"]
     explains: "Do not resolve hostnames, show numeric IPs."
   - flag: ["-b"]
     explains: "Show both hostnames and IPs."
-  - flag: ["-m <hops>"]
+  - flag: ["-m hops"]
     explains: "Set maximum hop limit."
-  - flag: ["-l <len>"]
+  - flag: ["-l len"]
     explains: "Set packet length in bytes."
-  - flag: ["-p <port>"]
+  - flag: ["-p port"]
     explains: "Set base destination port."
   - flag: ["-4", "-6"]
     explains: "Force IPv4 or IPv6."

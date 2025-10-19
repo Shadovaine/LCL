@@ -16,7 +16,7 @@ options:
     explains: "Verbose output."
   - flag: ["-C"]
     explains: "Check on root at boot (progress)."
-  - flag: ["-t <type>"]
+  - flag: ["-t type"]
     explains: "Specify filesystem type."
   - flag: ["-N"]
     explains: "No action; print what would be done."

@@ -4,9 +4,9 @@ category: "troubleshooting"
 description: "Trace system calls and signals made by a process."
 syntax: "strace [OPTIONS] COMMAND [args...]"
 options:
-  - flag: ["-o <FILE>"]
+  - flag: ["-o FILE"]
     explains: "Write trace output to a file."
-  - flag: ["-p <PID>"]
+  - flag: ["-p PID"]
     explains: "Attach to an already running process."
   - flag: ["-c"]
     explains: "Count syscalls."
@@ -24,7 +24,7 @@ options:
     explains: "Show syscall instruction pointer."
   - flag: ["-k"]
     explains: "Print kernel stack trace for each syscall."
-  - flag: ["-e trace=<set>"]
+  - flag: ["-e trace=set"]
     explains: "Trace only specified sets (file, network, process, etc.)."
 examples:
   - |

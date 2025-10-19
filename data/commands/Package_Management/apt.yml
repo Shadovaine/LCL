@@ -9,21 +9,21 @@ options:
     explains: "Upgrade all upgradable packages."
   - flag: ["full-upgrade"]
     explains: "Upgrade packages and handle changing dependencies."
-  - flag: ["install <pkg>"]
+  - flag: ["install pkg"]
     explains: "Install a package."
-  - flag: ["remove <pkg>"]
+  - flag: ["remove pkg"]
     explains: "Remove a package."
-  - flag: ["purge <pkg>"]
+  - flag: ["purge pkg"]
     explains: "Remove a package and its configuration files."
   - flag: ["autoremove"]
     explains: "Remove automatically installed packages no longer needed."
-  - flag: ["search <term>"]
+  - flag: ["search term"]
     explains: "Search for a package by name or description."
-  - flag: ["show <pkg>"]
+  - flag: ["show pkg"]
     explains: "Display detailed package information."
   - flag: ["list"]
     explains: "List packages based on filters."
-  - flag: ["download <pkg>"]
+  - flag: ["download pkg"]
     explains: "Download a package .deb file without installing."
   - flag: ["edit-sources"]
     explains: "Open the sources list for editing."

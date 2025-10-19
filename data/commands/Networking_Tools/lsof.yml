@@ -18,38 +18,38 @@ syntax: lsof [OPTIONS]...[ARGS]...
 # Use " flags" as a list if there are multiple aliases (e.g. ["-i", "--ignore-case"])
 # Optional: add "arg" if the optin expects a value
 options:
-  - flag: ["-u <user>"]
-    explains: List files opened by the specified user.
-  - flag: ["-p <pid>"]
-    explains: List files opened by the specified process ID.
+  - flag: ["-u user"]
+    explains: "List files opened by the specified user.
+  - flag: ["-p pid"]
+    explains: "List files opened by the specified process ID.
   - flag: ["-i"]
-    explains: List files related to network connections.
-  - flag: ["-i <port>"]
-    explains: List files related to the specified port.
+    explains: "List files related to network connections.
+  - flag: ["-i port"]
+    explains: "List files related to the specified port.
   - flag: ["-i tcp"]
-    explains: List files related to TCP connections.
+    explains: "List files related to TCP connections.
   - flag: ["-i udp"]
-    explains: List files related to UDP connections.
-  - flag: ["-i @<hostname>"]
-    explains: List files related to the specified hostname.
-  - flag: ["-c <string"]
-    explains: List files opened by commands that match the specified string.
+    explains: "List files related to UDP connections.
+  - flag: ["-i @hostname"]
+    explains: "List files related to the specified hostname.
+  - flag: ["-c string"]
+    explains: "List files opened by commands that match the specified string.
   - flag: ["-a"]
-    explains: Combine multiple selection options with a logical AND.
+    explains: "Combine multiple selection options with a logical AND.
   - flag: ["-p"]
-    explains: Combine multiple selection options with a logical OR.
+    explains: "Combine multiple selection options with a logical OR.
   - flag: ["-n"]
-    explains: Do not convert network numbers to host names for network files.
-  - flag: ["-r <seconds>"]
-    explains: Repeat the listing every specified number of seconds.
+    explains: "Do not convert network numbers to host names for network files.
+  - flag: ["-r seconds"]
+    explains: "Repeat the listing every specified number of seconds.
   - flag: ["-n"]
-    explains: Do not resolve hostnames (speeds up output).
+    explains: "Do not resolve hostnames (speeds up output).
   - flag: ["-t"]
-    explains: Output only process IDs (PIDs).
-  - flag: ["+d <directory>"]
-    explains: List files under the specified directory.
-  - flag: ["+D <directory>"]
-    explains: Recursively list files under the specified directory.
+    explains: "Output only process IDs (PIDs).
+  - flag: ["+d directory"]
+    explains: "List files under the specified directory.
+  - flag: ["+D directory"]
+    explains: "Recursively list files under the specified directory.
 
 # Examples: List of example usages
 examples:

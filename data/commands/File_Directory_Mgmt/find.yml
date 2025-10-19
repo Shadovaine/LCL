@@ -19,12 +19,12 @@ syntax: find [PATH] [OPTIONS] [EXPRESSION] [ACTION]
 # Optional: add "arg" if the optin expects a value
 options:
   - flag: ["-name"]
-    explains: Search for files matching the given name
+    explains: "Search for files matching the given name
     arg:
       name: PATTERN
       required: true
   - flag: ["-type"]
-    explains: Distingishes either a file or directory.
+    explains: "Distingishes either a file or directory.
     arg: 
       name: type
       values:
@@ -40,13 +40,8 @@ options:
     arg:
       name: size
       required: true
-  - flag: ["-size"]
-    explains: "Filter files by size. Use [+|-]N[unit]: +N = greater than, -N = less than, N = exactly."
-    arg:
-      name: size
-      required: true
   - flag: ["-exec"]
-    explains: Execute command on each file found. Use {} to represent the current file and \; to terminate the command.
+    explains: "Execute command on each file found. Use {} to represent the current file and \; to terminate the command.
     arg:
       name: command
       required: true
@@ -65,10 +60,10 @@ options:
     arg:
       name: days
       required: true
-  - flag: ["print"]
-    explains: Print the full file name on the standard output.
+  - flag: ["-print"]
+    explains: "Print the full file name on the standard output.
   - flag: ["-perm"]
-    explains: Filter files by permission. Use symbolic (e.g., u=rwx) or octal (e.g., 755) modes.
+    explains: "Filter files by permission. Use symbolic (e.g., u=rwx) or octal (e.g., 755) modes.
     arg:
       name: mode
       required: true

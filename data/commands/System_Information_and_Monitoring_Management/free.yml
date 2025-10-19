@@ -8,11 +8,11 @@ options:
     explains: "Omit filenames in output."
   - flag: ["-i"]
     explains: "Print MIME type."
-  - flag: ["-e <test>"]
+  - flag: ["-e test"]
     explains: "Exclude specific tests."
-  - flag: ["-f <namefile>"]
-    explains: "Read file list from <namefile>."
-  - flag: ["-F <sep>"]
+  - flag: ["-f namefile"]
+    explains: "Read file list from namefile."
+  - flag: ["-F sep"]
     explains: "Use custom field separator."
   - flag: ["-h"]
     explains: "Do not follow symlinks."

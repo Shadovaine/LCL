@@ -4,7 +4,7 @@ category: "search and filter management"
 description: "Text processing and reporting language."
 syntax: "awk [options] 'pattern { action }' [file...]"
 options:
-  - flag: ["-F <sep>"]
+  - flag: ["-F sep"]
     explains: "Set input field separator."
   - flag: ["-v var=value"]
     explains: "Define a variable."

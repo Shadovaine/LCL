@@ -10,7 +10,7 @@ options:
     explains: "Trace delegation from root."
   - flag: ["+dnssec"]
     explains: "Request DNSSEC info."
-  - flag: ["-t <type>"]
+  - flag: ["-t type"]
     explains: "Query specific record type (A, MX, etc.)."
 examples:
   - |

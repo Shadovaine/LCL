@@ -19,21 +19,21 @@ syntax: rm [OPTIONS] target
 # Optional: add "arg" if the optin expects a value
 options:
   - flag: ["-r"]
-    explains: REmoves directories and contents recursively.
+    explains: "REmoves directories and contents recursively.
   - flag: ["-f"]
-    explains: Force deletion (ignore errors/pormpts).
+    explains: "Force deletion (ignore errors/pormpts).
   - flag: ["-i"]
-    explains: Prompts before each deletion.
+    explains: "Prompts before each deletion.
   - flag: ["-v"]
-    explains: Verbose mode.
+    explains: "Verbose mode.
   - flag: ["-I"]
-    explains: Less intrusive interactive mode
+    explains: "Less intrusive interactive mode
   - flag: ["-d"]
-    explains: Remove empty directories.
+    explains: "Remove empty directories.
   - flag: ["--preserve-root"]
-    explains: Removes the protection from root.
+    explains: "Removes the protection from root.
   - flag: ["--one-file-system"]
-    explains: When deleting recursively, skip files on other file system.
+    explains: "When deleting recursively, skip files on other file system.
     
 
 # Examples: List of example usages

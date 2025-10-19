@@ -8,7 +8,7 @@ options:
     explains: "Attach separator before."
   - flag: ["-r"]
     explains: "Treat separator as regex (use with -s)."
-  - flag: ["-s <sep>"]
+  - flag: ["-s sep"]
     explains: "Use custom separator instead of newline."
 examples:
   - |

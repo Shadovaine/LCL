@@ -6,7 +6,7 @@ syntax: "mount [OPTIONS] DEVICE DIR"
 options:
   - flag: ["(default)"]
     explains: "List current mounts."
-  - flag: ["-t <fstype>"]
+  - flag: ["-t fstype"]
     explains: "Specify filesystem type."
   - flag: ["-o ro"]
     explains: "Read-only mount."

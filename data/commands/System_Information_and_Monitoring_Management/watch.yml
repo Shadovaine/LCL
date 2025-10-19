@@ -4,7 +4,7 @@ category: "system information and monitoring management"
 description: "Run a command repeatedly at fixed intervals and show full-screen output."
 syntax: "watch [OPTIONS] command"
 options:
-  - flag: ["-n <secs>","--interval <secs>"]
+  - flag: ["-n secs","--interval secs"]
     explains: "Refresh interval."
   - flag: ["-d","--differences[=permanent]"]
     explains: "Highlight changes between updates."

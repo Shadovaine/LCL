@@ -19,23 +19,23 @@ syntax: ip [Options] [Object]
 # Optional: add "arg" if the optin expects a value
 options:
   - flag: ["addr"]
-    explains: Show or modify IP address.
+    explains: "Show or modify IP address.
   - flag: ["link"]
-    explains: Show or modify interfaces.
+    explains: "Show or modify interfaces.
   - flag: ["show"]
     explaoins: Show specific interfaces.
   - flag: ["add"]
-    explains: Adds an IP address.
+    explains: "Adds an IP address.
   - flag: ["del"]
-    explains: Removes an IP address.
+    explains: "Removes an IP address.
   - flag: ["route"]
-    explains: Show or modify routing tables. 
+    explains: "Show or modify routing tables. 
   - flag: ["neigh"]
-    explains: Show or modify ARP cache.
+    explains: "Show or modify ARP cache.
   - flag: ["rule"]
-    explains: Routing policy rules.
+    explains: "Routing policy rules.
   - flag: ["monitor"]
-    explains: Watch changes to netlink.
+    explains: "Watch changes to netlink.
 
 # Examples: List of example usages
 examples:

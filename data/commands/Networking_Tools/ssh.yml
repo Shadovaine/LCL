@@ -18,37 +18,37 @@ syntax: ssh [Options] user@host
 # Use " flags" as a list if there are multiple aliases (e.g. ["-i", "--ignore-case"])
 # Optional: add "arg" if the optin expects a value
 options:
-  - flag: ["-p <port>"]
-    explains: Specify a port.
-  - flag: ["-i <identity>"]
-    explains: Use identify file (SSH key)
-  - flag: ["-L <local_port>:<remote_host>:<remote_port>"]
-    explains: Local port forwarding.
-  - flag: ["-l <user>"]
-    explains: Log in as a specific user.
+  - flag: ["-p port"]
+    explains: "Specify a port.
+  - flag: ["-i identity"]
+    explains: "Use identify file (SSH key)
+  - flag: ["-L local_port:remote_host:remote_port"]
+    explains: "Local port forwarding.
+  - flag: ["-l user"]
+    explains: "Log in as a specific user.
     arg:
       name: name
       required: true
   - flag: ["-v"]
-    explains: Verbose mode.
+    explains: "Verbose mode.
   - flag: ["-x"]
-    explains: Enable X11 forwarding.
-  - flag: ["-R <remote_port>:<local_host>:<local_port>"]
-    explains: Remote port forwarding.
+    explains: "Enable X11 forwarding.
+  - flag: ["-R remote_port:local_host:local_port"]
+    explains: "Remote port forwarding.
     arg:
       name: remote_forward
       required: true
-  - flag: ["-D <port>"]
-    explains: Dynamic port forwarding.
+  - flag: ["-D port"]
+    explains: "Dynamic port forwarding.
     arg:
       name: port
       required: true
   - flag: ["-N"]
-    explains: No remote command execution.
+    explains: "No remote command execution.
   - flag: ["-T"]
-    explains: Disable pseudo-terminal allocation.
-  - flag: ["-o <option>"]
-    explains: Pass custom SSH cleint option.
+    explains: "Disable pseudo-terminal allocation.
+  - flag: ["-o option"]
+    explains: "Pass custom SSH cleint option.
     arg:
       name: option
       required: true

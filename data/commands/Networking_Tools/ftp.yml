@@ -19,47 +19,47 @@ syntax: ftp [OPTIONS]...[ARGS]...
 # Optional: add "arg" if the optin expects a value
 options:
   - flag: ["-p"]
-    explains: Use passive mode for data transfers
+    explains: "Use passive mode for data transfers
   - flag: ["-i"]
-    explains: Disable interactive prompting during multiple file transfers
+    explains: "Disable interactive prompting during multiple file transfers
   - flag: ["-n"]
-    explains: Suppress auto-login upon initial connection
+    explains: "Suppress auto-login upon initial connection
   - flag: ["-g"]
-    explains: Disable filename globbing
+    explains: "Disable filename globbing
   - flag: ["-v"]
-    explains: Enable verbose mode, showing all responses from the FTP server
+    explains: "Enable verbose mode, showing all responses from the FTP server
   - flag: ["-d"]
-    explains: Enable debugging mode, providing detailed information about the connection and data transfer process
+    explains: "Enable debugging mode, providing detailed information about the connection and data transfer process
   - flag: ["-u user[,pass]]"]
-    explains: Specify the username and optionally the password for login
+    explains: "Specify the username and optionally the password for login
   - flag: ["-A"]
-    explains: Use anonymous login with the username "anonymous" and an email address as the password
+    explains: "Use anonymous login with the username "anonymous" and an email address as the password
   - flag: ["-V", "--version"]
-    explains: Display the version information of the ftp command and exit 
+    explains: "Display the version information of the ftp command and exit 
   - flag: ["-h", "--help"]
-    explains: Show help information about the ftp command and its options
+    explains: "Show help information about the ftp command and its options
 
 # Examples: List of example usages
 examples:
-  - <<ftp ftp.example.com>
-  - <<ftp -p ftp.example.com>
-  - <<ftp -i ftp.example.com>
-  - <<ftp -n ftp.example.com>
-  - <<ftp -g ftp.example.com>
-  - <<ftp -v ftp.example.com>
-  - <<ftp -d ftp.example.com>
-  - <<ftp -u username,password ftp.example.com>
-  - <<ftp -A ftp.example.com>
-  - <<ftp --version>
-  - <<ftp --help> 
-  - <<ftp -p -i -v ftp.example.com>
-  - <<ftp -n -g -d ftp.example.com>
-  - <<ftp -u username,password -A ftp.example.com>
-  - <<ftp -p -n -g -v -d ftp.example.com>
-  - <<ftp -i -u username,password ftp.example.com>
-  - <<ftp -p -i -u username,password ftp.example.com>
-  - <<ftp -n -g -A ftp.example.com>
-  - <<ftp -v -d -u username,password ftp.example.com>
-  - <<ftp -p -n -g -v -d -u username,password ftp.example.com>
-  - <<ftp -p -i -n -g -v -d -u username,password ftp.example.com>
-  - <<ftp -p -i -n -g -v -d -u username,password -A ftp.example.com>  
+  - ftp ftp.example.com
+  - ftp -p ftp.example.com
+  - ftp -i ftp.example.com
+  - ftp -n ftp.example.com
+  - ftp -g ftp.example.com
+  - ftp -v ftp.example.com
+  - ftp -d ftp.example.com
+  - ftp -u username,password ftp.example.com
+  - ftp -A ftp.example.com
+  - ftp --version
+  - ftp --help 
+  - ftp -p -i -v ftp.example.com
+  - ftp -n -g -d ftp.example.com
+  - ftp -u username,password -A ftp.example.com
+  - ftp -p -n -g -v -d ftp.example.com
+  - ftp -i -u username,password ftp.example.com
+  - ftp -p -i -u username,password ftp.example.com
+  - ftp -n -g -A ftp.example.com
+  - ftp -v -d -u username,password ftp.example.com
+  - ftp -p -n -g -v -d -u username,password ftp.example.com
+  - ftp -p -i -n -g -v -d -u username,password ftp.example.com
+  - ftp -p -i -n -g -v -d -u username,password -A ftp.example.com  

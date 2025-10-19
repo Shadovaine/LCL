@@ -2,7 +2,7 @@
 name: "umount"
 category: "system information and monitoring management"
 description: "Detach a filesystem from the directory tree."
-syntax: "umount [OPTIONS] <target>"
+syntax: "umount [OPTIONS] target"
 options:
   - flag: ["-a"]
     explains: "Unmount all filesystems from /etc/mtab."
@@ -14,7 +14,7 @@ options:
     explains: "Lazy unmount."
   - flag: ["-d"]
     explains: "Also free loop device."
-  - flag: ["-t <type>","--types <type>"]
+  - flag: ["-t type","--types type"]
     explains: "Limit to filesystem type."
   - flag: ["--fake","-n"]
     explains: "Fake or no-mtab write."

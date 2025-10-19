@@ -14,11 +14,11 @@ options:
     explains: "Octal bytes (alias)."
   - flag: ["-d"]
     explains: "Unsigned decimal."
-  - flag: ["-t <type>"]
+  - flag: ["-t type"]
     explains: "Select output type (e.g., x1, u2, d4, f8)."
-  - flag: ["-N <NUM>"]
+  - flag: ["-N NUM"]
     explains: "Read only NUM bytes."
-  - flag: ["-j <NUM>"]
+  - flag: ["-j NUM"]
     explains: "Skip NUM bytes before dumping."
   - flag: ["-v"]
     explains: "Do not suppress repeated lines."

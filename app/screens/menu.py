@@ -50,37 +50,37 @@ class MenuScreen(ModalScreen[None]):
         align: center middle;
         background: rgba(0, 0, 0, 0.8);
     }
-    
+
     #menu_container {
         width: 50;
-        height: 22;  /* Increase height for all buttons */
-        border: round #0178d4;
+        height: 22;
+        border: round $accent;  /* Use theme accent instead of hardcoded blue */
         padding: 2;
         background: $surface;
     }
-    
+
     #menu_title {
         text-align: center;
         text-style: bold;
-        color: #0178d4;
+        color: $accent;  /* Use theme accent */
         margin: 0 0 1 0;
         height: 1;
     }
-    
+
     .menu_button {
         width: 100%;
         margin: 0 0 1 0;
-        border: round #0178d4;
-        height: 3;  /* Make buttons taller for easier targeting */
+        border: round $accent;  /* Use theme accent */
+        height: 3;
     }
-    
+
     .menu_button:hover {
-        background: #0178d4 30%;
+        background: $accent 30%;  /* Use theme accent */
     }
-    
+
     .menu_button:focus {
-        border: thick #0178d4;
-        background: #0178d4 20%;
+        border: thick $accent;  /* Use theme accent */
+        background: $accent 20%;
     }
     """
 

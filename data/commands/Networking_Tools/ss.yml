@@ -19,37 +19,37 @@ syntax: ss [Options] [Filter]
 # Optional: add "arg" if the optin expects a value
 options:
   - flag: ["-t"]
-    explains: Show TCP sockets only.
+    explains: "Show TCP sockets only.
   - flag: ["-u"]
-    explains: Show UDP sockets only.
+    explains: "Show UDP sockets only.
   - flag: ["-l"]
-    explains: Show listening sockets only.
+    explains: "Show listening sockets only.
   - flag: ["-a"]
-    explains: Show all sockets.
+    explains: "Show all sockets.
   - flag: ["-n"]
-    explains: Do not resolve service names or hostnames.
+    explains: "Do not resolve service names or hostnames.
   - flag: ["-p"]
-    explains: Show PID and process using the sockets.
+    explains: "Show PID and process using the sockets.
   - flag: ["-4"]
-    explains: Show only IPv4.
+    explains: "Show only IPv4.
   - flag: ["-6"]
-    explains: Show only IPv6.
+    explains: "Show only IPv6.
   - flag: ["-r"]
-    explains: Resolve service names.
+    explains: "Resolve service names.
   - flag: ["-o"]
-    explains: Show timer information.
+    explains: "Show timer information.
   - flag: ["-s"]
-    explains: Show summary statistics.
+    explains: "Show summary statistics.
   - flag: ["-i"]
-    explains: Show interanl TCP info.
+    explains: "Show interanl TCP info.
   - flag: ["-m"]
-    explains: Show memory usage for sockets.
+    explains: "Show memory usage for sockets.
   - flag: ["-K"]
-    explains: Kill a socket.
+    explains: "Kill a socket.
   - flag: ["-f"]
-    explains: Specify socket family.
+    explains: "Specify socket family.
   - flag: ["-H"]
-    explains: No header line in output.
+    explains: "No header line in output.
 
 # Examples: List of example usages
 examples:

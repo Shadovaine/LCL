@@ -4,9 +4,9 @@ category: "file viewing and editing management"
 description: "Output the beginning of files (default: first 10 lines)."
 syntax: "head [OPTIONS] [FILE]"
 options:
-  - flag: ["-n <NUM>", "--lines=<NUM>"]
+  - flag: ["-n NUM", "--lines=NUM"]
     explains: "Show first NUM lines."
-  - flag: ["-c <NUM>", "--bytes=<NUM>"]
+  - flag: ["-c NUM", "--bytes=NUM"]
     explains: "Show first NUM bytes."
 examples:
   - |

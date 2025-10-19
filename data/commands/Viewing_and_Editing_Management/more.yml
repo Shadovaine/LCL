@@ -14,9 +14,9 @@ options:
     explains: "Squeeze multiple blank lines."
   - flag: ["-u"]
     explains: "Suppress underline/bold."
-  - flag: ["+<NUMBER>"]
+  - flag: ["+NUMBER"]
     explains: "Start at line number."
-  - flag: ["+/<pattern>"]
+  - flag: ["+/pattern"]
     explains: "Start at first search match."
 examples:
   - |

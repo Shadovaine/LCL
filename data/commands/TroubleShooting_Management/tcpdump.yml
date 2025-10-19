@@ -4,13 +4,13 @@ category: "troubleshooting"
 description: "Capture and analyze network packets."
 syntax: "tcpdump [OPTIONS] [FILTER]"
 options:
-  - flag: ["-i <iface>"]
+  - flag: ["-i iface"]
     explains: "Capture on interface."
-  - flag: ["-c <count>"]
+  - flag: ["-c count"]
     explains: "Stop after N packets."
-  - flag: ["-w <file>"]
+  - flag: ["-w file"]
     explains: "Write packets to file."
-  - flag: ["-r <file>"]
+  - flag: ["-r file"]
     explains: "Read from capture file."
   - flag: ["-nn"]
     explains: "Do not resolve hostnames or ports."

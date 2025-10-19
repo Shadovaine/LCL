@@ -4,29 +4,29 @@ category: "system administration"
 description: "Control and inspect systemd services, units, and system state."
 syntax: "systemctl [OPTIONS] COMMAND [UNIT]"
 options:
-  - flag: ["start <service>"]
+  - flag: ["start service"]
     explains: "Start a service."
-  - flag: ["stop <service>"]
+  - flag: ["stop service"]
     explains: "Stop a service."
-  - flag: ["reload <service>"]
+  - flag: ["reload service"]
     explains: "Reload configuration without restart."
-  - flag: ["reload-or-restart <service>"]
+  - flag: ["reload-or-restart service"]
     explains: "Reload if supported, else restart."
-  - flag: ["enable <service>"]
+  - flag: ["enable service"]
     explains: "Enable service at boot."
-  - flag: ["disable <service>"]
+  - flag: ["disable service"]
     explains: "Disable service at boot."
-  - flag: ["mask <service>"]
+  - flag: ["mask service"]
     explains: "Prevent manual/automatic starts."
-  - flag: ["unmask <service>"]
+  - flag: ["unmask service"]
     explains: "Undo mask."
-  - flag: ["status <service>"]
+  - flag: ["status service"]
     explains: "Show detailed status."
-  - flag: ["is-active <service>"]
+  - flag: ["is-active service"]
     explains: "Check if service is active."
-  - flag: ["is-enabled <service>"]
+  - flag: ["is-enabled service"]
     explains: "Check if service is enabled at boot."
-  - flag: ["is-failed <service>"]
+  - flag: ["is-failed service"]
     explains: "Check if service has failed."
 examples:
   - |

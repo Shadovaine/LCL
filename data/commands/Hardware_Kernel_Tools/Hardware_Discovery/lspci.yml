@@ -17,21 +17,21 @@ syntax: lspci [Options]
 # Optional: add "arg" if the optin expects a value
 options:
   - flag: ["-v"]
-    explains: Verbose mode.
+    explains: "Verbose mode.
   - flag: ["-vv"]
-    explains: Extra Verbose mode.
+    explains: "Extra Verbose mode.
   - flag: ["-n"]
-    explains: Shows numeric IDs instead of text.
+    explains: "Shows numeric IDs instead of text.
   - flag: ["-nn"]
-    explains: Both numeric and human readable form.
+    explains: "Both numeric and human readable form.
   - flag: ["-xxx"]
-    explains: Detailed dump of config space.
+    explains: "Detailed dump of config space.
   - flag: ["-k"]
-    explains: Show kernel driver in use. 
+    explains: "Show kernel driver in use. 
   - flag: ["-mm"]
-    explains: Show machine-readable/scripting format.
+    explains: "Show machine-readable/scripting format.
   - flag: ["-t"]
-    explains: Tree view.
+    explains: "Tree view.
     
 # Examples: List of example usages
 examples:

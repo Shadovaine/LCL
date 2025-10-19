@@ -9,13 +9,13 @@ options:
     explains: "Show total I/O since start."
   - flag: ["-b"]
     explains: "Non-interactive (batch) mode."
-  - flag: ["-n <N>"]
+  - flag: ["-n N"]
     explains: "Number of iterations (use with -b)."
-  - flag: ["-d <seconds>"]
+  - flag: ["-d seconds"]
     explains: "Delay between updates."
-  - flag: ["-p <PID>"]
+  - flag: ["-p PID"]
     explains: "Monitor a specific PID."
-  - flag: ["-u <user>"]
+  - flag: ["-u user"]
     explains: "Filter by user."
   - flag: ["-k"]
     explains: "Show I/O in KB."

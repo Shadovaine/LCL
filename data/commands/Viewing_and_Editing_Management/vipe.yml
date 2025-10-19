@@ -9,7 +9,7 @@ options:
 examples:
   - |
     # Interactively edit pipeline text before saving
-    echo "Note to self..." | vipe > notes.txt
+    echo "Note to self..." | vipe  notes.txt
   - |
     # Pause-and-edit in the middle of a pipeline
     cat /etc/passwd | vipe | grep bash

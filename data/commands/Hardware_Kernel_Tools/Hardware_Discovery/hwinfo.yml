@@ -19,56 +19,56 @@ syntax: hwinfo [Options]
 # Optional: add "arg" if the optin expects a value
 options:
   - flag: ["--short"]
-    explains: Summarized hardware list.
+    explains: "Summarized hardware list.
   - flag: ["--very-verbose"]
-    explains: Ultra-detailed verbose mode.
+    explains: "Ultra-detailed verbose mode.
   - flag: ["--all"]
-    explains: Shows all available info.
+    explains: "Shows all available info.
   - flag: ["--cpu"]
-    explains: Show only CPU details.
+    explains: "Show only CPU details.
   - flag: ["--disk"]
-    explains: Show only storage devices
+    explains: "Show only storage devices
   - flag: ["--usb"]
-    explains: Show only USB devices. 
+    explains: "Show only USB devices. 
   - flag: ["--gfxcard"]
-    explains: Show details of the graphics card.
+    explains: "Show details of the graphics card.
   - flag: ["--netcard"]
-    explains: Show details of networe interfaces.
+    explains: "Show details of networe interfaces.
   - flag: ["--sound"]
-    explains: Show sound card info.
+    explains: "Show sound card info.
   - flag: ["--printer"]
-    explains: Show printers detected.
+    explains: "Show printers detected.
   - flag: ["--monitor"]
-    explains: Show details of connected monitors.
+    explains: "Show details of connected monitors.
   - flag: ["--mouse"]
-    explains: Show details about the mouse.
+    explains: "Show details about the mouse.
   - flag: ["--keyboard"]
-    explains: Show keyboard device info.
+    explains: "Show keyboard device info.
   - flag: ["--bios"]
-    explains: Shows BIOS/UEFI details.
+    explains: "Shows BIOS/UEFI details.
   - flag: ["--framebuffer"]
-    explains: Shows framebuffer.
+    explains: "Shows framebuffer.
   - flag: ["--partition"]
-    explains: Shows partition table info.
+    explains: "Shows partition table info.
   - flag: ["--bridge"]
-    explains: Show info. about PCI/USB/RCA bridges.
+    explains: "Show info. about PCI/USB/RCA bridges.
   - flag: ["--memory"]
-    explains: Show RAM info.
+    explains: "Show RAM info.
   - flag: ["--ide", "--cdrom", "--scsi", "iipcmcia", "--cdrom"]
-    explains: All show info on specific storage buses/devices.
+    explains: "All show info on specific storage buses/devices.
   - flag: ["--listmd"]
-    explains: Show RAID devices.
+    explains: "Show RAID devices.
   - flag: ["-wlan"]
-    explains: Shows wireless LAN devices.
+    explains: "Shows wireless LAN devices.
   - flag: ["-bluetooth"]
-    explains: Show bluetooth devices.
-  - flag: ["--debug <N>"]
-    explains: Set debug level 0 - 10.
+    explains: "Show bluetooth devices.
+  - flag: ["--debug N"]
+    explains: "Set debug level 0 - 10.
     arg:
       name: numbers
       required: true
-  - flag: ["--log <files>"]
-    explains: Save output to a log file.
+  - flag: ["--log files"]
+    explains: "Save output to a log file.
     arg:
       name: type
       required: true 

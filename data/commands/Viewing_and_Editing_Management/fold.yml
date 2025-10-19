@@ -4,7 +4,7 @@ category: "file viewing and editing management"
 description: "Wrap long lines to fit terminal width."
 syntax: "fold [OPTIONS] [FILE]"
 options:
-  - flag: ["-w <WIDTH>", "--width=<WIDTH>"]
+  - flag: ["-w WIDTH", "--width=WIDTH"]
     explains: "Max line width."
   - flag: ["-s", "--spaces"]
     explains: "Break at spaces (no mid-word splits)."

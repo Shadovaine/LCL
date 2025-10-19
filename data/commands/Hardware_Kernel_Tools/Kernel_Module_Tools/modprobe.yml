@@ -12,37 +12,37 @@ category: Hardware and Kernel tools
 description: Used to add or remove kernel modules intelligently.
 
 # General syntax of the command
-syntax: modprobe [Options] <module_name> [parameters...]
+syntax: modprobe [Options] module_name [parameters...]
 
 # Options: each flag (or set of flags) with an explanation
 # Use " flags" as a list if there are multiple aliases (e.g. ["-i", "--ignore-case"])
 # Optional: add "arg" if the optin expects a value
 options:
   - flag: ["-a"]
-    explains: Inserts all listed modules.
+    explains: "Inserts all listed modules.
   - flag: ["-r"]
-    explains: Removes a module.
+    explains: "Removes a module.
   - flag: ["--show", "-n"]
-    explains: Dry- run.
+    explains: "Dry- run.
   - flag: ["-v"]
-    explains: Verbose mode.
+    explains: "Verbose mode.
   - flag: ["--firest-time"]
-    explains: Fail if module already loaded.
+    explains: "Fail if module already loaded.
   - flag: ["--remove-dependencies"]
-    explains: Remove a module and its unused dempendencies.
-  - flag: ["--set-version <version>"]
-    explains: Act as if running under a specific kernel version.
+    explains: "Remove a module and its unused dempendencies.
+  - flag: ["--set-version version"]
+    explains: "Act as if running under a specific kernel version.
     arg:
       name: pattern
       required: true
   - flag: ["--dirname"]
-    explains: Shows the base direcotry of modules.
+    explains: "Shows the base direcotry of modules.
   - flag: ["--show-depends"]
-    explains: Shows all modules that would be inserted.
+    explains: "Shows all modules that would be inserted.
   - flag: ["--quiet"]
-    explains: Supress errors.
-  - flag: ["-C <file>"]
-    explains: Use alternate config file.
+    explains: "Supress errors.
+  - flag: ["-C file"]
+    explains: "Use alternate config file.
     arg:
       name: file
       required: true

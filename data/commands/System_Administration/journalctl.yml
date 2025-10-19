@@ -4,7 +4,7 @@ category: "system administration"
 description: "Query and display logs from systemd’s journal."
 syntax: "journalctl [OPTIONS]"
 options:
-  - flag: ["-u <service>"]
+  - flag: ["-u service"]
     explains: "Show logs for a specific unit."
   - flag: ["-b"]
     explains: "Show logs from the current boot."
@@ -12,19 +12,19 @@ options:
     explains: "Show kernel messages only."
   - flag: ["-f"]
     explains: "Follow logs in real time."
-  - flag: ["-n <N>"]
+  - flag: ["-n N"]
     explains: "Show the last N lines."
-  - flag: ["--since <time>"]
+  - flag: ["--since time"]
     explains: "Show logs since a given time."
-  - flag: ["--until <time>"]
+  - flag: ["--until time"]
     explains: "Show logs until a given time."
-  - flag: ["-p <priority>"]
+  - flag: ["-p priority"]
     explains: "Filter by priority (0=emerg to 7=debug)."
   - flag: ["--no-pager"]
     explains: "Disable paging."
   - flag: ["--disk-usage"]
     explains: "Show journal size on disk."
-  - flag: ["--vacuum-size=<size>"]
+  - flag: ["--vacuum-size=size"]
     explains: "Reduce logs until below specified size."
 examples:
   - |

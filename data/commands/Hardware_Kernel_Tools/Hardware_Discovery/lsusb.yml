@@ -19,19 +19,19 @@ syntax: lsusb [Options]
 # Optional: add "arg" if the optin expects a value
 options:
   - flag: ["-v"]
-    explains: Verbos mode.
+    explains: "Verbos mode.
   - flag: ["-s [[bus]:[device]]"]
-    explains: Shows only devices on a specific bus and/or device number.
+    explains: "Shows only devices on a specific bus and/or device number.
     arg:
       name: bus:device
       required: true
   - flag: ["-d [vendor]:[product]"]
-    explains: Shows only devices matching the given vendor ID and product ID.
+    explains: "Shows only devices matching the given vendor ID and product ID.
     arg: 
       name: vendor:product
       required: true
   - flag: ["-t"]
-    explains: Displays USB devices as a tree view.
+    explains: "Displays USB devices as a tree view.
     
 # Examples: List of example usages
 examples:

@@ -19,50 +19,50 @@ syntax: tree [OPTIONS]... [DIRECTORY]...
 # Optional: add "arg" if the optin expects a value
 options:
   - flag: ["-a"]
-    explains: All files are printed
+    explains: "All files are printed
   - flag: ["-d"]
-    explains: List directories only
-  - flag: ["-L <num>"]
-    explains: Max display depth of the directory tree
+    explains: "List directories only
+  - flag: ["-L num"]
+    explains: "Max display depth of the directory tree
     arg:
       name: num       # the placeholder name for the argument
       required: true # true if mandatory, false if optional
   - flag: ["-f"]
-    explains: Print the full path prefix for each file
+    explains: "Print the full path prefix for each file
   - flag: ["-F"]
-    explains: Append a '/' for directories, '*' for executables, etc.
+    explains: "Append a '/' for directories, '*' for executables, etc.
   - flag: ["-p"]
-    explains: Print the protections for each file
+    explains: "Print the protections for each file
   - flag: ["-u"]
-    explains: Print the file owner or UID number
+    explains: "Print the file owner or UID number
   - flag: ["-g"]
-    explains: Print the file group owner or GID number
+    explains: "Print the file group owner or GID number
   - flag: ["-s"]
-    explains: Print the size of each file in bytes
+    explains: "Print the size of each file in bytes
   - flag: ["-h"]
-    explains: Print the size of each file in a more human-readable way
-  - flag: ["-P <pattern>"]
-    explains: List only those files that match the pattern given
+    explains: "Print the size of each file in a more human-readable way
+  - flag: ["-P pattern"]
+    explains: "List only those files that match the pattern given
     arg:
       name: pattern   # the placeholder name for the argument
       required: true # true if mandatory, false if optional 
-  - flag: ["-I <pattern>"]
-    explains: Do not list files that match the given pattern  
+  - flag: ["-I pattern"]
+    explains: "Do not list files that match the given pattern  
     arg:
       name: pattern   # the placeholder name for the argument
       required: true # true if mandatory, false if optional
   - flag: ["-C"]
-    explains: Colorize the output
+    explains: "Colorize the output
   - flag: ["-N"]
-    explains: Print non-printable characters as istead of using escape sequences
+    explains: "Print non-printable characters as istead of using escape sequences
   - flag: ["-q"]
-    explains: Print non-printable characters as '?'
+    explains: "Print non-printable characters as '?'
   - flag: ["--du"]
-    explains: Show the cumulative size of each directory
+    explains: "Show the cumulative size of each directory
   - flag: ["--prune"]
-    explains: Prune empty directories from the output
+    explains: "Prune empty directories from the output
   - flag: ["--dirsfirst"]
-    explains: List directories before files
+    explains: "List directories before files
     
 # Examples: List of example usages
 examples:

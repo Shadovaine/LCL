@@ -19,27 +19,27 @@ syntax: modinfo [Options] [module_file] [module_name]
 # Optional: add "arg" if the optin expects a value
 options:
   - flag: ["-a"]
-    explains: Shows author of the module.
+    explains: "Shows author of the module.
   - flag: ["-d"]
-    explains: Shows description.
+    explains: "Shows description.
   - flag: ["-l"]
-    explains: Show license type.
+    explains: "Show license type.
   - flag: ["-p"]
-    explains: Show parameters the module accepts.
+    explains: "Show parameters the module accepts.
   - flag: ["-n"]
-    explains: Show the filename of the module.
-  - flag: ["-F <field>"]
-    explains: Displays only a specific field.
+    explains: "Show the filename of the module.
+  - flag: ["-F field"]
+    explains: "Displays only a specific field.
     arg: 
       name: field
       required: true
-  - flag: ["-k <kernel>"]
-    explains: Query module info for a specific kernel.
+  - flag: ["-k kernel"]
+    explains: "Query module info for a specific kernel.
     arg: 
       name: pattern
       required: true
   - flag: ["-O"]
-    explains: Seperate output fields with NUL instead of newline.
+    explains: "Seperate output fields with NUL instead of newline.
 
 # Examples: List of example usages
 examples:

@@ -7,19 +7,19 @@ options:
     explains: "Show help."
   - flag: ["-V"]
     explains: "Show version."
-  - flag: ["-t <seconds>"]
+  - flag: ["-t seconds"]
     explains: "Set refresh rate."
   - flag: ["-w"]
     explains: "Start in web UI mode."
   - flag: ["-s"]
     explains: "Start in server mode."
-  - flag: ["-c <host>"]
+  - flag: ["-c host"]
     explains: "Connect as client to remote server."
-  - flag: ["-C <file>"]
+  - flag: ["-C file"]
     explains: "Use custom config file."
-  - flag: ["-o <type>"]
+  - flag: ["-o type"]
     explains: "Set output mode (e.g., html)."
-  - flag: ["--export <backend>"]
+  - flag: ["--export backend"]
     explains: "Export stats to backend (e.g., influxdb2)."
   - flag: ["--disable-logs"]
     explains: "Disable logs."
@@ -27,15 +27,15 @@ options:
     explains: "Disable auto update check."
   - flag: ["--disable-rest"]
     explains: "Disable REST API."
-  - flag: ["--enable-plugin <name>", "--disable-plugin <name>"]
+  - flag: ["--enable-plugin name", "--disable-plugin name"]
     explains: "Control plugins."
-  - flag: ["-p <port>"]
+  - flag: ["-p port"]
     explains: "Set server/webserver port."
-  - flag: ["--username <user> --password <pwd>"]
+  - flag: ["--username user --password pwd"]
     explains: "Basic auth for web UI."
-  - flag: ["-f <MB>"]
+  - flag: ["-f MB"]
     explains: "Minimum free space alert threshold."
-  - flag: ["--process-filter <regex>"]
+  - flag: ["--process-filter regex"]
     explains: "Only show processes matching regex."
   - flag: ["-B"]
     explains: "No bold text."

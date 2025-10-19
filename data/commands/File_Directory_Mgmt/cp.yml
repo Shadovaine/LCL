@@ -19,33 +19,33 @@ syntax: cp [OPTIONS]... SOURCE... DEST
 # Optional: add "arg" if the optin expects a value
 options:
   - flag: ["-r"]
-    explains: Copy directories recursively
+    explains: "Copy directories recursively
   - flag: ["-u"]
-    explains: Copy only when the SOURCE file is newer than the destination file or when the destination file is missing
+    explains: "Copy only when the SOURCE file is newer than the destination file or when the destination file is missing
   - flag: ["-v"]
-    explains: Explain what is being done
+    explains: "Explain what is being done
   - flag: ["-i"]
-    explains: Prompt before overwrite
+    explains: "Prompt before overwrite"
   - flag: ["-a"]
-    explains: Archive mode; same as -dR --preserve=all
+    explains: "Archive mode; same as -dR --preserve=all"
   - flag: ["-f"]
-    explains: If an existing destination file cannot be opened, remove it and try again (this option is ignored when the -n option is also used)
+    explains: "If an existing destination file cannot be opened, remove it and try again (this option is ignored when the -n option is also used)"
   - flag: ["-n"]
-    explains: Do not overwrite an existing file (same as --no-clobber)
+    explains: "Do not overwrite an existing file (same as --no-clobber)"
   - flag: ["-p"]
-    explains: Preserve the specified attributes (e.g., mode, ownership, timestamps)
+    explains: "Preserve the specified attributes (e.g., mode, ownership, timestamps)
   - flag: ["-d"]
-    explains: Copy symbolic links as symbolic links
+    explains: "Copy symbolic links as symbolic links
   - flag: ["-L"]
-    explains: Always follow symbolic links in SOURCE
+    explains: "Always follow symbolic links in SOURCE
   - flag: ["-P"]
-    explains: Never follow symbolic links in SOURCE
+    explains: "Never follow symbolic links in SOURCE
   - flag: ["--parents"]
-    explains: Use full source file name under DIRECTORY
+    explains: "Use full source file name under DIRECTORY
   - flag: ["--remove-destination"]
-    explains: Remove each existing destination file before attempting to open it (contrast with -f)
+    explains: "Remove each existing destination file before attempting to open it (contrast with -f)
   - flag: ["--backup"]
-    explains: Make a backup of each existing destination file
+    explains: "Make a backup of each existing destination file
     arg:
       name: CONTROL
       required: false

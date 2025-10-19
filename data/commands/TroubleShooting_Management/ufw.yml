@@ -8,11 +8,11 @@ options:
     explains: "Turn firewall on/off."
   - flag: ["status"]
     explains: "Show firewall rules."
-  - flag: ["allow <port>"]
+  - flag: ["allow port"]
     explains: "Allow traffic to port."
-  - flag: ["deny <port>", "reject <port>"]
+  - flag: ["deny port", "reject port"]
     explains: "Deny traffic or actively reject."
-  - flag: ["limit <service>"]
+  - flag: ["limit service"]
     explains: "Rate-limit service to prevent brute-force."
 examples:
   - |

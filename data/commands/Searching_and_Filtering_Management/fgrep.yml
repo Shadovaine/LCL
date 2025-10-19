@@ -28,13 +28,13 @@ options:
     explains: "Match whole words."
   - flag: ["-x"]
     explains: "Match whole lines."
-  - flag: ["-A <N>"]
+  - flag: ["-A N"]
     explains: "Print N lines after match."
-  - flag: ["-B <N>"]
+  - flag: ["-B N"]
     explains: "Print N lines before match."
-  - flag: ["-C <N>"]
+  - flag: ["-C N"]
     explains: "Print N lines of context."
-  - flag: ["-m <N>"]
+  - flag: ["-m N"]
     explains: "Stop after N matches."
   - flag: ["-r", "-R"]
     explains: "Recursive search."

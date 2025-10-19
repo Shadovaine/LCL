@@ -13,9 +13,9 @@ syntax: vidir [OPTIONS]... DIRECTORY
 # Optional: add "arg" if the optin expects a value
 options:
   - flag: ["-v"]
-    explains: Use the specified editor instead of $EDITOR
+    explains: "Use the specified editor instead of $EDITOR
   - flag: ["-c"]
-    explains: Create the directory if it does not exist
+    explains: "Create the directory if it does not exist
    
 # Examples: List of example usages
 examples:

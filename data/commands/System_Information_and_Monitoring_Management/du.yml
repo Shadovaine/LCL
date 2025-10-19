@@ -12,13 +12,13 @@ options:
     explains: "Display only total per argument."
   - flag: ["-c"]
     explains: "Produce grand total."
-  - flag: ["-d <N>","--max-depth=<N>"]
+  - flag: ["-d N","--max-depth=N"]
     explains: "Limit recursion depth."
   - flag: ["-x"]
     explains: "Stay on one filesystem."
   - flag: ["--apparent-size"]
     explains: "Show apparent size, not blocks."
-  - flag: ["-k","-m","-B <SIZE>"]
+  - flag: ["-k","-m","-B SIZE"]
     explains: "Force size units."
   - flag: ["--time"]
     explains: "Show last modification time."

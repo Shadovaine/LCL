@@ -19,7 +19,7 @@ options:
     explains: "Print search paths for units."
   - flag: ["exit-status"]
     explains: "Print exit status of failed services."
-  - flag: ["verify <FILE>..."]
+  - flag: ["verify FILE..."]
     explains: "Check unit files for correctness."
 examples:
   - |
@@ -33,7 +33,7 @@ examples:
     systemd-analyze critical-chain
   - |
     # Export boot performance graph
-    systemd-analyze plot > boot.svg
+    systemd-analyze plot  boot.svg
   - |
     # Verify correctness of unit files
     systemd-analyze verify /etc/systemd/system/*.service

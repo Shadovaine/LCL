@@ -18,24 +18,24 @@ syntax: cd [directory]
 # Optional: add "arg" if the optin expects a value
 options:
   - flag: ["cd"]
-    explains: Change to the specified directory
+    explains: "Change to the specified directory
     arg:
       name: directory  # the placeholder name for the argument
       required: false # true if mandatory, false if optional
   - flag: ["cd ~"]
-    explains: Change to the home directory
+    explains: "Change to the home directory
   - flag: ["cd -"]
-    explains: Change to the previous directory
+    explains: "Change to the previous directory
   - flag: ["cd .."]
-    explains: Change to the parent directory
+    explains: "Change to the parent directory
   - flag: ["cd /path/to/directory"]
-    explains: Change to the specified absolute path
+    explains: "Change to the specified absolute path
   - flag: ["cd ../.."]
-    explains: Change to the grandparent directory
+    explains: "Change to the grandparent directory
   - flag: ["cd ./directory"]
-    explains: Change to a subdirectory within the current directory
+    explains: "Change to a subdirectory within the current directory
   - flag: ["cd ~username"]
-    explains: Change to the home directory of the specified user
+    explains: "Change to the home directory of the specified user
   
 # Examples: List of example usages
 examples:

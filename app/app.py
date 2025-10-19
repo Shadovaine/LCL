@@ -23,7 +23,21 @@ from .screens.menu import MenuScreen
 #=========================================================
 # Configuration
 #=========================================================
-SEARCH_PLACEHOLDER = "Search by name, category, description, or option…"
+SEARCH_PLACEHOLDER = "Search by name, category, or option..."
+
+#=========================================================
+# Focusable Static Widget
+#=========================================================
+class FocusableStatic(Static):
+    """A Static widget that can receive focus"""
+    
+    def __init__(self, *args, **kwargs):
+        # Disable markup by default to prevent parsing errors
+        kwargs.setdefault('markup', False)
+        super().__init__(*args, **kwargs)
+        # Make this widget focusable
+        self.can_focus = True
+
 
 #=========================================================
 # Main TUI Application
@@ -254,32 +268,48 @@ class CommandApp(App):
 
     def action_focus_next(self) -> None:
         """Custom tab navigation through specific widgets"""
-        # Define the focus order
+        # Define the focus order - only include widgets that always exist
         focus_order = [
             "#search_input",
-            "#results", 
+            "#results"
+        ]
+        
+        # Add detail widgets only if they exist
+        detail_widgets = [
             "#command_name_focus",
-            "#category_focus",
-            "#description_focus", 
+            "#category_focus", 
+            "#description_focus",
             "#options_focus",
             "#examples_focus"
         ]
         
         try:
+            # Check which detail widgets actually exist
+            existing_details = []
+            for widget_id in detail_widgets:
+                try:
+                    self.query_one(widget_id)
+                    existing_details.append(widget_id)
+                except:
+                    pass  # Widget doesn't exist, skip it
+            
+            # Combine focus order
+            full_focus_order = focus_order + existing_details
+            
             # Get currently focused widget
             current_focus = self.focused
             current_id = getattr(current_focus, 'id', None)
             
             # Find current position in focus order
             current_index = -1
-            for i, widget_id in enumerate(focus_order):
+            for i, widget_id in enumerate(full_focus_order):
                 if current_id == widget_id.lstrip('#'):
                     current_index = i
                     break
             
             # Move to next widget (or first if at end)
-            next_index = (current_index + 1) % len(focus_order)
-            next_widget_id = focus_order[next_index]
+            next_index = (current_index + 1) % len(full_focus_order)
+            next_widget_id = full_focus_order[next_index]
             
             # Focus the next widget
             try:
@@ -289,7 +319,8 @@ class CommandApp(App):
                 # Fallback to search input if widget not found
                 self.query_one("#search_input").focus()
                 
-        except Exception:
+        except Exception as e:
+            self.log(f"Error in focus_next: {e}")
             # Fallback to search input
             self.query_one("#search_input").focus()
 
@@ -330,91 +361,142 @@ class CommandApp(App):
 
     # --------------- Filtering ---------------
     def _apply_filters_and_render(self) -> None:
-        """Apply search filters with enhanced category, description, and options search"""
-        query = self.query_one("#search_input", Input).value.strip().lower()
-        
-        if not query:
-            self.filtered_docs = self.docs[:100].copy()
-        else:
-            # 1. Exact command name match (highest priority)
-            exact_matches = [doc for doc in self.docs if doc.get("name", "").strip().lower() == query]
+        """Apply search filters and update the display."""
+        try:
+            search_text = self.query_one("#search_input", Input).value.strip().lower()
             
-            if exact_matches:
-                self.filtered_docs = exact_matches
+            if not search_text:
+                # Show first 100 commands if no search
+                self.filtered_docs = self.docs[:100].copy()
             else:
-                # 2. Multi-field search (name, category, description, options)
-                matches = []
+                self.filtered_docs = []
                 
                 for doc in self.docs:
-                    found = False
-                    
-                    # Search in command name (partial match)
-                    if query in doc.get("name", "").lower():
-                        matches.append(doc)
-                        continue
-                    
-                    # Search in category (exact and partial)
-                    category = doc.get("category", "").lower()
-                    if query == category or query in category.replace("_", " ").replace("-", " "):
-                        matches.append(doc)
-                        continue
-                    
-                    # Search in description (partial match)
-                    description = doc.get("description", "").lower()
-                    if query in description:
-                        matches.append(doc)
-                        continue
-                    
-                    # Search in options/flags (FIXED VERSION)
-                    options = doc.get("options", [])
-                    if isinstance(options, list):
-                        for option in options:
-                            if isinstance(option, dict):
-                                # Search in flag name - handle both list and string
-                                flag_data = option.get("flag", "")
-                                flag_text = ""
+                    try:
+                        # Safe field extraction with defaults
+                        name = str(doc.get("name", "")).lower()
+                        category = str(doc.get("category", "")).lower()
+                        
+                        # Safe option searching - handle different option formats
+                        options_text = self._extract_options_text(doc)
+                        
+                        # Search in name, category, and options
+                        if (search_text in name or 
+                            search_text in category or 
+                            search_text in options_text):
+                            self.filtered_docs.append(doc)
+                            
+                            # Limit results to prevent UI overload
+                            if len(self.filtered_docs) >= 100:
+                                break
                                 
-                                if isinstance(flag_data, list):
-                                    # Join list of flags: ['-k', '--keep'] -> '-k --keep'
-                                    flag_text = " ".join(str(f) for f in flag_data).lower()
-                                else:
-                                    # Single flag string
-                                    flag_text = str(flag_data).lower()
-                                
-                                if query in flag_text:
-                                    matches.append(doc)
-                                    found = True
-                                    break
-                                
-                                # Search in flag explanation
-                                explains = option.get("explains", "").lower()
-                                if query in explains:
-                                    matches.append(doc)
-                                    found = True
-                                    break
-                    
-                    if found:
+                    except Exception as e:
+                        # Log error but continue with next document
+                        self.log(f"Error processing document {doc.get('name', 'unknown')}: {e}")
                         continue
-                
-                self.filtered_docs = matches[:100]  # Limit results
-        
-        # Update table
-        table = self.query_one("#results", DataTable)
-        table.clear()
-        for doc in self.filtered_docs:
-            description = doc.get("description", "")
-            truncated_desc = description[:50] + "..." if len(description) > 50 else description
-            table.add_row(
-                doc.get("name", ""),
-                doc.get("category", ""),
-                truncated_desc
-            )
-        
-        # Auto-focus on first result if any
-        if self.filtered_docs and table.row_count > 0:
-            table.move_cursor(row=0)
-            # Show details for first result
-            self._update_details(self.filtered_docs[0])
+            
+            # Update table safely
+            self._update_results_table()
+            
+        except Exception as e:
+            self.log(f"Error in search: {e}")
+            # Fallback - show first 100 commands
+            self.filtered_docs = self.docs[:100].copy()
+            self._update_results_table()
+
+    def _update_results_table(self) -> None:
+        """Refresh the DataTable '#results' from self.filtered_docs safely."""
+        try:
+            table = self.query_one("#results", DataTable)
+            table.clear()
+            # Limit displayed rows to avoid UI overload
+            for doc in (self.filtered_docs or [])[:100]:
+                name = doc.get("name", "")
+                category = doc.get("category", "")
+                desc = doc.get("description", "") or ""
+                short_desc = desc[:50] + "..." if len(desc) > 50 else desc
+                table.add_row(name, category, short_desc)
+        except Exception as e:
+            # Log but do not raise to keep UI responsive
+            self.log(f"Error updating results table: {e}")
+
+    def _extract_options_text(self, doc: dict) -> str:
+        """Safely extract searchable text from options."""
+        try:
+            options = doc.get("options", [])
+            if not options:
+                return ""
+            
+            options_text_parts = []
+            
+            # Handle different option formats
+            if isinstance(options, list):
+                for option in options:
+                    try:
+                        if isinstance(option, dict):
+                            # Handle dict format: {"flag": ["-a", "--all"], "explains": "..."}
+                            flag = option.get("flag", "")
+                            if isinstance(flag, list):
+                                # Clean each flag item
+                                clean_flags = []
+                                for f in flag:
+                                    clean_flag = str(f).strip()
+                                    if clean_flag:
+                                        clean_flags.append(clean_flag.lower())
+                                if clean_flags:
+                                    options_text_parts.extend(clean_flags)
+                            else:
+                                clean_flag = str(flag).strip()
+                                if clean_flag:
+                                    options_text_parts.append(clean_flag.lower())
+                        
+                            # Add explanation text too
+                            explains = option.get("explains", "")
+                            if explains:
+                                clean_explains = str(explains).strip()
+                                if clean_explains:
+                                    options_text_parts.append(clean_explains.lower())
+                            
+                        elif isinstance(option, str):
+                            # Handle simple string options
+                            clean_option = option.strip()
+                            if clean_option:
+                                options_text_parts.append(clean_option.lower())
+                        else:
+                            # Fallback for unexpected types
+                            clean_option = str(option).strip()
+                            if clean_option:
+                                options_text_parts.append(clean_option.lower())
+                            
+                    except Exception as e:
+                        # Log error but continue with next option
+                        self.log(f"Error processing option {option}: {e}")
+                        continue
+            elif isinstance(options, dict):
+                # Some docs may store options as a dict; include keys and string values
+                for k, v in options.items():
+                    try:
+                        key = str(k).strip()
+                        if key:
+                            options_text_parts.append(key.lower())
+                        if isinstance(v, str):
+                            val = v.strip()
+                            if val:
+                                options_text_parts.append(val.lower())
+                    except Exception as e:
+                        self.log(f"Error processing option entry {k}: {e}")
+                        continue
+            else:
+                # Fallback to string representation
+                opts_str = str(options).strip()
+                if opts_str:
+                    options_text_parts.append(opts_str.lower())
+
+            return " ".join(options_text_parts)
+            
+        except Exception as e:
+            self.log(f"Error extracting options text: {e}")
+            return ""
 
     # --------------- Details ---------------
     def _update_details(self, doc: Dict[str, Any]) -> None:
@@ -423,10 +505,10 @@ class CommandApp(App):
             details_content = self.query_one("#details_content")
             details_content.remove_children()
 
-            # Command Name Box (focusable)
+            # Command Name Box (with markup=False)
             command_name_box = Vertical(
-                Static("Command Name", classes="detail_header"),
-                FocusableStatic(doc.get("name", "N/A"), classes="detail_content", id="command_name_focus"),
+                Static("Command Name", classes="detail_header", markup=False),
+                FocusableStatic(doc.get("name", "N/A"), classes="detail_content", id="command_name_focus", markup=False),
                 classes="detail_box_compact",
                 id="command_name_box",
             )
@@ -434,8 +516,8 @@ class CommandApp(App):
 
             # Category Box (focusable)
             category_box = Vertical(
-                Static("Category", classes="detail_header"),
-                FocusableStatic(doc.get("category", "N/A"), classes="detail_content", id="category_focus"),
+                Static("Category", classes="detail_header", markup=False),
+                FocusableStatic(doc.get("category", "N/A"), classes="detail_content", id="category_focus", markup=False),
                 classes="detail_box_compact",
                 id="category_box",
             )
@@ -443,28 +525,28 @@ class CommandApp(App):
 
             # Description Box (focusable)
             description_box = Vertical(
-                Static("Description", classes="detail_header"),
-                FocusableStatic(doc.get("description", "N/A"), classes="detail_content", id="description_focus"),
+                Static("Description", classes="detail_header", markup=False),
+                FocusableStatic(doc.get("description", "N/A"), classes="detail_content", id="description_focus", markup=False),
                 classes="detail_box_compact",
                 id="description_box",
             )
             details_content.mount(description_box)
 
-            # Options Box (focusable and scrollable)
+            # Options Box (focusable and scrollable) - ADD markup=False HERE
             options_content = self._format_options(doc.get("options", []))
             options_box = Vertical(
-                Static("Options with Explanations", classes="detail_header"),
-                FocusableStatic(options_content, classes="detail_content", id="options_focus"),
+                Static("Options with Explanations", classes="detail_header", markup=False),  # ADD THIS
+                FocusableStatic(options_content, classes="detail_content", id="options_focus", markup=False),  # ADD THIS
                 classes="detail_box_large",
                 id="options_box",
             )
             details_content.mount(options_box)
 
-            # Examples Box (focusable and scrollable)
+            # Examples Box (focusable and scrollable) - ADD markup=False HERE
             examples_content = self._format_examples(doc.get("examples", []))
             examples_box = Vertical(
-                Static("Examples", classes="detail_header"),
-                FocusableStatic(examples_content, classes="detail_content", id="examples_focus"),
+                Static("Examples", classes="detail_header", markup=False),  # ADD THIS
+                FocusableStatic(examples_content, classes="detail_content", id="examples_focus", markup=False),  # ADD THIS
                 classes="detail_box_large",
                 id="examples_box",
             )
@@ -474,61 +556,49 @@ class CommandApp(App):
             details_content = self.query_one("#details_content")
             details_content.remove_children()
             error_box = Vertical(
-                Static("ERROR", classes="detail_header"),
-                Static(f"Error: {str(e)}", classes="detail_content"),
+                Static("ERROR", classes="detail_header", markup=False),  # ADD THIS TOO
+                Static(f"Error: {str(e)}", classes="detail_content", markup=False),  # ADD THIS TOO
                 classes="detail_box"
             )
             details_content.mount(error_box)
 
     def _format_options(self, options: List[Dict[str, Any]]) -> str:
         """Format options into a readable string for the details pane."""
-        if not options:
-            return "No options documented."
+        try:
+            if not options:
+                return "No options documented."
 
-        lines: List[str] = []
-        # If options is a dict (sometimes), normalize to list
-        if isinstance(options, dict):
-            # try to iterate key/value pairs
-            for k, v in options.items():
-                lines.append(str(k))
-                if v:
-                    lines.append(f"  {v}")
-            return "\n".join(lines)
-
-        if not isinstance(options, list):
-            return str(options)
-
-        for opt in options:
-            if isinstance(opt, dict):
-                flag_data = opt.get("flag", "")
-                explains = opt.get("explains", "") or opt.get("explain", "") or ""
-                # Normalize flag(s)
-                if isinstance(flag_data, list):
-                    flag_text = " ".join(str(f) for f in flag_data)
-                else:
-                    flag_text = str(flag_data)
-                flag_text = flag_text.strip()
-                if flag_text:
-                    lines.append(flag_text)
-                if explains:
-                    # Preserve multi-line explanations
-                    expl_lines = str(explains).splitlines()
-                    for ex in expl_lines:
-                        lines.append(f"  {ex}")
-                else:
-                    lines.append("  (no explanation)")
-            else:
-                # Plain string entry
-                lines.extend(str(opt).splitlines())
-
-            # separator between options for readability
-            lines.append("")
-
-        # remove trailing empty line if present
-        if lines and lines[-1] == "":
-            lines.pop()
-
-        return "\n".join(lines)
+            lines: List[str] = []
+            
+            for option in options:
+                if isinstance(option, dict):
+                    flag = option.get("flag", "")
+                    explains = option.get("explains", "")
+                    
+                    # Debug: Print problematic content
+                    if "']: Use archive file" in str(flag) or "']: Use archive file" in str(explains):
+                        print(f"DEBUG: Found problematic content: flag={flag}, explains={explains}")
+                    
+                    # Format the flag part
+                    if isinstance(flag, list):
+                        flag_str = ", ".join(str(f) for f in flag)
+                    else:
+                        flag_str = str(flag)
+                    
+                    # Format the complete line
+                    if explains:
+                        lines.append(f"{flag_str}: {explains}")
+                    else:
+                        lines.append(flag_str)
+                        
+                elif isinstance(option, str):
+                    lines.append(option)
+                
+            return "\n\n".join(lines)
+            
+        except Exception as e:
+            self.log(f"Error formatting options: {e}")
+            return "Error formatting options"
 
     def _format_examples(self, examples: Any) -> str:
         """Format examples into a readable string for the details pane."""
@@ -569,18 +639,6 @@ class CommandApp(App):
 
 
 #=========================================================
-# Focusable Static Widget
-#=========================================================
-class FocusableStatic(Static):
-    """A Static widget that can receive focus"""
-    
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-        # Make this widget focusable
-        self.can_focus = True
-
-
-#=========================================================
 # Entry Point
 #=========================================================
 def main() -> None:
@@ -591,86 +649,3 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
-
-#=========================================================
-# Menu Screen Enhancements
-#=========================================================
-async def on_button_pressed(self, event: Button.Pressed) -> None:
-    """Handle button presses."""
-    bid = event.button.id
-    app = self.app
-
-    if bid == "menu_close":
-        self.dismiss(None)
-    elif bid == "menu_help":
-        from .screens.help import HelpScreen
-        app.push_screen(HelpScreen())
-    elif bid == "menu_about":
-        from .screens.about import AboutScreen
-        app.push_screen(AboutScreen())
-    elif bid == "menu_new":
-        # Use your existing template
-        self.dismiss(None)  # Close menu first
-        self._open_command_template()
-
-def _open_command_template(self) -> None:
-    """Open the existing command template for editing."""
-    try:
-        # Path to your existing template
-        template_path = Path("templates/command_template.yml")
-        
-        if not template_path.exists():
-            self.app.notify("Template not found at templates/command_template.yml", severity="error")
-            return
-        
-        # Create a copy for new command
-        import datetime
-        timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
-        new_command_path = Path(f"templates/new_command_{timestamp}.yml")
-        
-        # Copy template to new file
-        import shutil
-        shutil.copy2(template_path, new_command_path)
-        
-        self.app.notify(f"New command template created: {new_command_path}")
-        
-        # Try to open in editor
-        self._open_in_editor(new_command_path)
-        
-    except Exception as e:
-        self.app.notify(f"Error creating command template: {e}", severity="error")
-
-def _open_in_editor(self, file_path: Path) -> None:
-    """Try to open file in available text editor."""
-    import subprocess
-    import os
-    
-    # List of editors to try (in order of preference)
-    editors = [
-        os.getenv('EDITOR'),  # User's preferred editor
-        'nano',               # Usually available on Linux
-        'vim',               # Common on Linux
-        'gedit',             # GUI editor
-        'code',              # VS Code
-        'kate',              # KDE editor
-    ]
-    
-    for editor in editors:
-        if editor is None:
-            continue
-            
-        try:
-            # Check if editor exists
-            subprocess.run(['which', editor], check=True, capture_output=True)
-            
-            # Open the file
-            subprocess.Popen([editor, str(file_path)])
-            
-            self.app.notify(f"Opening template in {editor}")
-            return
-            
-        except (subprocess.CalledProcessError, FileNotFoundError):
-            continue
-    
-    # If no editor found, just show the path
-    self.app.notify(f"Please edit manually: {file_path}")

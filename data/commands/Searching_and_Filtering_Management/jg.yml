@@ -4,9 +4,9 @@ category: "search and filter management"
 description: "JSON grepping / parsing tool."
 syntax: "jg [options] pattern [path]"
 options:
-  - flag: ["--query <string>"]
+  - flag: ["--query string"]
     explains: "Search using a query string."
-  - flag: ["--cwd <dir>"]
+  - flag: ["--cwd dir"]
     explains: "Set working directory."
   - flag: ["--hidden"]
     explains: "Include hidden files."
@@ -18,9 +18,9 @@ options:
     explains: "Force case-sensitive."
   - flag: ["--ignore-case"]
     explains: "Force case-insensitive."
-  - flag: ["--type <ext>"]
+  - flag: ["--type ext"]
     explains: "Restrict to file type."
-  - flag: ["--type-not <ext>"]
+  - flag: ["--type-not ext"]
     explains: "Exclude file type."
 examples:
   - |

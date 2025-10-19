@@ -8,7 +8,7 @@ options:
     explains: "Readable key/value summary."
   - flag: ["-J"]
     explains: "JSON output."
-  - flag: ["-e=<cols>"]
+  - flag: ["-e=cols"]
     explains: "Tabular output with selected columns."
   - flag: ["-e=ALL"]
     explains: "All columns."

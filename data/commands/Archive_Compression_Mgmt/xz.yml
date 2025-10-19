@@ -3,43 +3,43 @@
 #--------------------------------
 
 # The name of the command (must match the actual Linux command)
-name: xz #<command_name>
+name: xz #command_name
 
 # Category this command belongs to (text_processing, file_management, user_group_mgmt, networking)
-category: Archiving_and_Compression_Management #<category>
+category: Archiving_and_Compression_Management #category
 
 # One-Line description of what the command does
-description: Compresses files using the LZMA2 algorithm #<what the command does>
+description: Compresses files using the LZMA2 algorithm #what the command does
 
 # General syntax of the command
-syntax: xz [OPTIONS] FILES... #<<command [OPTIONS]...[ARGS]...> 
+syntax: xz [OPTIONS] FILES... #command [OPTIONS]...[ARGS]... 
 
 # Options: each flag (or set of flags) with an explanation
 # Use " flags" as a list if there are multiple aliases (e.g. ["-i", "--ignore-case"])
 # Optional: add "arg" if the optin expects a value
 options:
   - flag: ["-k"]
-    explains: Keep (don't delete) input files
+    explains: "Keep (don't delete) input files
   - flag: ["-d", "--decompress", "--uncompress"]
-    explains: Decompress
+    explains: "Decompress
   - flag: ["-f", "--force"]
-    explains: Force compression or decompression even if the file has multiple links or the corresponding output file already exists
+    explains: "Force compression or decompression even if the file has multiple links or the corresponding output file already exists
   - flag: ["-t", "--test"]
-    explains: Test compressed file integrity
+    explains: "Test compressed file integrity
   - flag: ["-v", "--verbose"]
-    explains: Verbosely list files processed
+    explains: "Verbosely list files processed
   - flag: ["-q"]
-    explains: Suppress all warnings
+    explains: "Suppress all warnings
   - flag: ["-1", "-2", "-3", "-4", "-5", "-6", "-7", "-8", "-9"]
-    explains: Set compression level (1 is fastest, 9 is best compression) 
+    explains: "Set compression level (1 is fastest, 9 is best compression) 
   - flag: ["-C", "--check"]
-    explains: Set integrity check type (none, crc32, crc64, sha256)
+    explains: "Set integrity check type (none, crc32, crc64, sha256)
   - flag: ["-M", "--memory"]
-    explains: Set memory usage limit
+    explains: "Set memory usage limit
   - flag: ["-T", "--threads"]
-    explains: Set number of threads to use for compression or decompression (deafults to number of CPU cores)
+    explains: "Set number of threads to use for compression or decompression (deafults to number of CPU cores)
   - flag: ["--single-stream"]
-    explains: Compress or decompress using a single stream
+    explains: "Compress or decompress using a single stream
     
 # Examples: List of example usages
 examples:

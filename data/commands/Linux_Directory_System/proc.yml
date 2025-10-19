@@ -11,5 +11,5 @@ contents:
 examples:
   - command: "cat /proc/cpuinfo"
     explanation: "Show CPU details"
-  - command: "echo 1 > /proc/sys/net/ipv4/ip_forward"
+  - command: "echo 1  /proc/sys/net/ipv4/ip_forward"
     explanation: "Enable IP forwarding"

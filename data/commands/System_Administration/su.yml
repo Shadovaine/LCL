@@ -6,11 +6,11 @@ syntax: "su [OPTIONS] [-] [USERNAME [ARG]...]"
 options:
   - flag: ["(none)"]
     explains: "Switch to root account."
-  - flag: ["- <username>", "-l <username>"]
+  - flag: ["- username", "-l username"]
     explains: "Start a login shell as target user."
-  - flag: ["-c <command>"]
+  - flag: ["-c command"]
     explains: "Run a single command as another user."
-  - flag: ["-s <shell>"]
+  - flag: ["-s shell"]
     explains: "Specify shell to use."
   - flag: ["-m", "-p"]
     explains: "Preserve environment."

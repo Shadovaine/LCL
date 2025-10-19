@@ -5,19 +5,19 @@ syntax: "asciinema [COMMAND] [OPTIONS]"
 options:
   - flag: ["rec [FILE]"]
     explains: "Start recording. Save to local FILE or upload if no file given."
-  - flag: ["play <FILE/URL>"]
+  - flag: ["play FILE/URL"]
     explains: "Replay a recorded cast from local file or URL."
-  - flag: ["upload <FILE>"]
+  - flag: ["upload FILE"]
     explains: "Upload existing recording to asciinema.org."
-  - flag: ["cat <FILE>"]
+  - flag: ["cat FILE"]
     explains: "Print recording to stdout (for piping/processing)."
   - flag: ["auth"]
     explains: "Authenticate with asciinema.org (link local install to your account)."
   - flag: ["--stdin"]
     explains: "Capture stdin as well."
-  - flag: ["--cols <N>", "--rows <N>"]
+  - flag: ["--cols N", "--rows N"]
     explains: "Force terminal size for recording."
-  - flag: ["--command <CMD>"]
+  - flag: ["--command CMD"]
     explains: "Run a specific command inside the recording instead of default shell."
   - flag: ["--raw"]
     explains: "Record unprocessed stream (low-level, not typical)."

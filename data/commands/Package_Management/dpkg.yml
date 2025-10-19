@@ -21,9 +21,9 @@ options:
     explains: "Show info about a .deb file."
   - flag: ["-x"]
     explains: "Extract .deb contents to a folder."
-  - flag: ["--configure <package>"]
+  - flag: ["--configure package"]
     explains: "Reconfigure an unpacked package."
-  - flag: ["--unpack <file.deb>"]
+  - flag: ["--unpack file.deb"]
     explains: "Unpack without configuring."
   - flag: ["--audit"]
     explains: "Show partially installed packages."

@@ -18,11 +18,11 @@ options:
     explains: "List allowed/forbidden commands for current user."
   - flag: ["-L"]
     explains: "List all sudoers options and defaults."
-  - flag: ["-u <user>"]
+  - flag: ["-u user"]
     explains: "Run command as another user."
-  - flag: ["-g <group>"]
-    explains: "Run with primary group set to <group>."
-  - flag: ["-U <user>"]
+  - flag: ["-g group"]
+    explains: "Run with primary group set to group."
+  - flag: ["-U user"]
     explains: "List privileges for another user (with -l)."
   - flag: ["-s"]
     explains: "Run in the invoking user's default shell."
@@ -36,7 +36,7 @@ options:
     explains: "Run command in background."
   - flag: ["-n"]
     explains: "Non-interactive; fail if password is required."
-  - flag: ["-p <prompt>"]
+  - flag: ["-p prompt"]
     explains: "Use a custom password prompt."
   - flag: ["-S"]
     explains: "Read password from stdin."

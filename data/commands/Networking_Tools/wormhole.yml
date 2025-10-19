@@ -19,12 +19,12 @@ syntax: wormhole [OPTIONS]...[ARGS]...
 # Optional: add "arg" if the optin expects a value
 options:
   - flag: ["send[f or d]"]
-    explains: Start an encrypted transfer, spits out a code.
+    explains: "Start an encrypted transfer, spits out a code.
     arg:
       name: FILENAME or DIRECTORY  # the placeholder name for the argument
       required: true               # true if mandatory, false if optional
   - flag: ["receive[r]"]
-    explains: Receive a file or directory using the provided code.
+    explains: "Receive a file or directory using the provided code.
     arg:
       name: CODE     # the placeholder name for the argument
       required: true # true if mandatory, false if optional
@@ -33,4 +33,4 @@ options:
 examples:
   - wormhole send myfile.txt
   - wormhole receive 7-crimson-swan
-  - wormhole send myfolder | wormhole receive 7-crimson-swan  > received_folder
+  - wormhole send myfolder | wormhole receive 7-crimson-swan   received_folder

@@ -12,7 +12,7 @@ options:
     explains: "Use UDP."
   - flag: ["-z"]
     explains: "Zero-I/O (port scanning)."
-  - flag: ["-p <port>"]
+  - flag: ["-p port"]
     explains: "Source port."
 examples:
   - |
