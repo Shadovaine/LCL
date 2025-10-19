@@ -1,40 +1,39 @@
+cat > README.md << 'EOF'
+# 🐧 LCL
 
+A comprehensive Terminal User Interface (TUI) application for browsing and searching Linux commands with a beautiful, professional interface.
+
+![LCL Screenshot](screenshots/main-interface.png)
+
+## 🌟 Features
+
+- **📚 180+ Linux Commands** - Comprehensive database organized by category
+- **🔍 Lightning-Fast Search** - Real-time search by command name, category, or options  
+- **📖 Rich Details** - View command syntax, options, examples, and descriptions
+- **🎨 Beautiful TUI** - Professional orange-themed interface with smooth animations
+- **⌨️ Full Keyboard Navigation** - Tab through all interface elements seamlessly
+- **👑 Admin Features** - Template generation for command maintainers
+- **🛡️ Robust Error Handling** - Graceful handling of malformed data
+
+## 📸 Screenshots
+
+### Main Interface
+![Main Interface](screenshots/main-interface.png)
+
+### Search Results
+![Search Results](screenshots/search-results.png)
+
+### Command Details
+![Command Details](screenshots/command-details.png)
+
+### Menu System
+![Menu System](screenshots/menu-system.png)
+
+## 🚀 Quick Start
+
+### Installation via pipx (Recommended)
+```bash
+pipx install lcl
+lcl
 # 🐧 Linux Command Library
 
-Welcome to my personal Linux command library — a curated collection of commands, options, and breakdowns as I train for the CompTIA Linux+ certification and real-world sysadmin work.
-
-## 📁 Topics Covered
-
-- Archiving & Compression
-- Disk and FileSystem Management
-- File & Directory Management
-- Networking Tools
-- Package Management
-- Permissions & Ownership
-- Process Management
-- Scripting & Automation
-- Search & Filter Management
-- Security Hardening
-- System Information and Monitoring
-- TroubleShooting Management
-- User & Group Management
-- WildCards
-- Viewing and Edit Management
-
-### 📌 Example Command: `find` 
-Search for Files Matching Criteria
-
-<pre>
-bash
-find /etc -type f -name "*.conf" -user root -mtime -2
-
-</pre>	
-
- **Breakdown**:
- - `find`: Search utility
- - `/etc`: Starting directory
- - `-type f`: Files only
- - `-name "*.conf"`: Only `.conf` files
- - `-user root`: Owned by root
- - `-mtime -2`: Modified in the last 2 days
-	
