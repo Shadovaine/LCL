@@ -1,38 +1,49 @@
-# Build / packaging
-*.egg-info
-*.egg-info/
-# Python cache / bytecode
+# Python
 __pycache__/
 *.py[cod]
-*.pyo
-*.pyd
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
 
 # Virtual environments
 .venv/
-env/
 venv/
 ENV/
+env/
 
-# Build / packaging
-build/
-dist/
-*.egg-info/
-*.spec
-
-# Logs / reports
-*.log
-*.out
-*.tmp
-
-# OS cruft
-.DS_Store
-Thumbs.db
-
-# IDE / editor junk
+# IDE
 .vscode/
 .idea/
 *.swp
 *.swo
 
-# Project specific
-app/progress.json   # your quiz/progress tracking file
+# OS
+.DS_Store
+Thumbs.db
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Logs
+*.log
+
+# Release archives (keep source, not built archives)
+*.tar.gz
+*.zip
