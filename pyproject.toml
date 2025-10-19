@@ -12,11 +12,10 @@ requires-python = ">=3.10"
 # PEP 621 wants a list of author tables
 authors = [{ name = "ShadoVaine", email = "shado.sec@proton.me" }]
 
-# Pin Textual a bit to match your older API (no show_key_bindings kwarg)
+# Correct dependencies for your app
 dependencies = [
   "textual>=0.69.0",
-  "rapidfuzz>=3.0.0",
-  "watchdog>=3.0.0"
+  "pyyaml>=6.0.0"
 ]
 
 # This creates the 'lcl' command that calls app/app.py:main()
@@ -28,10 +27,12 @@ lcl = "app.app:main"
 where = ["."]
 include = ["app*"]
 
-# Include your non-Python assets if you ship them (adjust paths as needed)
+# Include data files
+[tool.setuptools]
+include-package-data = true
+
 [tool.setuptools.package-data]
-"app" = [
-  "data/commands/**/*.yml",
-  "templates/**/*.yml",
-  ".exports/*.md"
+"*" = [
+  "data/**/*.yml",
+  "data/**/*.yaml"
 ]

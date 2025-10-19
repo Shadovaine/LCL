@@ -49,13 +49,13 @@ class HelpScreen(ModalScreen[None]):  # Change to ModalScreen
     CSS = """
     HelpScreen {
         align: center middle;
-        background: rgba(0, 0, 0, 0.8);  # Semi-transparent overlay
+        background: rgba(0, 0, 0, 0.8);
     }
     
     #help_container {
         width: 80;
         height: 30;
-        border: round $accent;
+        border: round #0178d4;      /* Blue border */
         padding: 2;
         background: $surface;
     }
@@ -63,7 +63,7 @@ class HelpScreen(ModalScreen[None]):  # Change to ModalScreen
     #help_title {
         text-align: center;
         text-style: bold;
-        color: $accent;
+        color: #0178d4;             /* Blue title */
         margin: 0 0 1 0;
         height: 1;
     }
@@ -72,13 +72,19 @@ class HelpScreen(ModalScreen[None]):  # Change to ModalScreen
         height: 1fr;
         overflow-y: auto;
         padding: 1;
-        border: round $primary;
+        border: round #0178d4;      /* Blue content border */
         background: $background;
     }
     
     .close_button {
         width: 20;
         margin: 1 0 0 0;
+        border: round #0178d4;      /* Blue button border */
+    }
+    
+    .close_button:focus {
+        border: thick #0178d4;      /* Blue focus */
+        background: #0178d4 20%;
     }
     """
 

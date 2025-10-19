@@ -15,13 +15,13 @@ class AboutScreen(ModalScreen[None]):  # Must be ModalScreen
     CSS = """
     AboutScreen {
         align: center middle;
-        background: rgba(0, 0, 0, 0.8);  # Semi-transparent overlay
+        background: rgba(0, 0, 0, 0.8);
     }
     
     #about_container {
         width: 70;
         height: 25;
-        border: round $accent;
+        border: round #0178d4;      /* Blue border */
         padding: 2;
         background: $surface;
     }
@@ -29,7 +29,7 @@ class AboutScreen(ModalScreen[None]):  # Must be ModalScreen
     #about_title {
         text-align: center;
         text-style: bold;
-        color: $accent;
+        color: #0178d4;             /* Blue title */
         margin: 0 0 1 0;
         height: 1;
     }
@@ -38,13 +38,19 @@ class AboutScreen(ModalScreen[None]):  # Must be ModalScreen
         height: 1fr;
         overflow-y: auto;
         padding: 1;
-        border: round $primary;
+        border: round #0178d4;      /* Blue content border */
         background: $background;
     }
     
     .close_button {
         width: 20;
         margin: 1 0 0 0;
+        border: round #0178d4;      /* Blue button border */
+    }
+    
+    .close_button:focus {
+        border: thick #0178d4;      /* Blue focus */
+        background: #0178d4 20%;
     }
     """
 
@@ -62,7 +68,7 @@ class AboutScreen(ModalScreen[None]):  # Must be ModalScreen
 A comprehensive command reference tool for Linux users
 
 ## 🚀 FEATURES
-• 500+ Linux commands organized by category
+• 180+ Linux commands organized by category
 • Detailed explanations and usage examples
 • Fast search and navigation interface
 • Clean, responsive TUI design
