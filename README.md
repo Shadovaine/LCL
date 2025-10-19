@@ -1,4 +1,7 @@
-cat > README.md << 'EOF'
+<p align="center">
+  <img src="./LCL/media/LCB.png" alt="LCL Banner" />
+</p>
+
 # 🐧 LCL
 
 A comprehensive Terminal User Interface (TUI) application for browsing and searching Linux commands with a beautiful, professional interface.
