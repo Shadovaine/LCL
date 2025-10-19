@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="./LCL/media/LCB.png" alt="LCL Banner" />
+  <img src="./media/LCB.png" alt="LCL Banner" />
 </p>
 
 # 🐧 LCL
