@@ -6,7 +6,9 @@
 
 A comprehensive Terminal User Interface (TUI) application for browsing and searching Linux commands with a beautiful, professional interface.
 
-![LCL Screenshot](screenshots/main-interface.png)
+<p align="center">
+  <img src="./media/lcl.png" alt="LCL Banner" />
+</p>
 
 ## 🌟 Features
 
@@ -21,22 +23,29 @@ A comprehensive Terminal User Interface (TUI) application for browsing and searc
 ## 📸 Screenshots
 
 ### Main Interface
-![Main Interface](screenshots/main-interface.png)
+<p align="center">
+  <img src="./media/lcl.png" alt="LCL Banner" />
+</p>
 
 ### Search Results
-![Search Results](screenshots/search-results.png)
+<p align="center">
+  <img src="./media/lcl.png" alt="LCL Banner" />
+</p>
 
 ### Command Details
-![Command Details](screenshots/command-details.png)
+<p align="center">
+  <img src="./media/lcl.png" alt="LCL Banner" />
+</p>
 
 ### Menu System
-![Menu System](screenshots/menu-system.png)
-
+<p align="center">
+  <img src="./media/lcl.png" alt="LCL Banner" />
+</p>
 ## 🚀 Quick Start
 
 ### Installation via pipx (Recommended)
 ```bash
 pipx install lcl
 lcl
-# 🐧 Linux Command Library
+# 🐧 LCL
 
