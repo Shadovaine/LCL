@@ -29,7 +29,7 @@ A comprehensive Terminal User Interface (TUI) application for browsing and searc
 
 ### Search Results
 <p align="center">
-  <img src="./media/lcl.png" alt="LCL Banner" />
+  <img src="./media/lcl2.png" alt="Search Banner" />
 </p>
 
 ### Command Details
