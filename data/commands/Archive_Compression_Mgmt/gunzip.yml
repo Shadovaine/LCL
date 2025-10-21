@@ -19,23 +19,23 @@ syntax: gunzip [OPTIONS] FILE.gz
 # Optional: add "arg" if the optin expects a value
 options:
   - flag: ["-k"]
-    explains: "Keep (don't delete) input files
+    explains: "Keep (don't delete) input files"
   - flag: ["-c"]
-    explains: "Write output to standard output and keep original files
+    explains: "Write output to standard output and keep original files"
   - flag: ["-f"]
-    explains: "Force decompression even if the file has multiple links or the corresponding uncompressed file already exists
+    explains: "Force decompression even if the file has multiple links or the corresponding uncompressed file already exists"
   - flag: ["-l"]
-    explains: "List compressed file contents
+    explains: "List compressed file contents"
   - flag: ["-t"]
-    explains: "Test compressed file integrity
+    explains: "Test compressed file integrity"
   - flag: ["-v"]
-    explains: "Verbosely list files processed
+    explains: "Verbosely list files processed"
   - flag: ["-q"]
-    explains: "Suppress all warnings
+    explains: "Suppress all warnings"
   - flag: ["-s"]
-    explains: "Suppress all output except for errors
+    explains: "Suppress all output except for errors"
   - flag: ["-d"]
-    explains: "Decompress (same as default behavior)
+    explains: "Decompress (same as default behavior)"
     
 # Examples: List of example usages
 examples:

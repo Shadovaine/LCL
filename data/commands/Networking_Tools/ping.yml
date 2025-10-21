@@ -19,32 +19,32 @@ syntax: ping [Options] [Destination]
 # Optional: add "arg" if the optin expects a value
 options:
   - flag: ["-c NUM"]
-    explains: "Stop after sending N packets.
+    explains: "Stop after sending N packets."
   - flag: ["-i interval"]
-    explains: "Interval between packets.
+    explains: "Interval between packets."
   - flag: ["-t ttl"]
-    explains: "Set time-to-live.
+    explains: "Set time-to-live."
   - flag: ["-s size"]
-    explains: "Set the sie of the packet payload.
+    explains: "Set the size of the packet payload."
   - flag: ["-W timeout"]
-    explains: "Set timeout to wait for a reply.
+    explains: "Set timeout to wait for a reply."
   - flag: ["-q"]
-    explains: "Quiet output.
+    explains: "Quiet output."
   - flag: ["-v"]
-    explains: "Verbose mode.
+    explains: "Verbose mode."
   - flag: ["-f"]
-    explains: "Flood ping.
+    explains: "Flood ping."
   - flag: ["-D"]
-    explains: "Print timestamps for each reply.
+    explains: "Print timestamps for each reply."
   - flag: ["-I iface"]
-    explains: "Specify network interface to use.
+    explains: "Specify network interface to use."
     arg:
       name: Pattern
       required: true
   - flag: ["-4"]
-    explains: "Force IPv4 ping 
+    explains: "Force IPv4 ping."
   - flag: ["-6"]
-    explains: "Force IPv6 ping 
+    explains: "Force IPv6 ping."
 
 # Examples: List of example usages
 examples:

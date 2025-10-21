@@ -20,61 +20,61 @@ syntax: mtr [OPTIONS]...[HOST]...
 # Optional: add "arg" if the optin expects a value
 options:
   - flag: ["-4"]
-    explains: "Use IPv4 only
+    explains: "Use IPv4 only."
   - flag: ["-6"]
-    explains: "Use IPv6 only
+    explains: "Use IPv6 only."
   - flag: ["-r"]
-    explains: "Report mode - output is displayed in a format suitable for parsing
+    explains: "Report mode - output is displayed in a format suitable for parsing."
   - flag: ["-c"]
-    explains: "Set the number of pings to send
+    explains: "Set the number of pings to send."
     arg:
       name: COUNT
       required: true
   - flag: ["-n"]
-    explains: "Show line numbers
+    explains: "Show line numbers."
   - flag: ["-a"]
-    explains: "Show all hosts
+    explains: "Show all hosts."
   - flag: ["-f"]
-    explains: "Set the first hop to start from
+    explains: "Set the first hop to start from"
     arg:
       name: HOP
       required: true
   - flag: ["-m"]
-    explains: "Set the maximum number of hops
+    explains: "Set the maximum number of hops."
     arg:
       name: MAX_HOPS
       required: true
   - flag: ["-p"]
-    explains: "Displays the actual packet path
+    explains: "Displays the actual packet path."
   - flag: ["-z"]
-    explains: "Shows ASN information
+    explains: "Shows ASN information."
   - flag: ["-w"]
-    explains: "Wide output format
+    explains: "Wide output format."
   - flag: ["-i"]
-    explains: "Set the interval between pings
+    explains: "Set the interval between pings."
     arg:
       name: SECONDS
       required: true
   - flag: ["-s"]
-    explains: "Set the packet size
+    explains: "Set the packet size."
     arg:
       name: BYTES
       required: true
   - flag: ["-b"]
-    explains: "Show both hostnames and IP addresses
+    explains: "Show both hostnames and IP addresses."
   - flag: ["-l"]
-    explains: "Use a specified interface
+    explains: "Use a specified interface."
     arg:
       name: IFACE
       required: true
   - flag: ["-u"]
-    explains: "Use UDP packets instead of ICMP
+    explains: "Use UDP packets instead of ICMP."
   - flag: ["-T"]
-    explains: "Use TCP packets instead of ICMP
-  - flag: ["-I"]  
-    explains: "Use ICMP ECHO for probes instead of UDP
-  - flag: ["-S"]  
-    explains: "Show the summary statistics
+    explains: "Use TCP packets instead of ICMP."
+  - flag: ["-I"]
+    explains: "Use ICMP ECHO for probes instead of UDP."
+  - flag: ["-S"]
+    explains: "Show the summary statistics."
 
 # Examples: List of example usages
 examples:

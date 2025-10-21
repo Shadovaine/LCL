@@ -12,7 +12,7 @@ options:
     explains: "Cancel a scheduled shutdown."
   - flag: ["+m"]
     explains: "Shutdown in m minutes."
-  - flag: ["time string"]
+  - flag: ["-time string"]
     explains: "Specify shutdown time (e.g., 23:00)."
 examples:
   - |

@@ -14,40 +14,40 @@ syntax: exa [OPTIONS]...[ARGS]...
 # Optional: add "arg" if the optin expects a value
 options:
   - flag: ["-l"]
-    explains: "Use a long listing format
+    explains: "Use a long listing format"
   - flag: ["-a", "--all"]
-    explains: "Show all files, including hidden ones   
+    explains: "Show all files, including hidden ones   "
   - flag: ["-la", "-al"]
-    explains: "Combine long format and hidden files.
+    explains: "Combine long format and hidden files."
   - flag: ["-l"]
-    explains: "List one file per line.
+    explains: "List one file per line."
   - flag: ["-s"]
-    explains: "Sort by the file size.
+    explains: "Sort by the file size."
   - flag: ["-s name"]
-    explains: "Sort by name.
+    explains: "Sort by name."
     arg:
       name: name
       required: true
   - flag: ["-s modified"]
-    explains: "Sort by modification time.
+    explains: "Sort by modification time."
     arg: 
       name: time
       required: true
   - flag: ["-r"]
-    explains: "Reverse the sort order.
+    explains: "Reverse the sort order."
   - flag: ["-T"]
-    explains: "Displays a tree view of directories.
+    explains: "Displays a tree view of directories."
   - flag: ["-L NUM"]
-    explains: "Limit depth of recursion in tree view.
+    explains: "Limit depth of recursion in tree view."
     arg:
       name: numbers
       required: true
   - flag: ["--git"]
-    explains: "Show GIT status for files.
+    explains: "Show GIT status for files."
   - flag: ["-@"]
-    explains: "Show extended attributes.
+    explains: "Show extended attributes."
   - flag: ["--icons"]
-    explains: "Show extended attributes.
+    explains: "Show extended attributes."
 
 # Examples: List of example usages
 examples:

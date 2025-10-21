@@ -19,27 +19,27 @@ syntax: ranger [Options] [Path]
 # Optional: add "arg" if the optin expects a value
 options:
   - flag: ["-d"]
-    explains: "Debug mode.
+    explains: "Debug mode."
   - flag: ["-c", "--clean"]
-    explains: "Start ranger without loading any configuration files.
+    explains: "Start ranger without loading any configuration files."
   - flag: ["-r", "--confdir"]
-    explains: "Specify an alternate configuration directory.
+    explains: "Specify an alternate configuration directory."
   - flag: ["--copy-config"]
-    explains: "Copy default config files to config directory for customization.
+    explains: "Copy default config files to config directory for customization."
   - flag: ["-f", "--fail-unless-cd"]
-    explains: "Exit if the initial directory chosen is invalid.
+    explains: "Exit if the initial directory chosen is invalid."
   - flag: ["-p"]
-    explains: "Enable profiling.
+    explains: "Enable profiling."
   - flag: ["-s"]
-    explains: "Select a file in the give ndirectory when launching.
+    explains: "Select a file in the give ndirectory when launching."
   - flag: ["-w", "--choosefiles"]
-    explains: "Output the chosen file paths to a file instead of running ranger normally.
+    explains: "Output the chosen file paths to a file instead of running ranger normally."
   - flag: ["-t"]
-    explains: "Same as `--choosefiles`, but for a single file.
+    explains: "Same as `--choosefiles`, but for a single file."
   - flag: ["-m", "--choosefile-multiple"]
-    explains: "Same as `--choosefiles`, but for a single file.
+    explains: "Same as `--choosefiles`, but for a single file."
   - flag: ["-q", "--list-unused-keys"]
-    explains: "List all keybindings that are not mapped in the current configuration.
+    explains: "List all keybindings that are not mapped in the current configuration."
     
 # Examples: List of example usages
 examples:

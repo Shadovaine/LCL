@@ -1,40 +1,40 @@
 name: tar
-category: Archive_Compression_Mgmt
+category: Archive_and_Compression_Management
 description: Archives multiple files into one file
 syntax: tar [OPTIONS] [ARCHIVE_FILE] [FILES/DIRS...]
 options:
   - flag: ["-c", "--create"]
-    explains: "Create a new archive
+    explains: "Create a new archive"
   - flag: ["-x", "--extract", "--get"]
-    explains: "Extract files from an archive  
+    explains: "Extract files from an archive  "
   - flag: ["-t", "--list"]
-    explains: "List the contents of an archive 
+    explains: "List the contents of an archive "
   - flag: ["-v", "--verbose"]
-    explains: "Verbose mode 
+    explains: "Verbose mode "
   - flag: ["-f", "--file=ARCHIVE_FILE"]
-    explains: "Use archive file 
+    explains: "Use archive file "
   - flag: [ "-z"]
-    explains: "Compress archive with gzip 
+    explains: "Compress archive with gzip "
   - flag: ["-j"]
-    explains: "Compress archive with bzip2
+    explains: "Compress archive with bzip2"
   - flag: ["-J"]
-    explains: "Compress archive with xz 
+    explains: "Compress archive with xz "
   - flag: ["-p", "--preserve-permissions", "--same-permissions"]
-    explains: "Preserve file permissions 
+    explains: "Preserve file permissions "
   - flag: ["--same-owner"]
-    explains: "Preserve original file ownership 
+    explains: "Preserve original file ownership "
   - flag: ["-C", "--directory=DIRECTORY"]
-    explains: "Change to a specific directory before extracting 
+    explains: "Change to a specific directory before extracting "
   - flag: ["-A", "--catenate", "--concatenate"]
-    explains: "Append tar files to an existing archive 
+    explains: "Append tar files to an existing archive "
   - flag: ["-r", "--append"]
-    explains: "Append files to the end of an archive 
+    explains: "Append files to the end of an archive "
   - flag: ["-u", "--update"]
-    explains: "Append only files that area newer than what is in the archive 
+    explains: "Append only files that area newer than what is in the archive "
   - flag: ["--remove-files"]
-    explains: "Remove files after adding them to the archive 
+    explains: "Remove files after adding them to the archive "
   - flag: ["--exclude=PATTERN"]
-    explains: "Exclude files matching a pattern 
+    explains: "Exclude files matching a pattern "
     arg: { name: GLOB, required: true } 
 examples:
   - "tar -cf backup.tar /home/original"

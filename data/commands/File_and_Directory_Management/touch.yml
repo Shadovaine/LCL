@@ -19,23 +19,23 @@ syntax: touch [Options] file_name
 # Optional: add "arg" if the optin expects a value
 options:
   - flag: ["-c","--no-create"]
-    explains: "Do not create file if it does not exist.
+    explains: "Do not create file if it does not exist."
   - flag: ["-a"]
-    explains: "Change only the access time of the file.
+    explains: "Change only the access time of the file."
   - flag: ["-m"]
-    explains: "Changes only the modification time of the file.
+    explains: "Changes only the modification time of the file."
   - flag: ["-d time"]
-    explains: "Set a specific date/time instead of using the current time.
+    explains: "Set a specific date/time instead of using the current time."
     arg:
       name: integer
       required: true
   - flag: ["-t stamp"]
-    explains: "Set a specific timestamp.
+    explains: "Set a specific timestamp."
     arg:
       name: integer
       required: true
   - flag: ["-r file"]
-    explains: "Use the timestamp from another file instead of the current time.
+    explains: "Use the timestamp from another file instead of the current time."
     arg:
       name: file
       required: true

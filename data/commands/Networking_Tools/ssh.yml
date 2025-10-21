@@ -19,36 +19,36 @@ syntax: ssh [Options] user@host
 # Optional: add "arg" if the optin expects a value
 options:
   - flag: ["-p port"]
-    explains: "Specify a port.
+    explains: "Specify a port."
   - flag: ["-i identity"]
-    explains: "Use identify file (SSH key)
+    explains: "Use identify file (SSH key)."
   - flag: ["-L local_port:remote_host:remote_port"]
-    explains: "Local port forwarding.
+    explains: "Local port forwarding."
   - flag: ["-l user"]
-    explains: "Log in as a specific user.
+    explains: "Log in as a specific user."
     arg:
       name: name
       required: true
   - flag: ["-v"]
-    explains: "Verbose mode.
+    explains: "Verbose mode."
   - flag: ["-x"]
-    explains: "Enable X11 forwarding.
+    explains: "Enable X11 forwarding."
   - flag: ["-R remote_port:local_host:local_port"]
-    explains: "Remote port forwarding.
+    explains: "Remote port forwarding."
     arg:
       name: remote_forward
       required: true
   - flag: ["-D port"]
-    explains: "Dynamic port forwarding.
+    explains: "Dynamic port forwarding."
     arg:
       name: port
       required: true
   - flag: ["-N"]
-    explains: "No remote command execution.
+    explains: "No remote command execution."
   - flag: ["-T"]
-    explains: "Disable pseudo-terminal allocation.
+    explains: "Disable pseudo-terminal allocation."
   - flag: ["-o option"]
-    explains: "Pass custom SSH cleint option.
+    explains: "Pass custom SSH client option."
     arg:
       name: option
       required: true
@@ -58,4 +58,10 @@ examples:
   - ssh -p 2222 test@10.1.0.1
   - ssh -i ~/.ssh/id_ed25519 test@testserver.command
   - ssh -v test@ubuntu.ubuntu
-  
+  - ssh -X test@10.1.0.1
+  - ssh -L 8080:localhost:80 user@remotehost
+  - ssh -R 9090:localhost:90 user@remotehost
+  - ssh -D 1080 user@remotehost
+  - ssh -N -L 8080:localhost:80 user@remotehost
+  - ssh -T user@remotehost
+  - ssh -o "StrictHostKeyChecking=no" user@remotehost

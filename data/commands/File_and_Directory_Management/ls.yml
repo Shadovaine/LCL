@@ -21,39 +21,39 @@ options:
   - flag: ["-a"]
     explains: "Show all files (include hidden ones)."
   - flag: ["-l"]
-    explains: "Long listing format.
+    explains: "Long listing format."
   - flag: ["-h"]
-    explains: "Human-readable file sizes.
+    explains: "Human-readable file sizes."
   - flag: ["-R"]
-    explains: "Recursively list subdirectories.
+    explains: "Recursively list subdirectories."
   - flag: ["-S"]
-    explains: "Sort by file sizes. 
+    explains: "Sort by file sizes. "
   - flag: ["-A"]
-    explains: "Show all files except `.` and `..` 
+    explains: "Show all files except `.` and `..` "
   - flag: ["-d"]
-    explains: "List directories themselves.
+    explains: "List directories themselves."
   - flag: ["-F"]
-    explains: "Append '/' to directories, '*' to executables, `@` to symlinks.
+    explains: "Append '/' to directories, '*' to executables, `@` to symlinks."
   - flag: ["-t"]
-    explains: "Sort by modification time.
+    explains: "Sort by modification time."
   - flag: ["-1"]
-    explains: "Force one entry per line.
+    explains: "Force one entry per line."
   - flag: ["-i"]
-    explains: "Show the inode number of each file.
+    explains: "Show the inode number of each file."
   - flag: ["-p"]
-    explains: "Append `/` to directories similar to `-F`.
+    explains: "Append `/` to directories similar to `-F`."
   - flag: ["-g"]
-    explains: "Long listing format without showing owner.
+    explains: "Long listing format without showing owner."
   - flag: ["-G"]
-    explains: "Suppress group information in long listing format.
+    explains: "Suppress group information in long listing format."
   - flag: ["-q"]
-    explains: "Show non=printable characters as `?`.
+    explains: "Show non=printable characters as `?`."
   - flag: ["-x"]
-    explains: "Sort by file extension.
+    explains: "Sort by file extension."
   - flag: ["--color"]
-    explains: "Colorize the output.
+    explains: "Colorize the output."
   - flag: ["--group-directories-first"]
-    explains: "List directories before files.
+    explains: "List directories before files."
     
 # Examples: List of example usages
 examples:

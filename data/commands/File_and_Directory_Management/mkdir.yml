@@ -19,11 +19,11 @@ syntax: mkdir [OPTIONS] DIRECTORY...
 # Optional: add "arg" if the optin expects a value
 options:
   - flag: ["-p"]
-    explains: "No error if existing, make parent directories as needed
+    explains: "No error if existing, make parent directories as needed"
   - flag: ["-v"]
-    explains: "Verbosely list directories being created
+    explains: "Verbosely list directories being created"
   - flag: ["-m"]
-    explains: "Set file mode (as in chmod), not a=rwx - umask  (default 0777)
+    explains: "Set file mode (as in chmod), not a=rwx - umask  (default 0777)"
     arg:
       name: MODE     # the placeholder name for the argument
       required: true # true if mandatory, false if optional

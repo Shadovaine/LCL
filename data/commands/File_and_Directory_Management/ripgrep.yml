@@ -18,89 +18,89 @@ syntax: rg [Pattern] [Path]
 # Optional: add "arg" if the optin expects a value
 options:
   - flag: ["-i", "--ignore-case"]
-    explains: "Ignore case distinctions
+    explains: "Ignore case distinctions"
   - flag: ["-n"]
-    explains: "Show line numbers.
+    explains: "Show line numbers."
   - flag: ["-l"]
-    explains: "List filenames only.
+    explains: "List filenames only."
   - flag: ["-S"]
-    explains: "Smart case case-insensitive unless the pattern has upper case letters.
+    explains: "Smart case case-insensitive unless the pattern has upper case letters."
   - flag: ["-e pattern"]
-    explains: "Explicitly specific a search pattern.
+    explains: "Explicitly specific a search pattern."
     arg:
       name: pattern
       required: true
   - flag: ["-w"]
-    explains: "Match whole words only.
+    explains: "Match whole words only."
   - flag: ["-x"]
     wsplains: Match the entire line.
   - flag: ["-g glob"]
-    explains: "Includes only files matching the glob pattern.
+    explains: "Includes only files matching the glob pattern."
     arg:
       name: glob
       required: true
   - flag: ["-T ext"]
-    explains: "Excludes a certain file type.
+    explains: "Excludes a certain file type."
   - flag: ["-t type"]
-    explains: "Searches only files of a certain type.
+    explains: "Searches only files of a certain type."
     arg:
       name: type
       required: true
   - flag: ["-u"]
-    explains: "Search hidden and ignored files.
+    explains: "Search hidden and ignored files."
   - flag: ["-iglob pattern"]
-    explains: "Cae-insensitive glob matching.
+    explains: "Cae-insensitive glob matching."
     arg:
       name: glob
       required: true
   - flag: ["--hidden"]
-    explains: "Include hidden files or directories.
+    explains: "Include hidden files or directories."
   - flag: ["-H"]
-    explains: "Always show the filename in results.
+    explains: "Always show the filename in results."
   - flag: ["-L"]
-    explains: "Print only filenames without matches.
+    explains: "Print only filenames without matches."
   - flag: ["-o"]
-    explains: "Show only the matching part of each line.
+    explains: "Show only the matching part of each line."
   - flag: ["-v"]
-    explains: "Invert match.
+    explains: "Invert match."
   - flag: ["-c"]
-    explains: "Show the count of matches per file.
+    explains: "Show the count of matches per file."
   - flag: ["--stats"]
-    explains: "Show search statistics.
+    explains: "Show search statistics."
   - flag: ["-r replacements"]
-    explains: "User regex replacements.
+    explains: "User regex replacements."
   - flag: ["-m NUM"]
-    explains: "Limit the number of matches.
+    explains: "Limit the number of matches."
   - flag: ["--max-column NUM"]
-    explains: "Trucate long lines to the column.
+    explains: "Trucate long lines to the column."
   - flag: ["--max-depth NUM"]
-    explains: "Limit search depth.
+    explains: "Limit search depth."
   - flag: ["--follow"]
-    explains: "Follow the symlink.
+    explains: "Follow the symlink."
   - flag: ["--no-messages"]
-    explains: "Suppress error messages.
+    explains: "Suppress error messages."
   - flag: ["--color when"]
-    explains: "Control color - always, never, auto.
+    explains: "Control color - always, never, auto."
   - flag: ["--heading"]
-    explains: "Shows file names as headings.
+    explains: "Shows file names as headings."
   - flag: ["--no-heading"]
-    explains: "Disables headings.
+    explains: "Disables headings."
   - flag: ["--json"]
-    explains: "Output results in JSON format.
+    explains: "Output results in JSON format."
   - flag: ["--pretty"]
-    explains: "Pretty print results with colors and context.
+    explains: "Pretty print results with colors and context."
   - flag: ["-A NUM"]
-    explains: "Show NUM lines after each match.
+    explains: "Show NUM lines after each match."
     arg:
       name: number
       required: true 
   - flag: ["-B NUM"]
-    explains: "Show NUM lines before each match.
+    explains: "Show NUM lines before each match."
     arg:
       name: number
       required: true 
   - flag: ["-C NUM"]
-    explains: "Show NUM lines of context.
+    explains: "Show NUM lines of context."
     arg: 
       name: number
       required: true

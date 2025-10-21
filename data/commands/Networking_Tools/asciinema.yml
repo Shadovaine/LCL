@@ -1,5 +1,5 @@
 name: "asciinema"
-category: "file viewing and editing management"
+category: "Networking_Tools"
 description: "Record and share terminal sessions as lightweight text-based casts (not videos). Useful for tutorials, demos, and reproducing command-line work."
 syntax: "asciinema [COMMAND] [OPTIONS]"
 options:

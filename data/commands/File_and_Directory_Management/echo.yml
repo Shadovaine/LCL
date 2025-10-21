@@ -19,9 +19,9 @@ syntax: echo [OPTIONS] [STRING]
 # Optional: add "arg" if the optin expects a value
 options:
   - flag: ["-n"]
-    explains: "Do not print newline.
+    explains: "Do not print newline."
   - flag: ["-e"]
-    explains: "Enable interpretation of escapes.
+    explains: "Enable interpretation of escapes."
     escape_sequences:
       - sequence: "\n"
         meaning: "New line"
@@ -45,12 +45,16 @@ options:
         meaning: "Backslash"
         example: "echo -e '\\Hello\\'"     
   - flag: ["-E"]
-    explains: "Disable interpretation of escape sequence. 
+    explains: "Disable interpretation of escape sequence." "
     
 # Examples: List of example usages
 examples:
   - echo -n "back up"
   - echo -e "back\nup"
-  
-  
-  
+  - echo -e "back\tup"
+  - echo -e "back\vup"
+  - echo -e "back\rup"
+  - echo -e "back\bup"
+  - echo -e "back\aup"
+  - echo -e "back\\up"
+

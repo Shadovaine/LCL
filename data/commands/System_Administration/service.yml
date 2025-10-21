@@ -4,15 +4,15 @@ category: "system administration"
 description: "Legacy SysVinit service control (still present on many systems)."
 syntax: "service [SERVICE_NAME] COMMAND"
 options:
-  - flag: ["start"]
+  - flag: ["-start"]
     explains: "Start a service."
-  - flag: ["stop"]
+  - flag: ["-stop"]
     explains: "Stop a service."
-  - flag: ["restart"]
+  - flag: ["-restart"]
     explains: "Restart a service."
-  - flag: ["reload"]
+  - flag: ["-reload"]
     explains: "Reload configuration."
-  - flag: ["status"]
+  - flag: ["-status"]
     explains: "Show service status."
   - flag: ["--status-all"]
     explains: "List all services."

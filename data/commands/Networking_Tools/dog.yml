@@ -19,30 +19,30 @@ syntax: dog [OPTIONS]...[ARGS]...
 # Optional: add "arg" if the optin expects a value
 options:
   - flag: ["-q", "--query=HOST"]
-    explains: "Query the specified host
+    explains: "Query the specified host"
     arg:  
       name: HOST
       required: true
   - flag: ["-t", "--type=TYPE"]
-    explains: "Specify the type of DNS record to query (e.g., A, AAAA, CNAME)
+    explains: "Specify the type of DNS record to query (e.g., A, AAAA, CNAME)"
     arg:
       name: TYPE
       required: true
   - flag: ["-s", "--server=SERVER"]
-    explains: "Use the specified DNS server for the query
+    explains: "Use the specified DNS server for the query"
     arg:
       name: SERVER
       required: true
   - flag: ["-p", "--port=PORT"]
-    explains: "Specify the port number to use for the DNS query
+    explains: "Specify the port number to use for the DNS query"
     arg:
       name: PORT
       required: false
   - flag: ["-4"]
-    explains: "Use IPv4 for the DNS query
+    explains: "Use IPv4 for the DNS query"
   - flag: ["-6"]
-    explains: "Use IPv6 for the DNS query
-    
+    explains: "Use IPv6 for the DNS query"
+
 # Examples: List of example usages
 examples:
   - dog -q example.com

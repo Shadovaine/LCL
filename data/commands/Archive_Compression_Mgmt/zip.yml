@@ -19,25 +19,25 @@ syntax: zip [OPTIONS] ARCHIVE_NAME.zip FILES...
 # Optional: add "arg" if the optin expects a value
 options:
   - flag: ["-r"]
-    explains: "Recursively include files and directories
+    explains: "Recursively include files and directories"
   - flag: ["-e"]
-    explains: "Encrypt the zip file with a password
+    explains: "Encrypt the zip file with a password"
   - flag: ["-q"]
-    explains: "Suppress output messages
+    explains: "Suppress output messages"
   - flag: ["-v"]
-    explains: "Verbosely list files processed
+    explains: "Verbosely list files processed"
   - flag: ["-u"]
-    explains: "Update existing entries and add new files
+    explains: "Update existing entries and add new files"
   - flag: ["-9"]
-    explains: "Use the best compression method
+    explains: "Use the best compression method"
   - flag: ["-0"]
-    explains: "Store files without compression
+    explains: "Store files without compression"
   - flag: ["-T"]
-    explains: "Test the integrity of the zip file after creation
+    explains: "Test the integrity of the zip file after creation"
   - flag: ["-j"]
-    explains: "Junk the path information and store only the file names
+    explains: "Junk the path information and store only the file names"
   - flag: ["-X"]
-    explains: "Exclude specified files
+    explains: "Exclude specified files"
     arg:
       name: FILES     # the placeholder name for the argument
       required: true # true if mandatory, false if optional 
@@ -47,18 +47,18 @@ options:
       name: FILES     # the placeholder name for the argument
       required: true # true if mandatory, false if optional 
   - flag: ["-F", "--fix"]
-    explains: "Fix the zip file if it is corrupted
+    explains: "Fix the zip file if it is corrupted"
   - flag: ["-n"]
-    explains: "Do not compress files with the specified suffixes
+    explains: "Do not compress files with the specified suffixes"
     arg:
       name: SUFFIXES  # the placeholder name for the argument
       required: true # true if mandatory, false if optional
   - flag: ["-o"]
-    explains: "Set the modification time of the zip file to the current time
+    explains: "Set the modification time of the zip file to the current time"
   - flag: ["-m"]
-    explains: "Move the input files into the zip archive (deletes original files)
+    explains: "Move the input files into the zip archive (deletes original files)"
   - flag: ["-C"]
-    explains: "Change to the specified directory before zipping files
+    explains: "Change to the specified directory before zipping files"
     arg:
       name: DIRECTORY # the placeholder name for the argument
       required: true # true if mandatory, false if optional 

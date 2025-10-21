@@ -19,29 +19,29 @@ syntax: ifconfig [Interface] [Options]
 # Optional: add "arg" if the optin expects a value
 options:
   - flag: ["-a"]
-    explains: "Show all interfaces.
+    explains: "Show all interfaces."
   - flag: ["ifconfig iface"]
-    explains: "Show details of a specific interface.
+    explains: "Show details of a specific interface."
   - flag: ["ifconfig iface up"]
-    explains: "Enables an interface.
-  - flag: ["-ifconfig iface down"]
-    explains: "Disable an interface.
+    explains: "Enables an interface."
+  - flag: ["ifconfig iface down"]
+    explains: "Disable an interface."
   - flag: ["ifconfig iface IP"]
-    explains: "Assign IP address.
-  - flag: ["netmaks mask"]
-    explains: "Set subnet mask.
+    explains: "Assign IP address."
+  - flag: ["netmask mask"]
+    explains: "Set subnet mask."
   - flag: ["broadcast addr"]
-    explains: "Sets broadcast address.
+    explains: "Sets broadcast address."
   - flag: ["add IP"]
-    explains: "Add a secondary IP.
+    explains: "Add a secondary IP."
   - flag: ["hw ether MAC"]
-    explains: "Change the MAC address.
+    explains: "Change the MAC address."
   - flag: ["mtu size"]
-    explains: "Sets the MTU size.
+    explains: "Sets the MTU size."
   - flag: ["promisc"]
-    explains: "Enables promiscous mode.
-  - flag: ["-prmisc"]
-    explains: "Disables promiscous mode. 
+    explains: "Enables promiscous mode."
+  - flag: ["-promisc"]
+    explains: "Disables promiscous mode."
 
 # Examples: List of example usages
 examples:

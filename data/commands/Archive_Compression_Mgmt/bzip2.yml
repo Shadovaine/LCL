@@ -18,29 +18,29 @@ syntax: bzip2 [OPTIONS] FILE
 # Optional: add "arg" if the optin expects a value
 options:
   - flag: ["-k", "--keep"]
-    explains: "Keep original file
+    explains: "Keep original file"
   - flag: ["-d"]
-    explains: "Decompress
+    explains: "Decompress"
   - flag: ["-f"]
-    explains: "Force overwrite if the file already exists
+    explains: "Force overwrite if the file already exists"
   - flag: ["-t"]
-    explains: "Test the integrity of the compressed file
+    explains: "Test the integrity of the compressed file"
   - flag: ["-v"]
-    explains: "Verbosely list the files being processed
+    explains: "Verbosely list the files being processed"
   - flag: ["-q"]
-    explains: "Suppress non-critical error messages
+    explains: "Suppress non-critical error messages"
   - flag: ["-1"]
-    explains: "Fastest compression (least compression)
+    explains: "Fastest compression (least compression)"
   - flag: ["-9"]
-    explains: "Best compression (slowest compression)
+    explains: "Best compression (slowest compression)"
   - flag: ["-c"]
-    explains: "Write to standard output and keep original files
+    explains: "Write to standard output and keep original files"
   - flag: ["--repetitive-best"]
-    explains: "Use a more CPU-intensive algorithm to achieve better compression ratios
+    explains: "Use a more CPU-intensive algorithm to achieve better compression ratios"
   - flag: ["-z"]
-    explains: "Compress the file (default behavior)
+    explains: "Compress the file (default behavior)"
   - flag: ["-s"]
-    explains: "Compress files in-place, removing the original file after compression
+    explains: "Compress files in-place, removing the original file after compression"
 
 examples:
   - bzip2 -k file.bz2

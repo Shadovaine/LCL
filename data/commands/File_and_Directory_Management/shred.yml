@@ -14,25 +14,25 @@ syntax: shred [OPTIONS]... FILE...
 # Optional: add "arg" if the optin expects a value
 options:
   - flag: ["-f"]
-    explains: "Change permissions to allow writing if necessary
+    explains: "Change permissions to allow writing if necessary"
   - flag: ["-n NUM", "--iterations=NUM"]
-    explains: "Overwrite the file NUM times (default is 3)
+    explains: "Overwrite the file NUM times (default is 3)"
     arg:
       name: NUM
       required: true
   - flag: ["-z", "--zero"]
-    explains: "Add a final overwrite with zeros to hide shredding
+    explains: "Add a final overwrite with zeros to hide shredding"
   - flag: ["-s SIZE", "--size=SIZE"]
-    explains: "Shred only the first SIZE bytes of the file
+    explains: "Shred only the first SIZE bytes of the file"
     arg:
       name: SIZE
       required: true
   - flag: ["-u", "--remove"]
-    explains: "Truncate and remove the file after overwriting
+    explains: "Truncate and remove the file after overwriting"
   - flag: ["-v"]
-    explains: "Show progress information while shredding files
+    explains: "Show progress information while shredding files"
   - flag: ["--random-source=FILE"]
-    explains: "Get random bytes from FILE instead of /dev/urandom
+    explains: "Get random bytes from FILE instead of /dev/urandom"
     arg:
       name: FILE
       required: true

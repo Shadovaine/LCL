@@ -19,31 +19,31 @@ syntax: netstat [Options]
 # Optional: add "arg" if the optin expects a value
 options:
   - flag: ["-a"]
-    explains: "Shows all sockets.
+    explains: "Shows all sockets."
   - flag: ["-t"]
-    explains: "Show TCP connections only.
+    explains: "Show TCP connections only."
   - flag: ["-u"]
-    explains: "Shows UDP connections only.
+    explains: "Shows UDP connections only."
   - flag: ["-l"]
-    explains: "Show listening sockets only.
+    explains: "Show listening sockets only."
   - flag: ["-p"]
-    explains: "Show the PID and program name of each connections.
+    explains: "Show the PID and program name of each connections."
   - flag: ["-n"]
-    explains: "Show address numerically.
+    explains: "Show address numerically."
   - flag: ["-r"]
-    explains: "Show the routing table.
+    explains: "Show the routing table."
   - flag: ["-i"]
-    explains: "Show network interfaces.
+    explains: "Show network interfaces."
   - flag: ["-s"]
-    explains: "Show per-protocol statistics.
+    explains: "Show per-protocol statistics."
   - flag: ["-c"]
-    explains: "Continuous output.
+    explains: "Continuous output."
   - flag: ["-e"]
-    explains: "Show extended information.
+    explains: "Show extended information."
   - flag: ["-g"]
-    explains: "Show multicast group membership.
+    explains: "Show multicast group membership."
   - flag: ["-o"]
-    explains: "Show timers for connections.
+    explains: "Show timers for connections."
 
 # Examples: List of example usages
 examples:

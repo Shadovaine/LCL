@@ -16,26 +16,36 @@ def load_all_commands() -> List[Dict[str, Any]]:
     """Load all commands from YAML files in category directories."""
     print(f"[DEBUG] === Starting load_all_commands ===", file=sys.stderr)
     
-    try:
-        commands_base = _find_commands_base()
-        print(f"[DEBUG] Commands base directory: {commands_base}", file=sys.stderr)
-    except Exception as e:
-        print(f"[ERROR] Failed to find commands base: {e}", file=sys.stderr)
+    commands = []
+    
+    # Try multiple possible paths
+    possible_paths = [
+        Path(__file__).parent / "data" / "commands",
+        Path(__file__).parent.parent / "data" / "commands",
+        Path("data") / "commands",
+    ]
+    
+    data_dir = None
+    for path in possible_paths:
+        if path.exists():
+            data_dir = path
+            break
+    
+    if not data_dir:
+        print(f"[ERROR] Could not find data/commands directory", file=sys.stderr)
         return []
-
-    if not commands_base.exists():
-        print(f"[ERROR] Commands base directory does not exist: {commands_base}", file=sys.stderr)
-        return []
+    
+    print(f"[DEBUG] Using data directory: {data_dir}", file=sys.stderr)
 
     docs: List[Dict[str, Any]] = []
     
     # Get all category directories
     try:
-        category_dirs = [d for d in commands_base.iterdir() if d.is_dir()]
+        category_dirs = [d for d in data_dir.iterdir() if d.is_dir()]
         print(f"[DEBUG] Found category directories: {[d.name for d in category_dirs]}", file=sys.stderr)
         
         if not category_dirs:
-            print(f"[WARN] No category directories found in {commands_base}", file=sys.stderr)
+            print(f"[WARN] No category directories found in {data_dir}", file=sys.stderr)
             return []
             
     except Exception as e:

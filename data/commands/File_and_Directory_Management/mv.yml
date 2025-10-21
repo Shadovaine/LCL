@@ -18,24 +18,24 @@ syntax: mv [OPTIONS] source destination
 # Optional: add "arg" if the optin expects a value
 options:
   - flag: ["-i"]
-    explains: "Prompt before overwrite
+    explains: "Prompt before overwrite"
   - flag: ["-v"]
-    explains: "Verbose output
+    explains: "Verbose output"
   - flag: ["-u"]
-    explains: "Move only if source is newer.
+    explains: "Move only if source is newer."
   - flag: ["-f"]
-    explains: "Force move.
+    explains: "Force move."
   - flag: ["-n"]
-    explains: "Never overwrite an existing file.
+    explains: "Never overwrite an existing file."
   - flag: ["-tdirectory"]
-    explains: "Specify the target directory explicitly.
+    explains: "Specify the target directory explicitly."
     arg:
       name: directory
       required: true
   - flag: ["--backup=[CONTROL]"]
-    explains: "Make a backup of each destination file.
+    explains: "Make a backup of each destination file."
   - flag: ["--strip-trailing-slashes"]
-    explains: "Removes trailing slashes from source arguments.
+    explains: "Removes trailing slashes from source arguments."
 
 # Examples: List of example usages
 examples:

@@ -19,41 +19,41 @@ syntax: wget [Options] URL
 # Optional: add "arg" if the optin expects a value
 options:
   - flag: ["-O FILE"]
-    explains: "Write output to a specific file.
+    explains: "Write output to a specific file."
   - flag: ["-o FILE"]
-    explains: "Write log message to a file.
+    explains: "Write log message to a file."
   - flag: ["-c"]
-    explains: "Resume incomplete download.
+    explains: "Resume incomplete download."
   - flag: ["-P dir"]
-    explains: "Save files to a specific directory.
+    explains: "Save files to a specific directory."
   - flag: ["-nv"]
-    explains: "Less verbose.
+    explains: "Less verbose."
   - flag: ["-v"]
-    explains: "Verbose mode. 
+    explains: "Verbose mode."
   - flag: ["-N"]
-    explains: "Only download if newer than local copy.
+    explains: "Only download if newer than local copy."
   - flag: ["--user=user --password=PASS"]
-    explains: "Authenticate with HTTP/FTP server.
+    explains: "Authenticate with HTTP/FTP server."
   - flag: ["--no-check-certificate"]
-    explains: "Ignore SSL certificate errors.
+    explains: "Ignore SSL certificate errors."
   - flag: ["-r"]
-    explains: "Recursive download.
+    explains: "Recursive download."
   - flag: ["-l depth"]
-    explains: "Set recursion depth.
+    explains: "Set recursion depth."
   - flag: ["-np"]
-    explains: "No parent directories.
+    explains: "No parent directories."
   - flag: ["--accept=PATTERN"]
-    explains: "Accept only certain file types.
+    explains: "Accept only certain file types."
   - flag: ["--reject=PATTERN"]
-    explains: "Reject certain file types.
+    explains: "Reject certain file types."
   - flag: ["--limit-rate=rate"]
-    explains: "Limit download speed.
+    explains: "Limit download speed."
   - flag: ["-W seconds"]
-    explains: "Wait between downloads.
+    explains: "Wait between downloads."
   - flag: ["--random-wait"]
-    explains: "Random delay between downloads.
+    explains: "Random delay between downloads."
   - flag: ["-b"]
-    explains: "Run in background.
+    explains: "Run in background."
 
 # Examples: List of example usages
 examples:

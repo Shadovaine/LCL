@@ -19,9 +19,9 @@ syntax: pwd [OPTIONS]...[ARGS]...
 # Optional: add "arg" if the optin expects a value
 options:
   - flag: ["-p"]
-    explains: "Print the physical directory, without any symbolic links
+    explains: "Print the physical directory, without any symbolic links"
   - flag: ["-L"]
-    explains: "Print the logical directory, with symbolic links resolved
+    explains: "Print the logical directory, with symbolic links resolved"
     
 
 # Examples: List of example usages

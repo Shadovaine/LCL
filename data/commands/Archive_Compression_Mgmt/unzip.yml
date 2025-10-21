@@ -18,37 +18,37 @@ syntax: unzip [OPTIONS] ARCHIVE_NAME.zip
 # Optional: add "arg" if the optin expects a value
 options:
   - flag: ["-l"]
-    explains: "List contents of a ZIP archive without extracting
+    explains: "List contents of a ZIP archive without extracting"
   - flag: ["-ddirectory"]
-    explains: "Extract files into the specified directory
+    explains: "Extract files into the specified directory"
     arg:
       name: directory
       required: true 
   - flag: ["-v"]
-    explains: "Enable verbose mode to display detailed information during extraction
+    explains: "Enable verbose mode to display detailed information during extraction"
   - flag: ["-t"]
-    explains: "Test the integrity of the files in the ZIP archive without extracting
+    explains: "Test the integrity of the files in the ZIP archive without extracting"
   - flag: ["-q"]
-    explains: "Operate in quiet mode, suppressing most output messages
+    explains: "Operate in quiet mode, suppressing most output messages"
   - flag: ["-n"]
-    explains: "Never overwrite existing files; skip extracting files that already existing
+    explains: "Never overwrite existing files; skip extracting files that already existing"
   - flag: ["-j"]
-    explains: "Junk paths; extract all files into the current directory without recreating directory structure
+    explains: "Junk paths; extract all files into the current directory without recreating directory structure"
   - flag: ["-xfile"]
-    explains: "Exclude specific files from being extracted
+    explains: "Exclude specific files from being extracted"
     arg:
       name: file
       required: true
   - flag: ["-aa"]
-    explains: "Convert text files to the local OS format during extraction
+    explains: "Convert text files to the local OS format during extraction"
   - flag: ["-u"]
-    explains: "Update existing files and extract new files from the archive
+    explains: "Update existing files and extract new files from the archive"
   - flag: ["-p"]
-    explains: "Extract files to pipe (stdout) without writing to disk  
+    explains: "Extract files to pipe (stdout) without writing to disk  "
   - flag: ["-z"]
-    explains: "Display the archive comment (if any) without extracting files
+    explains: "Display the archive comment (if any) without extracting files"
   - flag: ["-o"]
-    explains: "Overwrite existing files without prompting
+    explains: "Overwrite existing files without prompting"
 
 # Examples: List of example usages
 examples:

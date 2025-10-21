@@ -19,36 +19,36 @@ syntax: termshark [OPTIONS]...[ARGS]...
 # Optional: add "arg" if the optin expects a value
 options:
   - flag: ["r"]
-    explains: "Read packets from FILE
+    explains: "Read packets from FILE."
     arg:
       name: FILE     # the placeholder name for the argument
       required: true # true if mandatory, false if optional
   - flag: ["-i"]
-    explains: "Capture live traffic from the specified interface.
+    explains: "Capture live traffic from the specified interface."
     arg:
       name: INTERFACE # the placeholder name for the argument
       required: true # true if mandatory, false if optional
-  - flag: ["D"]
-    explains: "Dump a list of avaiable network interfaces and exit.
+  - flag: ["-D"]
+    explains: "Dump a list of available network interfaces and exit."
   - flag: ["-f"]
-    explains: "Apply a BPF-style filter during capture.  
+    explains: "Apply a BPF-style filter during capture."
     arg:
       name: FILE     # the placeholder name for the argument
       required: true # true if mandatory, false if optional
   - flag: ["-Y"]
-    explains: "Apply a Wireshark-style filter.
+    explains: "Apply a Wireshark-style filter."
     arg:
       name: FILE     # the placeholder name for the argument
       required: true # true if mandatory, false if optional
   - flag: ["-P"]
-    explains: "Print the version and exit.
+    explains: "Print the version and exit."
   - flag: ["-s snaplen"]
-    explains: "Define the snapshot length to use when capturing packets.
+    explains: "Define the snapshot length to use when capturing packets."
     arg:
       name: snaplen  # the placeholder name for the argument
       required: true # true if mandatory, false if optional
   - flag: ["-l"]
-    explains: "Launch directly into live capture mode.
+    explains: "Launch directly into live capture mode."
 
 # Examples: List of example usages
 examples:

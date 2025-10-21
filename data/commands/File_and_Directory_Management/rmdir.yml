@@ -19,11 +19,11 @@ syntax: rmdir [OPTIONS]... DIRECTORY...
 # Optional: add "arg" if the optin expects a value
 options:
   - flag: ["-ignore-fail-on-non-empty"]
-    explains: "Ignore each failure that is solely because a directory is non-empty
+    explains: "Ignore each failure that is solely because a directory is non-empty"
   - flag: ["-p", "--parents"] 
-    explains: "Remove DIRECTORY and its ancestors; e.g., 'rmdir -p a/b/c' is similar to 'rmdir a/b/c a/b a', but errors are ignored
+    explains: "Remove DIRECTORY and its ancestors; e.g., 'rmdir -p a/b/c' is similar to 'rmdir a/b/c a/b a', but errors are ignored"
   - flag: ["-v", "--verbose"]
-    explains: "Output a diagnostic for every directory processed
+    explains: "Output a diagnostic for every directory processed"
     
 # Examples: List of example usages
 examples:

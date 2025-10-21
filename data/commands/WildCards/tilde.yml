@@ -1,5 +1,6 @@
 # tilde yml file
 name: "~"
+category: "Wildcards"
 description: "Expands to the home directory of the current user"
 examples:
   - command: "cd ~"

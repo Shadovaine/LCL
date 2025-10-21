@@ -19,50 +19,50 @@ syntax: ipcalc [OPTIONS]...[ARGS]...
 # Optional: add "arg" if the optin expects a value
 options:
   - flag: ["-c"]
-    explains: "Validate if the IP is legitimate.
+    explains: "Validate if the IP is legitimate."
   - flag: ["-i"]
-    explains: "Show readable network information.
+    explains: "Show readable network information."
   - flag: ["--all-info"]
-    explains: "Display all available information.
+    explains: "Display all available information."
   - flag: ["-S"]
-    explains: "Cut a network into smaller chunks specified prefixes.
+    explains: "Cut a network into smaller chunks specified prefixes."
   - flag: ["-d"]
-    explains: "Display the DNS PTR record for the given IP address.
+    explains: "Display the DNS PTR record for the given IP address."
   - flag: ["-r"]
-    explains: "Create a random private IP given mask.
+    explains: "Create a random private IP given mask."
   - flag: ["-h"]
-    explains: "Give me the possible hostname for that IP.
+    explains: "Give me the possible hostname for that IP."
   - flag: ["-j"]
-    explains: "Show the JSON representation of the IP information.
+    explains: "Show the JSON representation of the IP information."
     arg:
       name: FORMAT   # the placeholder name for the argument
       required: false # true if mandatory, false if optional
   - flag: ["--no-decorate"]
-    explains: "Don't decorate the output
+    explains: "Don't decorate the output."
   - flag: ["--addrspace"]
-    explains: "Specify the address space to use (ipv4 or ipv6).
+    explains: "Specify the address space to use (ipv4 or ipv6)."
     arg:
       name: TYPE     # the placeholder name for the argument
       required: true # true if mandatory, false if optional
   - flag: ["-p"]
-    explains: "Show the CIDR prefix.
+    explains: "Show the CIDR prefix."
   - flag: ["--class-prefix"]
-    explains: "Show the classful network prefix.
+    explains: "Show the classful network prefix."
   - flag: ["--netmask"]
-    explains: "Show the netmask.
+    explains: "Show the netmask."
   - flag: ["--wildcard"]
-    explains: "Show the wildcard mask.
+    explains: "Show the wildcard mask."
   - flag: ["--network"]
-    explains: "Show the network address.
+    explains: "Show the network address."
   - flag: ["--broadcast"]
-    explains: "Show the broadcast address.
+    explains: "Show the broadcast address."
   - flag: ["--hostmin"]
-    explains: "Show the first host address.
+    explains: "Show the first host address."
   - flag: ["--hostmax"]
-    explains: "Show the last host address.
+    explains: "Show the last host address."
   - flag: ["--hosts"]
-    explains: "Show the number of hosts.
- 
+    explains: "Show the number of hosts."
+
 # Examples: List of example usages
 examples:
   - ipcalc  

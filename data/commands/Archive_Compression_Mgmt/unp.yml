@@ -19,24 +19,24 @@ syntax: unp [Options] [archive1] [archive2...]
 # Optional: add "arg" if the optin expects a value
 options:
   - flag: ["-v"]
-    explains: "Enable verbose mode; show detailed output during extraction
+    explains: "Enable verbose mode; show detailed output during extraction"
   - flag: ["-odirectory"]
-    explains: "Specify output directory for extracted files
+    explains: "Specify output directory for extracted files"
     arg:
       name: directory
       required: true  # true if mandatory, false if optional
   - flag: ["-d"]
-    explains: "Delete archive after successful extraction
+    explains: "Delete archive after successful extraction"
   - flag: ["-u"]
-    explains: "Update existing files only if the archive file is newer
+    explains: "Update existing files only if the archive file is newer"
   - flag: ["-n"]
-    explains: "Never overwrite existing files; skip extracting those files
+    explains: "Never overwrite existing files; skip extracting those files"
   - flag: ["-q"]
-    explains: "Perform operations quietly without outputting to the console
+    explains: "Perform operations quietly without outputting to the console"
   - flag: ["-t"]
-    explains: "Test the integrity of the files in the archive without extracting
+    explains: "Test the integrity of the files in the archive without extracting"
   - flag: ["-e"]
-    explains: "Extract files without prompting for confirmation
+    explains: "Extract files without prompting for confirmation"
     
 # Examples: List of example usages
 examples:

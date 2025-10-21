@@ -19,30 +19,30 @@ syntax: mosh [OPTIONS]...[HOST]...
 # Optional: add "arg" if the optin expects a value
 options:
   - flag: ["-p", "--port=PORT:PORT2"]
-    explains: "Specify the UDP port or port range to use
+    explains: "Specify the UDP port or port range to use."
     arg:
       name: PORT:PORT2 # the placeholder name for the argument
       required: false # true if mandatory, false if optional
   - flag: ["--ssh=SSH-Command"]
-    explains: "Specify the SSH command to use
+    explains: "Specify the SSH command to use."
     arg:
       name: SSH-Command # the placeholder name for the argument
       required: false # true if mandatory, false if optional
   - flag: ["-4", "--family=intelligent"]
-    explains: "Use IPv4 addresses only
+    explains: "Use IPv4 addresses only."
   - flag: ["-6", "--family=inet6"]
-    explains: "Use IPv6 addresses only
+    explains: "Use IPv6 addresses only."
   - flag: ["--predict=adaptive/always/never"]
-    explains: "Set the local echo prediction mode
+    explains: "Set the local echo prediction mode."
     arg:
       name: adaptive/always/never # the placeholder name for the argument
       required: false # true if mandatory, false if optional
   - flag: ["--no-init"]
-    explains: "Do not send initialization string to the server
+    explains: "Do not send initialization string to the server."
   - flag: ["--local"]
-    explains: "Use local echo only (no prediction)
+    explains: "Use local echo only (no prediction)."
   - flag: ["--server"]
-    explains: "Start a mosh-server on the remote host
+    explains: "Start a mosh-server on the remote host."
 
 # Examples: List of example usages
 examples:

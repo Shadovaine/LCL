@@ -19,30 +19,30 @@ syntax: modprobe [Options] module_name [parameters...]
 # Optional: add "arg" if the optin expects a value
 options:
   - flag: ["-a"]
-    explains: "Inserts all listed modules.
+    explains: "Inserts all listed modules."
   - flag: ["-r"]
-    explains: "Removes a module.
+    explains: "Removes a module."
   - flag: ["--show", "-n"]
-    explains: "Dry- run.
+    explains: "Dry- run."
   - flag: ["-v"]
-    explains: "Verbose mode.
+    explains: "Verbose mode."
   - flag: ["--firest-time"]
-    explains: "Fail if module already loaded.
+    explains: "Fail if module already loaded."
   - flag: ["--remove-dependencies"]
-    explains: "Remove a module and its unused dempendencies.
+    explains: "Remove a module and its unused dempendencies."
   - flag: ["--set-version version"]
-    explains: "Act as if running under a specific kernel version.
+    explains: "Act as if running under a specific kernel version."
     arg:
       name: pattern
       required: true
   - flag: ["--dirname"]
-    explains: "Shows the base direcotry of modules.
+    explains: "Shows the base direcotry of modules."
   - flag: ["--show-depends"]
-    explains: "Shows all modules that would be inserted.
+    explains: "Shows all modules that would be inserted."
   - flag: ["--quiet"]
-    explains: "Supress errors.
+    explains: "Supress errors."
   - flag: ["-C file"]
-    explains: "Use alternate config file.
+    explains: "Use alternate config file."
     arg:
       name: file
       required: true

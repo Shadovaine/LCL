@@ -19,87 +19,87 @@ syntax: ts [Options] ... [Format]
 # Optional: add "arg" if the optin expects a value
 options:
   - flag: ["-S NUM"]
-    explains: "Sets the maximum number of jobs that run simultaneously.
+    explains: "Sets the maximum number of jobs that run simultaneously."
     arg: 
       name: number
       required: true
   - flag: ["-r ID"]
-    explains: "To remove a job.
+    explains: "To remove a job."
     arg:
       name: pattern
       required: true
   - flag: ["-s ID"]
-    explains: "Show status of a job.
+    explains: "Show status of a job."
     arg:
       name: pattern
       required: true
   - flag: ["-n"]
-    explains: "No output file, send output to stdout.
+    explains: "No output file, send output to stdout."
   - flag: ["-g"]
-    explains: "Compress output with gzip (use with -n).
+    explains: "Compress output with gzip (use with -n)."
   - flag: ["-f"]
-    explains: "Run in foreground, wait until done.
+    explains: "Run in foreground, wait until done."
   - flag: ["-m"]
-    explains: "Email results when done.
+    explains: "Email results when done."
   - flag: ["-L label"]
-    explains: "Archive and compress a file.
+    explains: "Archive and compress a file."
     arg:
       name: label
       required: true
   - flag: ["-K"]
-    explains: "Kill task spooler.
+    explains: "Kill task spooler."
   - flag: ["-C"]
-    explains: "Clear finished jobs from list.
+    explains: "Clear finished jobs from list."
   - flag: ["-U id-id"]
-    explains: "Swap positions of two jobs.
+    explains: "Swap positions of two jobs."
     arg:
       name: pattern
       required: true
   - flag: ["-u"]
-    explains: "Move job up in queue.
+    explains: "Move job up in queue."
   - flag: ["-w ID"]
-    explains: "Wait for job to finish.
+    explains: "Wait for job to finish."
     arg:
       name: pattern
       required: true
   - flag: ["-o ID"]
-    explains: "Shows output file path.
+    explains: "Shows output file path."
     arg:
       name: pattern
       required: true
   - flag: ["-p"]
-    explains: "Show PID of job.
+    explains: "Show PID of job."
     arg:
       name: pattern
       required: true
   - flag: ["-c"]
-    explains: "Shows full job ouptut.
-    arg: 
+    explains: "Shows full job output."
+    arg:
       name: pattern
       required: true
   - flag: ["-t ID"]
-    explains: "Tail last 10 lines of job output.
+    explains: "Tail last 10 lines of job output."
     arg:
       name: pattern
       required: true
   - flag: ["-l"]
-    explains: "Lists jobs.
+    explains: "Lists jobs."
   - flag: ["-N NUM"]
-    explains: "Requires NUM free slots to run.
+    explains: "Requires NUM free slots to run."
     arg:
       name: number
       required: true
   - flag: ["-E"]
-    explains: "Separate stdout and stderr files.
+    explains: "Separate stdout and stderr files."
   - flag: ["-B"]
-    explains: "Do not block when queue is full.
+    explains: "Do not block when queue is full."
   - flag: ["-D ID"]
-    explains: "run only if specific job ID succeeded.
+    explains: "run only if specific job ID succeeded."
     arg: 
       name: pattern
       required: true
   - flag: ["-d"]
-    explains: "run only if last job succeeded.
+    explains: "run only if last job succeeded."
 
 # Examples: List of example usages
 examples:

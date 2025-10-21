@@ -62,7 +62,7 @@ class CommandApp(App):
     #results_section {
         width: 50%;
         layout: vertical;
-        border: round #0178d4;  /* Force blue border */
+        border: round;
         padding: 1;
         height: 1fr;
     }
@@ -82,7 +82,7 @@ class CommandApp(App):
     #details_section {
         width: 50%;
         layout: vertical;
-        border: round #0178d4;  /* Force blue border */
+        border: round;
         padding: 1;
         height: 1fr;
     }
@@ -97,26 +97,24 @@ class CommandApp(App):
         overflow-y: auto;
     }
     .detail_box {
-        border: round #0178d4;  /* Force blue border */
+        border: round;
         padding: 1;
         margin: 0 0 1 0;
     }
     .detail_box_compact {
-        border: round #0178d4;  /* Force blue border */
+        border: round;
         padding: 1;
         margin: 0 0 1 0;
         height: 8;
     }
     .detail_box_large {
-        border: round #0178d4;  /* Force blue border */
+        border: round;
         padding: 1;
         margin: 0 0 1 0;
         height: 12;
         overflow-y: auto;
     }
     .detail_header {
-        background: #0178d4;    /* Force blue header background */
-        color: white;
         text-style: bold;
         height: 1;
         content-align: left middle;
@@ -130,16 +128,8 @@ class CommandApp(App):
 
     /* Focus styles for tab navigation */
     .detail_content:focus {
-        border: thick #0178d4;     /* Force blue focus border */
-        background: #0178d4 20%;   /* Force blue focus background */
-    }
-
-    #search_input:focus {
-        border: thick #0178d4;     /* Force blue focus border */
-    }
-
-    #results:focus {
-        border: thick #0178d4;     /* Force blue focus border */
+        border: thick;
+        background: $accent 20%;
     }
     """
     
@@ -173,9 +163,11 @@ class CommandApp(App):
                 yield DataTable(id="results")
             
             with Vertical(id="details_section"):
-                yield Label("Details", id="details_title")
-                with Vertical(id="details_content"):
-                    yield Static("Navigate commands with arrow keys to see details.", id="initial_message")
+                    yield Label("Details", id="details_title")
+                    with Vertical(id="details_content"):
+                        initial = Static(id="initial_message")
+                        initial.update("Navigate commands with arrow keys to see details.")
+                        yield initial
 
         yield Footer()
 
@@ -183,7 +175,12 @@ class CommandApp(App):
     def on_mount(self) -> None:
         table = self.query_one("#results", DataTable)
         table.add_columns("Name", "Category", "Description")
-        self.query_one("#search_input", Input).focus()
+        
+        # FORCE UPDATE THE PLACEHOLDER TEXT
+        search_input = self.query_one("#search_input", Input)
+        search_input.placeholder = "Search by name, category, or option..."
+        
+        search_input.focus()
         
         # Ensure footer bindings are visible from start
         self.refresh_bindings()
@@ -205,15 +202,8 @@ class CommandApp(App):
         self.docs = load_all_commands()
         
         if self.docs:
-            table = self.query_one("#results", DataTable)
-            table.clear()
-            for doc in self.docs[:100]:  
-                table.add_row(
-                    doc.get("name", ""),
-                    doc.get("category", ""),
-                    doc.get("description", "")[:50] + "..." if len(doc.get("description", "")) > 50 else doc.get("description", "")
-                )
-            self.filtered_docs = self.docs[:100].copy()
+            # Don't limit to first 100 - let _apply_filters_and_render handle it
+            self._apply_filters_and_render()
         else:
             # If no docs loaded, show empty table
             table = self.query_one("#results", DataTable)
@@ -366,42 +356,52 @@ class CommandApp(App):
             search_text = self.query_one("#search_input", Input).value.strip().lower()
             
             if not search_text:
-                # Show first 100 commands if no search
-                self.filtered_docs = self.docs[:100].copy()
+                # Show ALL commands organized by category on startup
+                self.filtered_docs = self._get_all_commands_by_category()
             else:
+                # Search logic...
                 self.filtered_docs = []
                 
                 for doc in self.docs:
                     try:
-                        # Safe field extraction with defaults
                         name = str(doc.get("name", "")).lower()
-                        category = str(doc.get("category", "")).lower()
-                        
-                        # Safe option searching - handle different option formats
+                        category_raw = str(doc.get("category", ""))
+                        category = category_raw.lower()
+                        category_normalized = category.replace("_", " ")
                         options_text = self._extract_options_text(doc)
                         
-                        # Search in name, category, and options
-                        if (search_text in name or 
-                            search_text in category or 
-                            search_text in options_text):
-                            self.filtered_docs.append(doc)
-                            
-                            # Limit results to prevent UI overload
-                            if len(self.filtered_docs) >= 100:
+                        # FLEXIBLE SEARCH: Check if ANY search word is in ANY field
+                        search_words = search_text.split()
+                        matches = False
+                        
+                        for search_word in search_words:
+                            if (search_word in name or 
+                                search_word in category or 
+                                search_word in category_normalized or
+                                search_word in options_text):
+                                matches = True
                                 break
-                                
+                        
+                        # SPECIAL CASE: "networking" should match "network"
+                        if "networking" in search_text and ("network" in category or "network" in category_normalized):
+                            matches = True
+                        
+                        if matches:
+                            self.filtered_docs.append(doc)
+                            # REMOVE OR INCREASE THIS LIMIT:
+                            # if len(self.filtered_docs) >= 100:
+                            #     break
+                        
                     except Exception as e:
-                        # Log error but continue with next document
                         self.log(f"Error processing document {doc.get('name', 'unknown')}: {e}")
                         continue
-            
+    
             # Update table safely
             self._update_results_table()
-            
         except Exception as e:
             self.log(f"Error in search: {e}")
-            # Fallback - show first 100 commands
-            self.filtered_docs = self.docs[:100].copy()
+            # Fallback - show all commands by category
+            self.filtered_docs = self._get_all_commands_by_category()
             self._update_results_table()
 
     def _update_results_table(self) -> None:
@@ -409,13 +409,23 @@ class CommandApp(App):
         try:
             table = self.query_one("#results", DataTable)
             table.clear()
-            # Limit displayed rows to avoid UI overload
-            for doc in (self.filtered_docs or [])[:100]:
+            
+            current_category = None
+            
+            for doc in (self.filtered_docs or []):
                 name = doc.get("name", "")
                 category = doc.get("category", "")
                 desc = doc.get("description", "") or ""
                 short_desc = desc[:50] + "..." if len(desc) > 50 else desc
+                
+                # Add visual separator for new categories (optional)
+                if current_category != category:
+                    current_category = category
+                    # You could add a separator row here if desired
+                    # table.add_row(f"━━━ {category} ━━━", "", "")
+                
                 table.add_row(name, category, short_desc)
+                
         except Exception as e:
             # Log but do not raise to keep UI responsive
             self.log(f"Error updating results table: {e}")
@@ -437,51 +447,52 @@ class CommandApp(App):
                             # Handle dict format: {"flag": ["-a", "--all"], "explains": "..."}
                             flag = option.get("flag", "")
                             if isinstance(flag, list):
-                                # Clean each flag item
-                                clean_flags = []
+                                # Clean each flag item and skip malformed ones
                                 for f in flag:
-                                    clean_flag = str(f).strip()
-                                    if clean_flag:
-                                        clean_flags.append(clean_flag.lower())
-                                if clean_flags:
-                                    options_text_parts.extend(clean_flags)
+                                    f_str = str(f).strip()
+                                    # Skip entries with malformed syntax
+                                    if f_str and not ("']: " in f_str or "']:" in f_str):
+                                        options_text_parts.append(f_str.lower())
                             else:
-                                clean_flag = str(flag).strip()
-                                if clean_flag:
-                                    options_text_parts.append(clean_flag.lower())
-                        
-                            # Add explanation text too
+                                f_str = str(flag).strip()
+                                # Skip malformed flag entries
+                                if f_str and not ("']: " in f_str or "']:" in f_str):
+                                    options_text_parts.append(f_str.lower())
+                            
+                            # Add explanation text too (with safety check)
                             explains = option.get("explains", "")
                             if explains:
-                                clean_explains = str(explains).strip()
-                                if clean_explains:
-                                    options_text_parts.append(clean_explains.lower())
-                            
+                                explains_str = str(explains).strip()
+                                # Skip malformed explanations
+                                if explains_str and not ("']: " in explains_str or "']:" in explains_str):
+                                    options_text_parts.append(explains_str.lower())
+                        
                         elif isinstance(option, str):
                             # Handle simple string options
-                            clean_option = option.strip()
-                            if clean_option:
-                                options_text_parts.append(clean_option.lower())
+                            option_str = str(option).strip()
+                            # Skip malformed string options
+                            if option_str and not ("']: " in option_str or "']:" in option_str):
+                                options_text_parts.append(option_str.lower())
                         else:
                             # Fallback for unexpected types
-                            clean_option = str(option).strip()
-                            if clean_option:
-                                options_text_parts.append(clean_option.lower())
-                            
+                            option_str = str(option).strip()
+                            if option_str and not ("']: " in option_str or "']:" in option_str):
+                                options_text_parts.append(option_str.lower())
                     except Exception as e:
                         # Log error but continue with next option
                         self.log(f"Error processing option {option}: {e}")
                         continue
+                
             elif isinstance(options, dict):
                 # Some docs may store options as a dict; include keys and string values
                 for k, v in options.items():
                     try:
                         key = str(k).strip()
-                        if key:
+                        if key and not ("']: " in key or "']:" in key):
                             options_text_parts.append(key.lower())
                         if isinstance(v, str):
                             val = v.strip()
-                            if val:
+                            if val and not ("']: " in val or "']:" in val):
                                 options_text_parts.append(val.lower())
                     except Exception as e:
                         self.log(f"Error processing option entry {k}: {e}")
@@ -489,7 +500,7 @@ class CommandApp(App):
             else:
                 # Fallback to string representation
                 opts_str = str(options).strip()
-                if opts_str:
+                if opts_str and not ("']: " in opts_str or "']:" in opts_str):
                     options_text_parts.append(opts_str.lower())
 
             return " ".join(options_text_parts)
@@ -636,6 +647,34 @@ class CommandApp(App):
     async def load_commands(self) -> None:
         """Async version of load_data for compatibility."""
         self.load_data()
+
+    def _get_all_commands_by_category(self) -> list:
+        """Return all commands organized by category."""
+        try:
+            # Group commands by category
+            category_groups = {}
+            
+            for doc in self.docs:
+                category = doc.get("category", "Unknown")
+                if category not in category_groups:
+                    category_groups[category] = []
+                category_groups[category].append(doc)
+            
+            # Sort categories alphabetically and combine all commands
+            organized_commands = []
+            
+            for category in sorted(category_groups.keys()):
+                # Sort commands within each category by name
+                commands_in_category = sorted(category_groups[category], 
+                                            key=lambda x: x.get("name", "").lower())
+                organized_commands.extend(commands_in_category)
+            
+            return organized_commands
+            
+        except Exception as e:
+            self.log(f"Error organizing commands by category: {e}")
+            # Fallback to original order
+            return self.docs.copy()
 
 
 #=========================================================
