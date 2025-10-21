@@ -1,40 +1,51 @@
+<p align="center">
+  <img src="./media/LCB.png" alt="LCL Banner" />
+</p>
 
-# 🐧 Linux Command Library
+# 🐧 LCL
 
-Welcome to my personal Linux command library — a curated collection of commands, options, and breakdowns as I train for the CompTIA Linux+ certification and real-world sysadmin work.
+A comprehensive Terminal User Interface (TUI) application for browsing and searching Linux commands with a beautiful, professional interface.
 
-## 📁 Topics Covered
+<p align="center">
+  <img src="./media/lcl.png" alt="LCL Banner" />
+</p>
 
-- Archiving & Compression
-- Disk and FileSystem Management
-- File & Directory Management
-- Networking Tools
-- Package Management
-- Permissions & Ownership
-- Process Management
-- Scripting & Automation
-- Search & Filter Management
-- Security Hardening
-- System Information and Monitoring
-- TroubleShooting Management
-- User & Group Management
-- WildCards
-- Viewing and Edit Management
+## 🌟 Features
 
-### 📌 Example Command: `find` 
-Search for Files Matching Criteria
+- **📚 180+ Linux Commands** - Comprehensive database organized by category
+- **🔍 Lightning-Fast Search** - Real-time search by command name, category, or options  
+- **📖 Rich Details** - View command syntax, options, examples, and descriptions
+- **🎨 Beautiful TUI** - Professional orange-themed interface with smooth animations
+- **⌨️ Full Keyboard Navigation** - Tab through all interface elements seamlessly
+- **👑 Admin Features** - Template generation for command maintainers
+- **🛡️ Robust Error Handling** - Graceful handling of malformed data
 
-<pre>
-bash
-find /etc -type f -name "*.conf" -user root -mtime -2
+## 📸 Screenshots
 
-</pre>	
+### Main Interface
+<p align="center">
+  <img src="./media/lcl.png" alt="LCL Banner" />
+</p>
 
- **Breakdown**:
- - `find`: Search utility
- - `/etc`: Starting directory
- - `-type f`: Files only
- - `-name "*.conf"`: Only `.conf` files
- - `-user root`: Owned by root
- - `-mtime -2`: Modified in the last 2 days
-	
+### Search Results
+<p align="center">
+  <img src="./media/LCL2.png" alt="Search Banner" />
+</p>
+
+### Command Details
+<p align="center">
+  <img src="./media/lcl.png" alt="LCL Banner" />
+</p>
+
+### Menu System
+<p align="center">
+  <img src="./media/lcl.png" alt="LCL Banner" />
+</p>
+## 🚀 Quick Start
+
+### Installation via pipx (Recommended)
+```bash
+pipx install lcl
+lcl
+# 🐧 LCL
+
