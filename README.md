@@ -34,14 +34,8 @@ A comprehensive Terminal User Interface (TUI) application for browsing and searc
 
 ### Command Details
 <p align="center">
-  <img src="./media/lcl.png" alt="LCL Banner" />
+  <img src="./media/lcl4.png" alt="Details Banner" />
 </p>
-
-### Menu System
-<p align="center">
-  <img src="./media/lcl.png" alt="LCL Banner" />
-</p>
-## 🚀 Quick Start
 
 ### Installation via pipx (Recommended)
 ```bash
