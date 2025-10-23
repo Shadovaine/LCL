@@ -165,7 +165,8 @@ class CommandApp(App):
             with Vertical(id="details_section"):
                     yield Label("Details", id="details_title")
                     with Vertical(id="details_content"):
-                        initial = Static(id="initial_message")
+                        initial = Static()
+                        initial.id = "initial_message"
                         initial.update("Navigate commands with arrow keys to see details.")
                         yield initial
 
@@ -359,8 +360,10 @@ class CommandApp(App):
                 # Show ALL commands organized by category on startup
                 self.filtered_docs = self._get_all_commands_by_category()
             else:
-                # Search logic...
+                # Search logic with EXACT MATCH PRIORITY
                 self.filtered_docs = []
+                exact_matches = []
+                partial_matches = []
                 
                 for doc in self.docs:
                     try:
@@ -370,7 +373,12 @@ class CommandApp(App):
                         category_normalized = category.replace("_", " ")
                         options_text = self._extract_options_text(doc)
                         
-                        # FLEXIBLE SEARCH: Check if ANY search word is in ANY field
+                        # 1. EXACT NAME MATCH (highest priority)
+                        if search_text == name:
+                            exact_matches.append(doc)
+                            continue
+                        
+                        # 2. PARTIAL MATCHES (lower priority)
                         search_words = search_text.split()
                         matches = False
                         
@@ -387,17 +395,21 @@ class CommandApp(App):
                             matches = True
                         
                         if matches:
-                            self.filtered_docs.append(doc)
-                            # REMOVE OR INCREASE THIS LIMIT:
-                            # if len(self.filtered_docs) >= 100:
-                            #     break
-                        
+                            partial_matches.append(doc)
+                            
                     except Exception as e:
                         self.log(f"Error processing document {doc.get('name', 'unknown')}: {e}")
                         continue
-    
+                
+                # PRIORITIZE: If exact matches exist, show only those. Otherwise show partial matches.
+                if exact_matches:
+                    self.filtered_docs = exact_matches
+                else:
+                    self.filtered_docs = partial_matches[:50]  # Limit partial matches to 50
+            
             # Update table safely
             self._update_results_table()
+            
         except Exception as e:
             self.log(f"Error in search: {e}")
             # Fallback - show all commands by category
@@ -647,6 +659,119 @@ class CommandApp(App):
     async def load_commands(self) -> None:
         """Async version of load_data for compatibility."""
         self.load_data()
+
+    def show_command_details(self, doc: dict) -> None:
+        """Display command details in the right panel."""
+        try:
+            details_content = self.query_one("#details_content", Vertical)
+            details_content.remove_children()  # Clear existing content
+            
+            # Command Name with UNIQUE ID
+            name_box = Vertical(
+                Static("Command", classes="detail_header"),
+                FocusableStatic(doc.get("name", "N/A"), classes="detail_content", id=f"name_focus_{doc.get('name', 'unknown')}", markup=False),
+                classes="detail_box_compact",
+                id=f"name_box_{doc.get('name', 'unknown')}",
+            )
+            details_content.mount(name_box)
+
+            # Category with UNIQUE ID
+            category_box = Vertical(
+                Static("Category", classes="detail_header"),
+                FocusableStatic(doc.get("category", "N/A"), classes="detail_content", id=f"category_focus_{doc.get('name', 'unknown')}", markup=False),
+                classes="detail_box_compact",
+                id=f"category_box_{doc.get('name', 'unknown')}",
+            )
+            details_content.mount(category_box)
+
+            # Description with UNIQUE ID
+            description_box = Vertical(
+                Static("Description", classes="detail_header"),
+                FocusableStatic(doc.get("description", "N/A"), classes="detail_content", id=f"description_focus_{doc.get('name', 'unknown')}", markup=False),
+                classes="detail_box",
+                id=f"description_box_{doc.get('name', 'unknown')}",
+            )
+            details_content.mount(description_box)
+
+            # Options with UNIQUE ID
+            options = doc.get("options", [])
+            if options:
+                options_box = self._render_options_section(options, doc.get('name', 'unknown'))
+                details_content.mount(options_box)
+
+            # Examples with UNIQUE ID
+            examples = doc.get("examples", [])
+            if examples:
+                examples_box = self._render_examples_section(examples, doc.get('name', 'unknown'))
+                details_content.mount(examples_box)
+
+        except Exception as e:
+            self.log(f"Error showing command details: {e}")
+            # Show error in details panel
+            try:
+                details_content = self.query_one("#details_content", Vertical)
+                details_content.remove_children()
+                error_box = Vertical(
+                    Static("Error", classes="detail_header"),
+                    Static(f"Failed to load details: {e}", classes="detail_content"),
+                    classes="detail_box",
+                    id="error_box",
+                )
+                details_content.mount(error_box)
+            except Exception:
+                pass
+
+    def _render_options_section(self, options: list, command_name: str) -> Vertical:
+        """Render the options section with unique IDs."""
+        try:
+            options_content = []
+            
+            for i, option in enumerate(options):
+                if isinstance(option, dict):
+                    flag = option.get("flag", "")
+                    explains = option.get("explains", "")
+                    
+                    if flag and explains:
+                        flag_str = ", ".join(flag) if isinstance(flag, list) else str(flag)
+                        option_text = f"{flag_str}: {explains}"
+                        options_content.append(option_text)
+            
+            content_text = "\n".join(options_content) if options_content else "No options available"
+            
+            return Vertical(
+                Static("Options", classes="detail_header"),
+                FocusableStatic(content_text, classes="detail_content", id=f"options_focus_{command_name}_{hash(content_text) % 10000}", markup=False),
+                classes="detail_box_large",
+                id=f"options_box_{command_name}",
+            )
+            
+        except Exception as e:
+            return Vertical(
+                Static("Options", classes="detail_header"),
+                Static(f"Error loading options: {e}", classes="detail_content"),
+                classes="detail_box",
+                id=f"options_error_{command_name}",
+            )
+
+    def _render_examples_section(self, examples: list, command_name: str) -> Vertical:
+        """Render the examples section with unique IDs."""
+        try:
+            examples_text = "\n\n".join(str(ex) for ex in examples if ex)
+            
+            return Vertical(
+                Static("Examples", classes="detail_header"),
+                FocusableStatic(examples_text, classes="detail_content", id=f"examples_focus_{command_name}_{hash(examples_text) % 10000}", markup=False),
+                classes="detail_box_large",
+                id=f"examples_box_{command_name}",
+            )
+            
+        except Exception as e:
+            return Vertical(
+                Static("Examples", classes="detail_header"),
+                Static(f"Error loading examples: {e}", classes="detail_content"),
+                classes="detail_box",
+                id=f"examples_error_{command_name}",
+            )
 
     def _get_all_commands_by_category(self) -> list:
         """Return all commands organized by category."""
