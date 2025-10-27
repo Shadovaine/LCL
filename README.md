@@ -34,7 +34,7 @@ A comprehensive Terminal User Interface (TUI) application for browsing and searc
 
 ### Command Details
 <p align="center">
-  <img src="./media/LCL4.png" alt="Details Banner" />
+  <img src="./media/LCL5.png" alt="Details Banner" />
 </p>
 
 ### Installation via pipx (Recommended)
