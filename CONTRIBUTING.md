@@ -1,4 +1,4 @@
-# Contributing to Linux Command Library (LCL)
+# Contributing to LCL
 
 Thank you for your interest in contributing to the LCL CONTRIBUTION page! We welcome contributions from developers of all skill levels.
 
