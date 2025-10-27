@@ -119,6 +119,8 @@ class CommandApp(App):
         height: 1;
         content-align: left middle;
         padding: 0 1;
+        background: #FF9500;
+        color: black;
     }
     .detail_content {
         height: auto;
