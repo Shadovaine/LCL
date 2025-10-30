@@ -1,14 +1,10 @@
-<p align="center">
-  <img src="./media/LCB.png" alt="LCL Banner" />
-</p>
-
 # 🐧 LCL
+
+![LCL Banner](https://raw.githubusercontent.com/Shadovaine/Linux-Command-Library-dev/main/media/LCB.png)
 
 A comprehensive Terminal User Interface (TUI) application for browsing and searching Linux commands with a beautiful, professional interface.
 
-<p align="center">
-  <img src="./media/lcl.png" alt="LCL Banner" />
-</p>
+![LCL Banner](https://raw.githubusercontent.com/Shadovaine/Linux-Command-Library-dev/main/media/lcl.png)
 
 ## 🌟 Features
 
@@ -23,23 +19,19 @@ A comprehensive Terminal User Interface (TUI) application for browsing and searc
 ## 📸 Screenshots
 
 ### Main Interface
-<p align="center">
-  <img src="./media/lcl.png" alt="LCL Banner" />
-</p>
 
-### Search Results
-<p align="center">
-  <img src="./media/LCL2.png" alt="Search Banner" />
-</p>
+![LCL Main Interface](https://raw.githubusercontent.com/Shadovaine/Linux-Command-Library-dev/main/media/lcl.png)
 
 ### Command Details
-<p align="center">
-  <img src="./media/LCL5.png" alt="Details Banner" />
-</p>
+
+![Search Results](https://raw.githubusercontent.com/Shadovaine/Linux-Command-Library-dev/main/media/LCL2.png)
+
+## 📦 Installation
+
+### Installation Command Details
+
+![Search Results](https://raw.githubusercontent.com/Shadovaine/Linux-Command-Library-dev/main/media/LCL2.png)
 
 ### Installation via pipx (Recommended)
-```bash
-pipx install lcl
-lcl
-# 🐧 LCL
 
+![Command Details](https://raw.githubusercontent.com/Shadovaine/Linux-Command-Library-dev/main/media/LCL5.png)
